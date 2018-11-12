@@ -11,7 +11,7 @@ class AddItem extends Component {
             price: null,
             description: '',
             sessionID: props.sessionID,
-           charityChoice: 'charity1',
+            charityChoice: 'charity1',
             username: props.username
         }
         this.handleNameChange = this.handleNameChange.bind(this)
