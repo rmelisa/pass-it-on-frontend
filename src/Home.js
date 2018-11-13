@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Route, BrowserRouter, Link } from 'react-router-dom'
-
+import { withRouter } from 'react-router'
 class Home extends Component {
     constructor() {
         super()
@@ -50,4 +50,9 @@ class Home extends Component {
             </div>)
     }
 }
-export default Home
+let connectedHome = connect(function (store) {
+    return {
+        sessionID: store.session
+    }
+})(withRouter(Home))
+export default connectedHome
