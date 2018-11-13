@@ -7,8 +7,8 @@ class AddItem extends Component {
         super(props)
         this.state = {
             filename: 'placeholder.png',
-            name: '',
-            price: null,
+            itemName: '',
+            minBid: 0,
             description: '',
             sessionID: props.sessionID,
             charityChoice: 'charity1',

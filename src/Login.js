@@ -43,8 +43,9 @@ class Login extends Component {
 
                 })
                 this.props.history.push('/')
+                // return(<div>Welcome,{this.state.usernameInput}</div>)
             } else {
-                alert('Failed login or signup, please try again')
+                alert('Failed login , please try again')
             }
         }
         cb = cb.bind(this)

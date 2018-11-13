@@ -65,7 +65,7 @@ class App extends Component {
           <Route exact={true} path='/login/' render={this.renderLogin} />
           <Route exact={true} path='/ItemsList' render={this.renderItemsList} />
           <Route exact={true} path='/addItem/' render={this.renderAddItem} />
-          <Route exact={true} path='/details/:itemID' render={this.renderDetails} />
+          <Route exact={true} path='/itemDetails/:itemID' render={this.renderDetails} />
           <Route exact={true} path='/Info/' render={this.renderFAQ} />
           {/* <Route exact={true} path='/cart/' render={this.renderCart} /> */}
           {/* <Route exact={true} path= '/charity/' render={this.renderCharity} /> */}

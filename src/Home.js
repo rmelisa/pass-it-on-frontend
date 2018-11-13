@@ -9,9 +9,8 @@ class Home extends Component {
 
         }
         this.handleAddItem = this.handleAddItem.bind(this)
+        this.handleTopLeft = this.handleTopLeft.bind(this)
     }
-
-    
 
     handleAddItem() {
         if (this.props.sessionID) {
@@ -28,17 +27,26 @@ class Home extends Component {
             alert('You must be logged in to access this page')
         }
     }
-    
+    handleTopLeft() {
+        if (this.props.sessionID) {
+            return(<div> welcome, {this.props.username}</div>)
+        }
+        else {
+           return(<div className="login-signup">
+                <Link className="login-signup" to={"/login/"}> Login </Link>
+                <Link className="login-signup" to={"/signup/"}> Signup </Link>
+            </div>)
+        }
+    }
+
     render() {
+
         return (
             <div className='home-container'>
-                <div className="login-signup" >
-                    <Link className="login-signup" to={"/login/"}> Login </Link>
-                    <Link className="login-signup" to={"/signup/"}> Signup </Link>
-                </div>
-                {/* <img className="title" src="/shabby.png"></img> */}
+                {this.handleTopLeft()}
                 <div className="tabs-container">
                     <div><Link to={"/ItemsList/"}>Items for sale</Link></div>
+                    <div><Link to={"/itemDetails/"}/>itemDetails</div>
                     <div><Link to={"/FAQ/"}></Link>How it works</div>
                     <div><Link to={"/members/"}></Link>Other members</div>
                     <div><Link to={"/charity/"}></Link>Charity</div>
@@ -52,7 +60,8 @@ class Home extends Component {
 }
 let connectedHome = connect(function (store) {
     return {
-        sessionID: store.session
+        sessionID: store.session,
+        username: store.username
     }
 })(withRouter(Home))
 export default connectedHome
