@@ -12,11 +12,11 @@ class ItemDetails extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentBid: 0,
-            newBid: 0,
+            currentBid: null,
+            newBid: null,
             item: {}
         }
-        this.handleClick = this.handleClick.bind(this)
+        // this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
         this.handleBidChange = this.handleBidChange.bind(this)
     }
@@ -28,7 +28,7 @@ class ItemDetails extends Component {
             })
         }
         callBack = callBack.bind(this)
-        fetch('/itemDetails', {
+        fetch('http://demo5206055.mockable.io/itemDetails', {
             method: 'POST',
             body: JSON.stringify({
                 itemID: this.props.itemID
@@ -55,24 +55,27 @@ class ItemDetails extends Component {
     //     }).then(callBack)
     // }
 
-    handleClick(event) {
-        event.preventDefault();
-        if (this.props.sessionID) {
-            this.props.dispatch({
-                type: "addToCart",
-                itemID: this.props.itemID,
-                name: this.state.item.name,
-                description: this.state.item.description,
-                price: this.state.item.price,
-                image: this.state.item.image
-            })
-            this.props.history.push('/cart/')
-        } else {
-            alert('Please login to add an item to the shopping cart.')
-        }
-    }
+    // handleClick(event) {
+    //     event.preventDefault();
+    //     if (this.props.sessionID) {
+    //         this.props.dispatch({
+    //             type: "allBids",
+    //             itemID: this.props.itemID,
+    //             name: this.state.item.itemName,
+    //             description: this.state.item.description,
+    //             price: this.state.item.newBid,
+    //             image: this.state.item.filename
+    //         })
+    //         this.props.history.push('/bids/')
+    //     } else {
+    //         alert('Please login to add an item to the shopping cart.')
+    //     }
+    // }
+
+  
     handleBidChange(event){
         let bidInput = event.target.value
+        
         this.setState({newBid: bidInput})
     }
 
@@ -81,32 +84,29 @@ class ItemDetails extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <div className="itemDetails">
-                    <img className="title-det-add" src="/shabby.png"></img>
-                </div>
-                <div>
-                    <button className="back-to-home" onClick={this.backToHome}>Back to Shopping</button>
-                </div>
-                <div className="item-details">
-                    <img className="item-image" src={'/' + this.state.item.image}></img>
-                    <div className="item-det">
-                        <div className="item-list"> Title:&nbsp;{this.state.item.name}</div>
-                        <div className="item-list">Price:&nbsp;${this.state.item.price}</div>
-                        <div className="item-list">Description:&nbsp;{this.state.item.description}</div>
-                        {/* <div className="item-list">Seller:&nbsp;&nbsp;<Link to={"/seller/" + this.state.item.username}>{this.state.item.username}</Link> </div> */}
+        return ( <div>
+                
+             
+                         <button className="back-to-home" onClick={this.backToHome}>Back to Shopping</button>
+                        <img className="item-image" src={'/' + this.props.item.filename}></img>
+                        <div className="item-list"> Title:&nbsp;{this.props.item.itemName}</div>
+                        <div className="item-list">Description:&nbsp;{this.props.item.description}</div>
+                        
                         <form className="bid-system">
-                        <input type="text" onChange={this.handleBidChange}></input></form>
-                        <input className="add-to-btn" type="submit" value="Add to cart" onClick={this.handleClick} />
-                    </div>
-                </div>
+                        <div className="item-list">Min Bid:&nbsp;${this.props.item.minBid}</div>
+                        <input type="text" onChange={this.handleBidChange}></input>
+                        <div className="item-list"> Current Bid:&nbsp;${this.state.newBid}</div>
+                        <input className="add-to-btn" type="submit" onClick={this.handleBidChange}/>
+                        </form>
+                        
+                
             </div>)
     }
 }
 let connectedItemDetails = connect(function (store) {
     return {
-        sessionID: store.session
+        sessionID: store.session,
+        item: store.item
     }
 })(withRouter(ItemDetails))
 export default connectedItemDetails

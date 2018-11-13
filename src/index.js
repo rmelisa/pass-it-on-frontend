@@ -17,12 +17,13 @@ let reducer = function( state, action){
     if(action.type === "setUsername") {
         return {...state, username: action.username}
     }
-    if(action.type === "addToCart"){
-        return{...state, cartItems: state.cartItems.concat({
+    if(action.type === "allBids"){
+        return{...state, bids: state.bids.concat({
             itemID: action.itemID,
-            name: action.name,
+            itemName: action.itemName,
             description: action.description,
-            price: action.price,
+            minBid: action.minBid,
+            newBid: action.newBid,
             image: action.image
 
         })}
@@ -34,7 +35,11 @@ let reducer = function( state, action){
 const store = createStore(
     reducer, // reducer
     {session: undefined,
-    cartItems:[]}, // initial state
+    bids:[], item: {filename:"123.png", 
+    itemName:"shirt", 
+    minBid:"10", 
+    description:"cool", 
+    charityChoice:"UNICEF" }}, // initial state
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
