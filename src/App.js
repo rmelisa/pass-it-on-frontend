@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import Home from './Home'
 import AddItem from './AddItem.js'
+import ItemsList from './ItemsList'
 import ShoppingCart from './ShoppingCart'
 
 class App extends Component {
@@ -40,6 +41,10 @@ class App extends Component {
   renderAddItem() {
     return (<AddItem />)
   }
+  renderItemsList() {
+    return (<ItemsList/>)
+  }
+
 
   // renderItemsBid(){
   //   return (<ItemsBid endpoint={'/ItemsBidOn'}/>)
@@ -63,7 +68,7 @@ class App extends Component {
           <Route exact={true} path='/' render={this.renderHome} />
           <Route exact={true} path='/signup/' render={this.renderSignup} />
           <Route exact={true} path='/login/' render={this.renderLogin} />
-          <Route exact={true} path='/ItemsList' render={this.renderItemsList} />
+          <Route exact={true} path='/itemsList' render={this.renderItemsList} />
           <Route exact={true} path='/addItem/' render={this.renderAddItem} />
           <Route exact={true} path='/itemDetails/:itemID' render={this.renderDetails} />
           <Route exact={true} path='/Info/' render={this.renderFAQ} />

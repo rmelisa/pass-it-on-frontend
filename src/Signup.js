@@ -116,7 +116,6 @@ class Login extends Component {
             <textarea rows="4" cols="20" type="text" onChange={this.handleBioChange}></textarea>
                     Profile picture:
             <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
-
                     Username:
             <input type="text" onChange={this.handleUsernameChange}></input>
                     Password:

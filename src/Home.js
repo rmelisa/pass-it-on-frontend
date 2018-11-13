@@ -45,12 +45,12 @@ class Home extends Component {
             <div className='home-container'>
                 {this.handleTopLeft()}
                 <div className="tabs-container">
-                    <div><Link to={"/ItemsList/"}>Items for sale</Link></div>
-                    <div><Link to={"/itemDetails/"}/>itemDetails</div>
+                    <div><Link to={"/itemsList/"}>Items for sale</Link></div>
+                    <div><Link to={"/itemDetails/"}>itemDetails</Link></div>
                     <div><Link to={"/FAQ/"}></Link>How it works</div>
                     <div><Link to={"/members/"}></Link>Other members</div>
                     <div><Link to={"/charity/"}></Link>Charity</div>
-                    <div><Link to={"/ItemsBidOn/"}></Link>Items you bid on</div>
+                    <div><Link to={"/itemsBidOn/"}></Link>Items you bid on</div>
                 </div>
                 <div className="btn">
                     <button className="add-item-btn" onClick={this.handleAddItem}>Add Item +</button>

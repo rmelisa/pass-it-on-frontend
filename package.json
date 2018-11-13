@@ -1,4 +1,4 @@
-{ "proxy":"http://localhost:4030",
+{ "proxy":"http://localhost:3021",
   "name": "some-awesome-name",
   "version": "0.1.0",
   "private": true,
