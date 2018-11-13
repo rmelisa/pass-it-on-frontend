@@ -36,7 +36,6 @@ class Login extends Component {
                 this.props.dispatch({  // passing this action to the reducer by specifing the type of action
                     type: "setSession",
                     sessionID: parsed.sessionID
-
                 })
                 this.props.dispatch({  // passing this action to the reducer by specifing the type of action
                     type: "setUsername",
@@ -49,7 +48,7 @@ class Login extends Component {
             }
         }
         cb = cb.bind(this)
-        fetch(this.props.endpoint, {
+        fetch("http://demo5206055.mockable.io/signup", {
             method: 'POST',
             body: body // body is defined above
         }).then(function (res) {
@@ -59,10 +58,9 @@ class Login extends Component {
 
     render() {
         return (
-        
+
             <div className="main">
-            <img className="title-logo" src="/shabby.png"></img>
-            <p className="title1">Enter To Begin Shopping!</p>
+                <p className="title1">Enter To Begin Shopping!</p>
                 <form className="signup" onSubmit={this.handleSubmit}>
                     Username:
             <input className="signup1" type="text" onChange={this.handleUsernameChange}></input>

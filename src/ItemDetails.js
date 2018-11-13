@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import Seller from './Seller.js'
+// import Member from './Member.js'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 
@@ -18,7 +18,7 @@ class ItemDetails extends Component {
         }
         this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
-        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleBidChange = this.handleBidChange.bind(this)
     }
     componentDidMount() {
         let callBack = function (response) {
@@ -38,22 +38,22 @@ class ItemDetails extends Component {
         }).then(callBack)
     }
 
-    getSellerDetail() {
-        let callBack = function (response) {
-            let parsed = JSON.parse(response)
-            this.props.dispatch({
-                type: "setSessionId",
-                id: parsed.id
-            })
-        }
-        callBack = callBack.bind(this)
-        fetch('/sellerDetail', {
-            method: 'GET',
+    // getSellerDetail() {
+    //     let callBack = function (response) {
+    //         let parsed = JSON.parse(response)
+    //         this.props.dispatch({
+    //             type: "setSessionId",
+    //             id: parsed.id
+    //         })
+    //     }
+    //     callBack = callBack.bind(this)
+    //     fetch('/memberDetail', {
+    //         method: 'GET',
 
-        }).then(function (x) {
-            return x.text()
-        }).then(callBack)
-    }
+    //     }).then(function (x) {
+    //         return x.text()
+    //     }).then(callBack)
+    // }
 
     handleClick(event) {
         event.preventDefault();
@@ -71,7 +71,7 @@ class ItemDetails extends Component {
             alert('Please login to add an item to the shopping cart.')
         }
     }
-    handleInputChange(event){
+    handleBidChange(event){
         let bidInput = event.target.value
         this.setState({newBid: bidInput})
     }
@@ -95,9 +95,9 @@ class ItemDetails extends Component {
                         <div className="item-list"> Title:&nbsp;{this.state.item.name}</div>
                         <div className="item-list">Price:&nbsp;${this.state.item.price}</div>
                         <div className="item-list">Description:&nbsp;{this.state.item.description}</div>
-                        <div className="item-list">Seller:&nbsp;&nbsp;<Link to={"/seller/" + this.state.item.username}>{this.state.item.username}</Link> </div>
+                        {/* <div className="item-list">Seller:&nbsp;&nbsp;<Link to={"/seller/" + this.state.item.username}>{this.state.item.username}</Link> </div> */}
                         <form className="bid-system">
-                        <input type="text" onChange={this.handleInputChange}></input></form>
+                        <input type="text" onChange={this.handleBidChange}></input></form>
                         <input className="add-to-btn" type="submit" value="Add to cart" onClick={this.handleClick} />
                     </div>
                 </div>

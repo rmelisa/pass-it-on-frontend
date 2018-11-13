@@ -6,15 +6,15 @@ class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            filename:"placeholder.png",
+            filename: "placeholder.png",
             firstNameInput: "",
-            lastNameInput:"",
-            email:"",
+            lastNameInput: "",
+            email: "",
             address: "",
-            bioInput:"",
+            bioInput: "",
             usernameInput: "",
             passwordInput: "",
-            
+
         }
         this.uploadFile = this.uploadFile.bind(this)
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
@@ -47,47 +47,40 @@ class Login extends Component {
             lastNameInput: event.target.value
         })
     }
-
     handleBioChange(event) {
         this.setState({
             bioInput: event.target.value
         })
     }
-
     handleUsernameChange(event) {
         this.setState({
             usernameInput: event.target.value
         })
     }
-
     handlePasswordChange(event) {
         this.setState({
             passwordInput: event.target.value
         })
     }
-
     handleSubmit(event) {
         event.preventDefault()
         let body = JSON.stringify(
             this.state)
-            // firstName: this.state.firstNameInput,
-            // lastName: this.state.lastNameInput,
-            // username: this.state.usernameInput,
-            // password: this.state.passwordInput,
-            // bio: this.state.bioInput
-        
+        // firstName: this.state.firstNameInput,
+        // lastName: this.state.lastNameInput,
+        // username: this.state.usernameInput,
+        // password: this.state.passwordInput,
+        // bio: this.state.bioInput
         let cb = function (resBody) {
             let parsed = JSON.parse(resBody)
             if (parsed.status) {
                 this.props.dispatch({  // passing this action to the reducer by specifing the type of action
                     type: "setSession",
                     sessionID: parsed.sessionID
-
                 })
                 this.props.dispatch({  // passing this action to the reducer by specifing the type of action
                     type: "setUsername",
                     username: this.state.usernameInput
-
                 })
                 this.props.history.push('/')
             } else {
@@ -105,13 +98,11 @@ class Login extends Component {
 
     render() {
         return (
-        
+
             <div className="main">
-            logo
-            <p>Enter</p>
-            <div className="add-image">
-                        <img className="add-image" src={`/${this.state.filename}`}></img>
-                    </div>
+                {/* <div className="add-image">
+                    <img className="add-image" src={`/${this.state.filename}`}></img>
+                </div> */}
                 <form onSubmit={this.handleSubmit}>
                     First Name:
             <input type="text" onChange={this.handleFirstNameChange}></input>
@@ -123,6 +114,9 @@ class Login extends Component {
             <input type="text"></input>
                     Bio:
             <textarea rows="4" cols="20" type="text" onChange={this.handleBioChange}></textarea>
+                    Profile picture:
+            <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
+
                     Username:
             <input type="text" onChange={this.handleUsernameChange}></input>
                     Password:
