@@ -10,6 +10,7 @@ import Home from './Home'
 import AddItem from './AddItem.js'
 import ItemsList from './ItemsList'
 import ShoppingCart from './ShoppingCart'
+import Members from './Members.js'
 
 class App extends Component {
   constructor(props) {
@@ -73,10 +74,10 @@ class App extends Component {
   //   return (<ItemsBid endpoint={'/bids'}/>)
   // }
   
-  // renderMember(routerData) {
-  //   let username = routerData.match.params.username;
-  //   return (<Member username={username} />)
-  // }
+  renderMember(routerData) {
+    let username = routerData.match.params.username;
+    return (<Members username={username} />)
+  }
   // renderCart(){
   //   return(<ShoppingCart/>)
   //   }
@@ -98,7 +99,7 @@ class App extends Component {
           {/* <Route exact={true} path='/cart/' render={this.renderCart} /> */}
           {/* <Route exact={true} path= '/charity/' render={this.renderCharity} /> */}
           <Route exact={true} path= '/bids' render={this.renderItemsBid} />
-          {/* <Route exact={true} path='/member/:username' render={this.renderSeller} /> */}
+          <Route exact={true} path='/members/' render={this.renderMember} />
 
         </div>
       </BrowserRouter>
