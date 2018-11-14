@@ -23,6 +23,7 @@ class Login extends Component {
         this.handleUsernameChange = this.handleUsernameChange.bind(this)
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.renderHome = this.renderHome.bind(this)
     }
 
     uploadFile(x) {
@@ -95,11 +96,15 @@ class Login extends Component {
             return res.text()
         }).then(cb)
     }
+    renderHome() {
+        this.props.history.push('/')
+    }
 
     render() {
         return (
 
             <div className="main">
+                <input type="submit" value="Back to homepage" onClick={this.renderHome}></input>
                 <div className="add-image">
                     <img className="add-image" src={`/${this.state.filename}`}></img>
                 </div>

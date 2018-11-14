@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from './Login.js'
-import Signup from './Signup.js'
-// import Member from './Member.js'
-import ItemDetails from './ItemDetails.js'
 import { connect } from 'react-redux'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
+import Login from './Login.js'
+import Signup from './Signup.js'
+import ItemsList from './ItemsList'
+import ItemDetails from './ItemDetails.js'
 import Home from './Home'
 import AddItem from './AddItem.js'
-import ItemsList from './ItemsList'
-import ShoppingCart from './ShoppingCart'
 import Members from './Members.js'
+import ShoppingCart from './ShoppingCart'
+
 
 class App extends Component {
   constructor(props) {

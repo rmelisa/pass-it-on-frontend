@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
+import Home from './Home.js'
 
 class Members extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Members extends Component {
         this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
         this.getAllMembers = this.getAllMembers.bind(this)
         this.renderAllMemebers = this.renderAllMemebers.bind(this)
+        this.renderHome = this.renderHome.bind(this)
     }
     componentDidMount() {
         this.getAllMembers()
@@ -49,7 +51,7 @@ class Members extends Component {
         return (<div className='members'>
             <div>
                 <div className="image-container">
-                    <img className="item-images" src={user.imageName}></img>
+                    <img className="item-images" src={'/' + user.imageName}></img>
                     <div className="desc-1">Username:{user.username}</div>
                     <div className="desc-2">First Name: {user.firstName}</div>
                     <div className="desc-3">Last Name: {user.lastName}</div>
@@ -58,8 +60,12 @@ class Members extends Component {
             </div>
         </div>)
     }
+    renderHome() {
+        this.props.history.push('/')
+    }
     render() {
         return (<div>
+            <input type="submit" value="Back to homepage" onClick={this.renderHome}></input>
             <form onSubmit={this.handleSearchSubmit}>
                 <input type="search" placeholder="Search here" onChange={this.handleSearchChange}></input>
                 <input type="submit" ></input>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-// import Member from './Member.js'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 

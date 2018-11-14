@@ -12,6 +12,7 @@ class ItemsList extends Component {
         }
         this.getItems = this.getItems.bind(this)
         this.renderItems = this.renderItems.bind(this)
+        this.renderHome = this.renderHome.bind(this)
         // this.handleAddItem = this.handleAddItem.bind(this)
         // this.handleShoppingCart = this.handleShoppingCart.bind(this)
     }
@@ -22,11 +23,11 @@ class ItemsList extends Component {
 
     getItems() {
         fetch("/itemsList") //confirm name
-        .then(x=>x.text())
-        .then(response =>{
-            let parsed =JSON.parse(response)
-            this.setState({itemsDisplayed:parsed})
-        })
+            .then(x => x.text())
+            .then(response => {
+                let parsed = JSON.parse(response)
+                this.setState({ itemsDisplayed: parsed })
+            })
     }
 
     renderItems(item) {
@@ -59,21 +60,18 @@ class ItemsList extends Component {
     //     }
     // }
 
+    renderHome() {
+        this.props.history.push('/')
+    }
 
-  
     render() {
 
         return (
             <div>
-          
-                    <div>
-                        <Link to={"/login/"}> Login </Link>
-                        <Link to={"/signup/"}> Signup </Link>
-                    </div>
-               
+                <input type="submit" value="Back to homepage" onClick={this.renderHome}></input>
                 <div className="items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
             </div>
-            
+
         )
     }
 }
