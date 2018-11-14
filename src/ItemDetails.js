@@ -57,6 +57,7 @@ class ItemDetails extends Component {
         let bidInput = this.refs.bid.value
         fetch('/newBid', {
             method: 'POST',
+            credentials: "same-origin",
             body: JSON.stringify({
                 itemID: this.props.itemID,
                 newBid: bidInput
@@ -64,6 +65,7 @@ class ItemDetails extends Component {
             }).then(function(res){
                 return res.text()
             }).then(callBack)
+            this.refs.bid.value = ''
     
     }
     // handleBidChange(event) {
@@ -132,8 +134,9 @@ class ItemDetails extends Component {
             <div className='item-list'>Charity:&nbsp;{this.state.item.charity}</div>
             <form className="bid-system">
                 <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
-                <input type="text"  ref="bid"></input>
                 <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
+                Place a bid:&nbsp;
+                <input type="text"  ref="bid"></input>
                 {/* <input className="add-to-bt}n" type="submit" onClick={this.handleBidChange} /> */}
                 <input type="submit" onClick={this.updateBidAmount}></input>
             </form>

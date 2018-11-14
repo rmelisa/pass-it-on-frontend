@@ -33,7 +33,7 @@ class ItemsList extends Component {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
         return (<div className='items'>
                 <div className="image-container">
-                    <img className="item-images" src={item.imageName}></img>
+                    <img className="item-images" src={'/' + item.imageName}></img>
                     <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
                     <div>Min Bid: {item.minBid}$</div>
                     <div>Current Bid: {item.currentBid}$</div>

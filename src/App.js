@@ -27,11 +27,11 @@ class App extends Component {
         this.props.dispatch({  
           type: "setSession",
           sessionID: parsed.sessionID
-      })
-      this.props.dispatch({  
-        type: "setUsername",
-        username: parsed.username
-    })
+        })
+        this.props.dispatch({  
+          type: "setUsername",
+          username: parsed.username
+        })
       }
     }
     callBack = callBack.bind(this)

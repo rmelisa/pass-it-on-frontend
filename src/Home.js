@@ -93,7 +93,6 @@ class Home extends Component {
                 {/* {this.getTopItems()} */}
                 <div className="tabs-container">
                     <div><Link to={"/itemsList/"}>Items for sale</Link></div>
-                    <div><Link to={"/itemDetails/"}>itemDetails</Link></div>
                     <div><Link to={"/FAQ/"}>How it works</Link></div>
                     <div><Link to={"/members/"}>Other members</Link></div>
                     <div><Link to={"/charity/"}>Charities</Link></div>

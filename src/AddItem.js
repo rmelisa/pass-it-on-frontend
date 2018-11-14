@@ -42,7 +42,7 @@ class AddItem extends Component {
     handleNameChange(event) {
         let name = event.target.value
         this.setState({
-            name: name
+            itemName: name
         })
     }
 
@@ -56,7 +56,7 @@ class AddItem extends Component {
     handlePriceChange(event) {
         let price = event.target.value
         this.setState({
-            price: price
+            minBid: price
         })
     }
 
@@ -106,7 +106,8 @@ class AddItem extends Component {
                         <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
                     </div>
                     <div>Item name:<input className="input-field" type='text' onChange={this.handleNameChange} placeholder="Item Name" /></div>
-                    <div>What is the story behind the item?<input className="input-field" type='text' onChange={this.handleDescriptionChange} placeholder="The story behind the item" /></div>
+                    <div>What is the story behind the item?<textarea className="input-field" rows="4" cols="20" type="text" onChange={this.handleDescriptionChange} placeholder="The story behind the item" ></textarea>
+                        </div>
                     <div> start the bid at:<input className="input-field" type='text' onChange={this.handlePriceChange} placeholder="" /></div>
 
                     <div>
