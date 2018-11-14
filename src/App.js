@@ -47,7 +47,7 @@ class App extends Component {
 
 
   // renderItemsBid(){
-  //   return (<ItemsBid endpoint={'/ItemsBidOn'}/>)
+  //   return (<ItemsBid endpoint={'/bids'}/>)
   // }
   
   // renderMember(routerData) {
@@ -74,7 +74,7 @@ class App extends Component {
           <Route exact={true} path='/Info/' render={this.renderFAQ} />
           {/* <Route exact={true} path='/cart/' render={this.renderCart} /> */}
           {/* <Route exact={true} path= '/charity/' render={this.renderCharity} /> */}
-          {/* <Route exact={true} path= '/ItemsBidOn' render={this.renderItemsBid} /> */}
+          <Route exact={true} path= '/bids' render={this.renderItemsBid} />
           {/* <Route exact={true} path='/member/:username' render={this.renderSeller} /> */}
 
         </div>

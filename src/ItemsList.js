@@ -37,7 +37,6 @@ class ItemsList extends Component {
                     <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
                     <div>Min Bid: {item.minBid}$</div>
                     <div>Current Bid: {item.currentBid}$</div>
-                    <div>Description: {item.itemDescription}</div>
                     <div>Posted By: {item.username}</div>
                     <div>Charity: {item.charity}</div>
                 </div>

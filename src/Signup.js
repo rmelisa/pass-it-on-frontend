@@ -88,7 +88,7 @@ class Login extends Component {
             }
         }
         cb = cb.bind(this)
-        fetch('http://demo5206055.mockable.io/signup', {
+        fetch('/signup', {
             method: 'POST',
             body: body // body is defined above
         }).then(function (res) {

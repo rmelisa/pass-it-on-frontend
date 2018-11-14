@@ -65,7 +65,7 @@ class AddItem extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        fetch('/addItem', {
+        fetch('http://demo5206055.mockable.io/addItem', {
             method: 'POST',
             body: JSON.stringify(this.state)
         }).then(function (res) {
@@ -89,7 +89,7 @@ class AddItem extends Component {
         return (<div>
             <div className="nav-add">
 
-                <img className="title-add" src="/shabby.png"></img>
+                <img className="title-add" src="/logo.png"></img>
             </div>
             <button className="keep-shopping" onClick={this.backToHome}>Continue Shopping</button>
             <form className="form-style" onSubmit={this.handleSubmit}>

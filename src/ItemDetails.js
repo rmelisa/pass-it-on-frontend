@@ -1,6 +1,3 @@
-//To add: likes, bid system, comments
-//Need to display the current bid
-//we need an onSubmit button with a method checking if the entered bid is higher than minimum or not.
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
@@ -13,22 +10,22 @@ class ItemDetails extends Component {
         super(props)
         this.state = {
             currentBid: null,
-            newBid: null,
             item: {}
         }
         // this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
-        this.handleBidChange = this.handleBidChange.bind(this)
+        // this.handleBidChange = this.handleBidChange.bind(this)
+        this.updateBidAmount = this.updateBidAmount.bind(this)
     }
     componentDidMount() {
         let callBack = function (response) {
             let parsed = JSON.parse(response)
             this.setState({
-                item: parsed.result
+                item: parsed
             })
         }
         callBack = callBack.bind(this)
-        fetch('http://demo5206055.mockable.io/itemDetails', {
+        fetch('/itemDetails', {
             method: 'POST',
             body: JSON.stringify({
                 itemID: this.props.itemID
@@ -38,25 +35,31 @@ class ItemDetails extends Component {
         }).then(callBack)
     }
 
-    // getSellerDetail() {
-    //     let callBack = function (response) {
-    //         let parsed = JSON.parse(response)
-    //         this.props.dispatch({
-    //             type: "setSessionId",
-    //             id: parsed.id
-    //         })
-    //     }
-    //     callBack = callBack.bind(this)
-    //     fetch('/memberDetail', {
-    //         method: 'GET',
-
-    //     }).then(function (x) {
-    //         return x.text()
-    //     }).then(callBack)
-    // }
-
-    // handleClick(event) {
-    //     event.preventDefault();
+    updateBidAmount(event){
+        event.preventDefault()
+        let callBack = function(response){
+            let parsed = JSON.parse(response)
+            if(parsed.status){
+                this.setState({item:parsed.item})
+            }else{
+                alert("The amount entered is lower than minimum bid")
+            }
+        }
+        callBack = callBack.bind(this)
+        let bidInput = this.refs.bid.value
+        fetch('/newBid', {
+            method: 'POST',
+            body: JSON.stringify({
+                itemID: this.props.itemID,
+                newBid: bidInput
+            })
+            }).then(function(res){
+                return res.text()
+            }).then(callBack)
+    
+    }
+    // handleBidChange(event) {
+    //     event.preventDefault()
     //     if (this.props.sessionID) {
     //         this.props.dispatch({
     //             type: "allBids",
@@ -67,40 +70,34 @@ class ItemDetails extends Component {
     //             image: this.state.item.filename
     //         })
     //         this.props.history.push('/bids/')
-    //     } else {
-    //         alert('Please login to add an item to the shopping cart.')
-    //     }
+    //     } 
+        // else {
+        //     alert('Please login to bid on this item.')
+        // }
     // }
-
-  
-    handleBidChange(event){
-        let bidInput = event.target.value
-        
-        this.setState({newBid: bidInput})
-    }
 
     backToHome() {
         this.props.history.push('/')
     }
 
     render() {
-        return ( <div>
-                
-             
-                         <button className="back-to-home" onClick={this.backToHome}>Back to Shopping</button>
-                        <img className="item-image" src={'/' + this.props.item.filename}></img>
-                        <div className="item-list"> Title:&nbsp;{this.props.item.itemName}</div>
-                        <div className="item-list">Description:&nbsp;{this.props.item.description}</div>
-                        
-                        <form className="bid-system">
-                        <div className="item-list">Min Bid:&nbsp;${this.props.item.minBid}</div>
-                        <input type="text" onChange={this.handleBidChange}></input>
-                        <div className="item-list"> Current Bid:&nbsp;${this.state.newBid}</div>
-                        <input className="add-to-btn" type="submit" onClick={this.handleBidChange}/>
-                        </form>
-                        
-                
-            </div>)
+        return (<div>
+
+
+            <button className="back-to-home" onClick={this.backToHome}>Back to Shopping</button>
+            <img className="item-image" src={'/' + this.state.item.filename}></img>
+            <div className="item-list"> Title:&nbsp;{this.state.item.itemName}</div>
+            <div className="item-list">Description:&nbsp;{this.state.item.itemDescription}</div>
+            <form className="bid-system">
+                <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
+                <input type="text"  ref="bid"></input>
+                <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
+                {/* <input className="add-to-btn" type="submit" onClick={this.handleBidChange} /> */}
+                <input type="submit" onClick={this.updateBidAmount}></input>
+            </form>
+
+
+        </div>)
     }
 }
 let connectedItemDetails = connect(function (store) {
