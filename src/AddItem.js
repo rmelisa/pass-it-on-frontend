@@ -10,9 +10,7 @@ class AddItem extends Component {
             itemName: '',
             minBid: 0,
             description: '',
-            sessionID: props.sessionID,
-            charityChoice: 'charity1',
-            username: props.username
+            charityChoice: 'charity1',   
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handlePriceChange = this.handlePriceChange.bind(this)
@@ -21,6 +19,12 @@ class AddItem extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleCategory = this.handleCategory.bind(this)
         this.backToHome = this.backToHome.bind(this)
+    }
+    componentDidMount(){
+        if (!this.props.sessionID) {
+            alert('You need to be logged in to add an item')
+            this.props.history.push('/')
+        }
     }
 
     uploadFile(x) {
@@ -65,8 +69,9 @@ class AddItem extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        fetch('http://demo5206055.mockable.io/addItem', {
+        fetch('/addItem', {
             method: 'POST',
+            credentials: "same-origin",
             body: JSON.stringify(this.state)
         }).then(function (res) {
             return res.text()
@@ -76,7 +81,7 @@ class AddItem extends Component {
                 alert('item added succesfully')
                 this.props.history.push('/')
             } else {
-                alert('item was not added succesfully, please try again')
+                alert('item was not added succesfully, please login and try again')
             }
         }.bind(this))
     }

@@ -19,6 +19,29 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    let callBack = function (res){
+      let parsed = JSON.parse(res)
+      if (parsed.status) {
+        this.props.dispatch({  
+          type: "setSession",
+          sessionID: parsed.sessionID
+      })
+      this.props.dispatch({  
+        type: "setUsername",
+        username: parsed.username
+    })
+      }
+    }
+    callBack = callBack.bind(this)
+    fetch('/sessionActive', {
+      method:'GET',
+      credentials: "same-origin"
+    }).then(function (x) {
+      return x.text()
+    }).then(callBack)
+  }
+
   renderLogin() {
     return (<Login endpoint={'/login'} />)
   }

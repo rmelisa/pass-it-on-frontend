@@ -12,17 +12,15 @@ class Home extends Component {
         this.handleTopLeft = this.handleTopLeft.bind(this)
         this.getTopItems = this.getTopItems.bind(this)
         this.renderItems = this.renderItems.bind(this)
+        this.handleLogout = this.handleLogout.bind(this)
     }
     componentDidMount() {
         this.getTopItems()
     }
 
     handleAddItem() {
-        if (this.props.sessionID) {
             this.props.history.push('/addItem/')
-        } else {
-            alert('Sorry! You must be logged in to add an item')
-        }
+        
     }
     //In the BidItems component make a fetch request. look at AddItem for inspiration
     // handleBidItems() {
@@ -34,7 +32,10 @@ class Home extends Component {
     // }
     handleTopLeft() {
         if (this.props.sessionID) {
-            return (<div> Welcome, {this.props.username}</div>)
+            return (<div><div> Welcome, {this.props.username}</div>
+               <button onClick={this.handleLogout}>Logout</button>
+               </div> )
+
         }
         else {
             return (<div className="login-signup">
@@ -43,6 +44,23 @@ class Home extends Component {
             </div>)
         }
     }
+
+    handleLogout (event){
+        fetch('/logout',{
+            method: 'GET',
+            credentials: "same-origin"
+        })
+        this.props.dispatch({  
+            type: "setSession",
+            sessionID: null
+        })
+        this.props.dispatch({  
+            type: "setUsername",
+            username: ''
+        })
+
+    }
+
     getTopItems() {
         fetch("/home") //confirm name
             .then(function (x) {
@@ -78,9 +96,8 @@ class Home extends Component {
                     <div><Link to={"/itemDetails/"}>itemDetails</Link></div>
                     <div><Link to={"/FAQ/"}>How it works</Link></div>
                     <div><Link to={"/members/"}>Other members</Link></div>
-                    <div><Link to={"/charity/"}>Charity</Link></div>
-                    <div><Link to={"/itemsBidOn/"}>Items you bid on</Link></div>
-                    <div><Link to={"/bids/"}>Bids</Link></div>
+                    <div><Link to={"/charity/"}>Charities</Link></div>
+                    <div><Link to={"/itemsBidOn/"}>My Bids</Link></div>
                 </div>
 
                 <div className="btn">
