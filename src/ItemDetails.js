@@ -10,14 +10,22 @@ class ItemDetails extends Component {
         super(props)
         this.state = {
             currentBid: null,
-            item: {}
+            commentInput: ''
         }
         // this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
         // this.handleBidChange = this.handleBidChange.bind(this)
         this.updateBidAmount = this.updateBidAmount.bind(this)
+        this.renderComments = this.renderComments.bind(this)
+        this.handleCommentInput = this.handleCommentInput.bind(this)
+        this.handleCommentSubmit = this.handleCommentSubmit.bind(this)
+        this.getItemDetails = this.getItemDetails.bind(this)
     }
     componentDidMount() {
+        this.getItemDetails()
+    }
+
+    getItemDetails() {
         let callBack = function (response) {
             let parsed = JSON.parse(response)
             this.setState({
@@ -80,7 +88,39 @@ class ItemDetails extends Component {
         this.props.history.push('/')
     }
 
+    renderComments(comment) {
+        return (<p className="single-comment">{comment}</p>)
+    }
+
+    handleCommentInput(event){
+        this.setState({commentInput: event.target.value})
+    }
+
+    handleCommentSubmit(event){
+        event.preventDefault()
+        let callBack = function(res){
+            let parsed = JSON.parse(res)
+            if (parsed.status) {
+                this.getItemDetails()
+            }
+        }
+        callBack = callBack.bind(this)
+        fetch('/addComment',{
+            method:'POST',
+            body:JSON.stringify({
+                itemID: this.state.item.itemID,
+                commentInput: this.state.commentInput
+            })
+        }).then(function(res){
+            return res.text()
+        }).then(callBack)
+        this.setState({commentInput: ''})
+    }
+
     render() {
+        if (!this.state.item) {
+            return 'loading'
+        }
         return (<div>
 
 
@@ -88,14 +128,22 @@ class ItemDetails extends Component {
             <img className="item-image" src={'/' + this.state.item.filename}></img>
             <div className="item-list"> Title:&nbsp;{this.state.item.itemName}</div>
             <div className="item-list">Description:&nbsp;{this.state.item.itemDescription}</div>
+            <div className='item-list'>Posted by:&nbsp;{this.state.item.username}</div>
+            <div className='item-list'>Charity:&nbsp;{this.state.item.charity}</div>
             <form className="bid-system">
                 <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
                 <input type="text"  ref="bid"></input>
                 <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
-                {/* <input className="add-to-btn" type="submit" onClick={this.handleBidChange} /> */}
+                {/* <input className="add-to-bt}n" type="submit" onClick={this.handleBidChange} /> */}
                 <input type="submit" onClick={this.updateBidAmount}></input>
             </form>
-
+            <div className='item-list'>Comments:</div>
+            <div>{this.state.item.comments.map(this.renderComments)}</div>
+            <form className='comments' onSubmit={this.handleCommentSubmit}>
+                <div className='item-list'>Add a comment:</div>
+                <textarea rows="10" cols="60" className="comment-box" type="text" onChange={this.handleCommentInput} value={this.state.commentInput}></textarea>
+                <input type='submit'/>
+            </form>
 
         </div>)
     }
