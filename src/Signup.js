@@ -100,9 +100,11 @@ class Login extends Component {
         return (
 
             <div className="main">
-                {/* <div className="add-image">
+                <div className="add-image">
                     <img className="add-image" src={`/${this.state.filename}`}></img>
-                </div> */}
+                </div>
+                Profile picture:
+            <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
                 <form onSubmit={this.handleSubmit}>
                     First Name:
             <input type="text" onChange={this.handleFirstNameChange}></input>
@@ -114,8 +116,6 @@ class Login extends Component {
             <input type="text"></input>
                     Bio:
             <textarea rows="4" cols="20" type="text" onChange={this.handleBioChange}></textarea>
-                    Profile picture:
-            <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
                     Username:
             <input type="text" onChange={this.handleUsernameChange}></input>
                     Password:
