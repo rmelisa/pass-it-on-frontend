@@ -44,7 +44,7 @@ class ItemsBid extends Component {
     renderBids(bid) { 
         return (<div>
             <Link to={"/itemDetails/" + bid.itemID}>{bid.itemName}</Link>
-            <div>Your bid:&nbsp;{bid.newBid}</div>
+            <div>Your bid:&nbsp;{bid.newBid}$</div>
             <img src={'/' + bid.imageName}></img>
          </div>
         )

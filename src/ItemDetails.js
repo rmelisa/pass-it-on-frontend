@@ -10,7 +10,6 @@ class ItemDetails extends Component {
         this.state = {
             currentBid: null,
             commentInput: '',
-            bidPlacedBy: ''
         }
         // this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
@@ -48,7 +47,7 @@ class ItemDetails extends Component {
         let callBack = function(response){
             let parsed = JSON.parse(response)
             if(parsed.status === 'success'){
-                this.setState({item:parsed.item, bidPlacedBy: parsed.username})
+                this.setState({item:parsed.item})
             }else if (parsed.status === 'lowBid') {
                 alert("Bid failed. The amount entered is lower than minimum bid or the current bid")
             }else if (parsed.status === 'notLogged'){
@@ -139,7 +138,7 @@ class ItemDetails extends Component {
             <form className="bid-system">
                 <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
                 <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
-                <div>Last bid placed by:&nbsp;{this.state.bidPlacedBy}</div>
+                <div>Last bid placed by:&nbsp;{this.state.item.currentBidUser}</div>
                 Place a bid:&nbsp;
                 <input type="text"  ref="bid"></input>
                 {/* <input className="add-to-bt}n" type="submit" onClick={this.handleBidChange} /> */}
