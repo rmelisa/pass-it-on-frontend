@@ -41,11 +41,20 @@ class ItemsBid extends Component {
         this.props.history.push('/')
     }
 
-    renderBids(bid) { 
+    renderBids(curBid) { 
+        let currentTime = Date.now()
+        let status;
+        if (curBid.timerEnd > currentTime){
+            status = 'auction in progress'
+        }else {
+            status = 'auction completed and won by ' + curBid.currentBidUser 
+        }
         return (<div>
-            <Link to={"/itemDetails/" + bid.itemID}>{bid.itemName}</Link>
-            <div>Your bid:&nbsp;{bid.newBid}$</div>
-            <img src={'/' + bid.imageName}></img>
+            <Link to={"/itemDetails/" + curBid.itemID}>{curBid.itemName}</Link>
+            <div>Your curBid:&nbsp;{curBid.mybid.newBid}$</div>
+            <div>{status}</div>
+            <img src={'/' + curBid.imageName}></img>
+            <div></div>
          </div>
         )
     }

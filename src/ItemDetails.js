@@ -61,9 +61,7 @@ class ItemDetails extends Component {
             credentials: "same-origin",
             body: JSON.stringify({
                 itemID: this.props.itemID,
-                newBid: bidInput,
-                itemName: this.state.item.itemName,
-                imageName: this.state.item.imageName
+                newBid: bidInput
             })
             }).then(function(res){
                 return res.text()
