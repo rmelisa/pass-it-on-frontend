@@ -9,7 +9,8 @@ class ItemDetails extends Component {
         super(props)
         this.state = {
             currentBid: null,
-            commentInput: ''
+            commentInput: '',
+            bidPlacedBy: ''
         }
         // this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
@@ -46,10 +47,12 @@ class ItemDetails extends Component {
         event.preventDefault()
         let callBack = function(response){
             let parsed = JSON.parse(response)
-            if(parsed.status){
-                this.setState({item:parsed.item})
-            }else{
-                alert("The amount entered is lower than minimum bid")
+            if(parsed.status === 'success'){
+                this.setState({item:parsed.item, bidPlacedBy: parsed.username})
+            }else if (parsed.status === 'lowBid') {
+                alert("Bid failed. The amount entered is lower than minimum bid or the current bid")
+            }else if (parsed.status === 'notLogged'){
+                alert("Bid failed. You are not logged in")
             }
         }
         callBack = callBack.bind(this)
@@ -59,7 +62,9 @@ class ItemDetails extends Component {
             credentials: "same-origin",
             body: JSON.stringify({
                 itemID: this.props.itemID,
-                newBid: bidInput
+                newBid: bidInput,
+                itemName: this.state.item.itemName,
+                imageName: this.state.item.imageName
             })
             }).then(function(res){
                 return res.text()
@@ -126,7 +131,7 @@ class ItemDetails extends Component {
 
 
             <button className="back-to-home" onClick={this.backToHome}>Back to Shopping</button>
-            <img className="item-image" src={'/' + this.state.item.filename}></img>
+            <img className="item-image" src={'/' + this.state.item.imageName}></img>
             <div className="item-list"> Title:&nbsp;{this.state.item.itemName}</div>
             <div className="item-list">Description:&nbsp;{this.state.item.itemDescription}</div>
             <div className='item-list'>Posted by:&nbsp;{this.state.item.username}</div>
@@ -134,6 +139,7 @@ class ItemDetails extends Component {
             <form className="bid-system">
                 <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
                 <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
+                <div>Last bid placed by:&nbsp;{this.state.bidPlacedBy}</div>
                 Place a bid:&nbsp;
                 <input type="text"  ref="bid"></input>
                 {/* <input className="add-to-bt}n" type="submit" onClick={this.handleBidChange} /> */}

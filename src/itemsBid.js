@@ -2,66 +2,69 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import Checkout from './Checkout'
 import { withRouter } from 'react-router'
+import { Route, BrowserRouter, Link } from 'react-router-dom'
 
-class ShoppingCart extends Component {
-    constructor() {
-        super()
+class ItemsBid extends Component {
+    constructor(props) {
+        super(props)
+        this.state={
+            bids:[]
+        }
 
-        this.getTotal = this.getTotal.bind(this)
         this.backToHome = this.backToHome.bind(this)
-        this.getItems = this.getItems.bind(this)
+        this.renderBids = this.renderBids.bind(this)
     }
 
-    getTotal() {
-        let total = 0
-        this.props.items.forEach(function (item) {
-            let price = parseInt(item.newBid)
-            total += price
-        });
-        return `${total} $`
+    componentDidMount(){
+        if (!this.props.sessionID) {
+            alert('You need to be logged in to see your current bids')
+            this.props.history.push('/')
+        }
+        let callBack = function(res) {
+            let parsed = JSON.parse(res)
+            console.log(parsed)
+            this.setState({bids:parsed})
+        }
+        callBack = callBack.bind(this)
+
+        fetch('/getBids', {
+            method: 'GET',
+            credentials: "same-origin"
+        }).then(function(res){
+            return res.text()
+        }).then(callBack)
+
     }
 
-    getItems() {
-        fetch("http://demo5206055.mockable.io/") 
-            .then(function (x) {
-                return x.text()
-            })
-            .then(function (response) {
-                let parsedResponse = JSON.parse(response);
-                let itemsArr = parsedResponse.result.filter(function (item) {
-                    return item.username === this.state.username
-                }.bind(this))
-                this.setState({ itemsDisplayed: itemsArr })//need to return array of items from server
-            }.bind(this))
-            .catch(err => console.log(err));
-    }
+    
     backToHome() {
         this.props.history.push('/')
     }
-    showItems(item) {
+
+    renderBids(bid) { 
         return (<div>
-            <img src={'/' + this.props.item.filename}></img>
-            <div>
-                <div>Name: {this.props.item.itemName}</div>
-                <div>Description: {this.props.item.description}</div>
-                <div>Current Highest Bid: {item.newBid}$</div>
-            </div>
-        </div>)
+            <Link to={"/itemDetails/" + bid.itemID}>{bid.itemName}</Link>
+            <div>Your bid:&nbsp;{bid.newBid}</div>
+            <img src={'/' + bid.imageName}></img>
+         </div>
+        )
     }
+ 
+
     render() {
+        
         return (<div>
-           
             <p>Items You Have Bid On</p>
-            <button onClick={this.backToHome}>Back to Home</button>
-            <div>Days Left in Auction</div>
-            <div>{this.props.items.map(this.showItems)}</div>
-            <div>Total price:{this.getTotal(this.props.items)}</div>
-            <Checkout/>
+            <div>{this.state.bids.map(this.renderBids)}</div>
+            <button onClick={this.backToHome}>Back to Shopping</button>
         </div>)
     }
 }
-const mapStateToProps = (state) => {
-    return { items: state.cartItems }
-}
-let connectedMapStateToStore = connect(mapStateToProps)(withRouter(ShoppingCart))
-export default connectedMapStateToStore;
+
+let connectedItemsBid = connect(function (store) {
+    return {
+        sessionID: store.session,
+        username: store.username
+    }
+})(withRouter(ItemsBid))
+export default connectedItemsBid

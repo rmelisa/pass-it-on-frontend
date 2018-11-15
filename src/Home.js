@@ -47,10 +47,6 @@ class Home extends Component {
     }
 
     handleLogout (event){
-        fetch('/logout',{
-            method: 'GET',
-            credentials: "same-origin"
-        })
         this.props.dispatch({  
             type: "setSession",
             sessionID: null
@@ -60,6 +56,11 @@ class Home extends Component {
             username: ''
         })
 
+        fetch('/logout',{
+            method: 'GET',
+            credentials: "same-origin"
+        })
+       
     }
 
     getTopItems() {
@@ -109,7 +110,7 @@ class Home extends Component {
                     <div><Link to={"/FAQ/"}>How it works</Link></div>
                     <div><Link to={"/members/"}>Other members</Link></div>
                     <div><Link to={"/Charities/"}>Charities</Link></div>
-                    <div><Link to={"/itemsBidOn/"}>My Bids</Link></div>
+                    <div><Link to={"/ItemsBid/"}>My Bids</Link></div>
                 </div>
 
                 <div className="btn">
