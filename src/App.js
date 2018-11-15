@@ -13,6 +13,7 @@ import CharityPage from './CharityPage.js'
 import ShoppingCart from './ShoppingCart'
 import FAQ from './FAQ'
 import ItemsBid from './ItemsBid.js'
+import Map from './Map.js'
 
 
 class App extends Component {
@@ -87,6 +88,9 @@ class App extends Component {
     let username = routerData.match.params.username;
     return (<Members username={username} />)
   }
+  renderMap(){
+    return (<Map></Map>)
+  }
   // renderCart(){
   //   return(<ShoppingCart/>)
   //   }
@@ -111,7 +115,7 @@ class App extends Component {
           {/* <Route exact={true} path= '/charity/' render={this.renderCharity} /> */}
           <Route exact={true} path= '/ItemsBid/' render={this.renderItemsBid} />
           <Route exact={true} path='/members/' render={this.renderMember} />
-
+          <Route exact={true} path='/map/' render={this.renderMap} />
         </div>
       </BrowserRouter>
     );

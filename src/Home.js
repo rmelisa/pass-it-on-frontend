@@ -111,6 +111,7 @@ class Home extends Component {
                     <div><Link to={"/members/"}>Other members</Link></div>
                     <div><Link to={"/Charities/"}>Charities</Link></div>
                     <div><Link to={"/ItemsBid/"}>My Bids</Link></div>
+                    <div><Link to={"/map/"}>Map</Link></div>
                 </div>
 
                 <div className="btn">
