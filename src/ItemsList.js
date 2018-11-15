@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+
 
 
 class ItemsList extends Component {
@@ -32,33 +34,23 @@ class ItemsList extends Component {
 
     renderItems(item) {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
-        return (<div className='items'>
-                <div className="image-container">
-                    <img className="item-images" src={'/' + item.imageName}></img>
-                    <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
-                    <div>Min Bid: {item.minBid}$</div>
-                    <div>Current Bid: {item.currentBid}$</div>
-                    <div>Posted By: {item.username}</div>
-                    <div>Charity: {item.charity}</div>
-                </div>
-        </div>)
+        return (    <div>
+            <Card>
+              <CardImg top width="100%" src={'/' + item.imageName} alt="Image" />
+              <CardBody>
+                <CardTitle><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </CardTitle>
+                <CardSubtitle>
+                <p>Min Bid: {item.minBid}$</p>
+                <p>Posted By: {item.username}</p>
+                </CardSubtitle>
+                <CardText><div>Current Bid: {item.currentBid}$</div></CardText>
+              </CardBody>
+            </Card>
+          </div>)
+
+     
     }
 
-    // handleAddItem() {
-    //     if (this.props.sessionID) {
-    //         this.props.history.push('/addItem/')
-    //     } else {
-    //         alert('Sorry! You must be logged in to add an item')
-    //     }
-    // }
-
-    // handleShoppingCart() {
-    //     if (this.props.sessionID) {
-    //         this.props.history.push('/cart/')
-    //     } else {
-    //         alert('You must be logged in to access shopping cart')
-    //     }
-    // }
 
     renderHome() {
         this.props.history.push('/')

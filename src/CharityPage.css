@@ -1,0 +1,28 @@
+.charity-dashboard{
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+}
+
+.charity-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    padding-right: 5px;
+    padding-bottom: 30px;
+    flex-direction: row; 
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.charity-div{
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+
+.charity-img{
+    height:110px;
+}
+

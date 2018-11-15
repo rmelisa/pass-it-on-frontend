@@ -9,7 +9,9 @@ import ItemDetails from './ItemDetails.js'
 import Home from './Home'
 import AddItem from './AddItem.js'
 import Members from './Members.js'
+import CharityPage from './CharityPage.js'
 import ShoppingCart from './ShoppingCart'
+import FAQ from './FAQ'
 
 
 class App extends Component {
@@ -68,6 +70,12 @@ class App extends Component {
   renderItemsList() {
     return (<ItemsList/>)
   }
+  renderCharityPage(){
+    return(<CharityPage/>)
+  }
+  renderFAQPage(){
+    return(<FAQ/>)
+  }
 
 
   // renderItemsBid(){
@@ -96,6 +104,8 @@ class App extends Component {
           <Route exact={true} path='/addItem/' render={this.renderAddItem} />
           <Route exact={true} path='/itemDetails/:itemID' render={this.renderDetails} />
           <Route exact={true} path='/Info/' render={this.renderFAQ} />
+          <Route exact={true} path='/Charities/' render={this.renderCharityPage} />
+          <Route exact={true} path='/FAQ/' render={this.renderFAQPage} />
           {/* <Route exact={true} path='/cart/' render={this.renderCart} /> */}
           {/* <Route exact={true} path= '/charity/' render={this.renderCharity} /> */}
           <Route exact={true} path= '/bids' render={this.renderItemsBid} />

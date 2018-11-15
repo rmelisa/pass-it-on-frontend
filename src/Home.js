@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 class Home extends Component {
     constructor() {
         super()
@@ -73,16 +74,28 @@ class Home extends Component {
     }
     renderItems(item) {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
-        return (<div className='items'>
-            <div className="image-container">
-                <img className="item-images" src={item.imageName}></img>
+        return (<div>
+            <Card>
+              <CardImg top width="100%" src={'/' + item.imageName} alt="Image" />
+              <CardBody>
+                <CardTitle><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </CardTitle>
+                <CardSubtitle>
+                <p>Min Bid: {item.minBid}$</p>
+                <div>Description: {item.itemDescription}</div>
+                <p>Posted By: {item.username}</p>
+                </CardSubtitle>
+                <CardText><div>Current Bid: {item.currentBid}$</div></CardText>
+                <div>Charity: {item.charity}</div>
+              </CardBody>
+            </Card>
+                {/* <img className="item-images" src={item.imageName}></img>
                 <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
                 <div>Min Bid: {item.minBid}$</div>
                 <div>Current Bid: {item.currentBid}$</div>
                 <div>Description: {item.itemDescription}</div>
                 <div>Posted By: {item.username}</div>
-                <div>Charity: {item.charity}</div>
-            </div>
+                <div>Charity: {item.charity}</div> */}
+
         </div>)
     }
     render() {
@@ -95,7 +108,7 @@ class Home extends Component {
                     <div><Link to={"/itemsList/"}>Items for sale</Link></div>
                     <div><Link to={"/FAQ/"}>How it works</Link></div>
                     <div><Link to={"/members/"}>Other members</Link></div>
-                    <div><Link to={"/charity/"}>Charities</Link></div>
+                    <div><Link to={"/Charities/"}>Charities</Link></div>
                     <div><Link to={"/itemsBidOn/"}>My Bids</Link></div>
                 </div>
 
