@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
+import { Route, BrowserRouter, Link } from 'react-router-dom'
 
 class AddItem extends Component {
     constructor(props) {
@@ -91,7 +92,25 @@ class AddItem extends Component {
     }
 
     render() {
-        return (<div>
+        return (
+                <div className='home-container'>
+                <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1 className="title1">PASS-IT-ON</h1>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <h2>-ADD ITEM-</h2>
+                    </div>
+                </div>
+                {/* {this.getTopItems()} */}
+                <ul className="tabs-container">
+                    <li><Link to={"/"}>Home</Link></li>
+                    <li><Link to={"/FAQ/"}>How it works</Link></li>
+                    <li><Link to={"/members/"}>Other members</Link></li>
+                    <li><Link to={"/Charities/"}>Charities</Link></li>
+                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                    <li><Link to={"/map/"}>Map</Link></li>
+                </ul>
             <div className="nav-add">
 
                 <img className="title-add" src="/logo.png"></img>
@@ -105,10 +124,10 @@ class AddItem extends Component {
                     <div className="file-input">
                         <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
                     </div>
-                    <div>Item name:<input className="input-field" type='text' onChange={this.handleNameChange} placeholder="Item Name" /></div>
-                    <div>What is the story behind the item?<textarea className="input-field" rows="4" cols="20" type="text" onChange={this.handleDescriptionChange} placeholder="The story behind the item" ></textarea>
+                    <div><input className="input-field" type='text' onChange={this.handleNameChange} placeholder="Item Name" /></div>
+                    <div><textarea className="input-field" rows="4" cols="20" type="text" onChange={this.handleDescriptionChange} placeholder="The story behind the item" ></textarea>
                         </div>
-                    <div> start the bid at:<input className="input-field" type='text' onChange={this.handlePriceChange} placeholder="" /></div>
+                    <div>Start the bid at:<input className="input-field" type='text' onChange={this.handlePriceChange} placeholder="" /></div>
 
                     <div>
                         <select className="category-select" onChange={this.handleCategory}>

@@ -6,23 +6,67 @@
 
 .charity-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap:wrap;
     padding-right: 5px;
     padding-bottom: 30px;
     flex-direction: row; 
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
+ 
 }
 
-.charity-div{
-    display: flex;
-    width: 200px;
-    flex-direction: column;
+.spca-div{
+    margin-top: 30px;
+    width: 300px;
 }
 
-.charity-img{
-    height:110px;
+.spca-img{
+    height:170px;
+    width: 150px;
+    margin-top: 30px;
 }
 
+.msf-div{
+    margin-top: 30px;
+    width: 300px;
+}
+
+.msf-img{
+    height:120px;
+    margin-top: 30px;
+}
+.ccs-div{
+    margin-top: 30px;
+    width: 300px;
+}
+
+.ccs-img{
+    height:120px;
+    margin-top: 30px;
+}
+
+.camh-div{
+    margin-top: 30px;
+    width: 400px;
+}
+
+.camh-img{
+    height:120px;
+    margin-top: 30px;
+}
+
+
+
+.full-chart{
+    display: flex;   
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 50px;
+
+}
+.chart-title{
+    text-align: center;
+    margin-top: 20px;
+}

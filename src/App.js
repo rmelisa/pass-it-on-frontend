@@ -13,6 +13,8 @@ import CharityPage from './CharityPage.js'
 import FAQ from './FAQ'
 import ItemsBid from './ItemsBid.js'
 import Map from './Map.js'
+import Chart from './Chart.js'
+
 
 
 class App extends Component {
@@ -90,6 +92,10 @@ class App extends Component {
   renderMap(){
     return (<Map></Map>)
   }
+  renderChart(){
+    return (<Chart></Chart>)
+  }
+
   // renderCart(){
   //   return(<ShoppingCart/>)
   //   }
@@ -109,6 +115,7 @@ class App extends Component {
           <Route exact={true} path='/itemDetails/:itemID' render={this.renderDetails} />
           <Route exact={true} path='/Info/' render={this.renderFAQ} />
           <Route exact={true} path='/Charities/' render={this.renderCharityPage} />
+          <Route exact={true} path='/Chart/' render={this.renderChart} />
           <Route exact={true} path='/FAQ/' render={this.renderFAQPage} />
           <Route exact={true} path= '/ItemsBid/' render={this.renderItemsBid} />
           <Route exact={true} path='/members/' render={this.renderMember} />

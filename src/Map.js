@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { Route, BrowserRouter, Link } from 'react-router-dom'
 import ReactMapGL from 'react-map-gl';
 
 const MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoiYm9yaGFhbiIsImEiOiJjam9pdnNsaWswZGgxM3FtaTcwbXNuMXZ1In0.dsqmmjBjCMkxcFhjcZ-gSA"
@@ -24,7 +25,25 @@ constructor(props){
   
   render() {
     return (<div>
-       
+        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+        <div className='home-container'>
+            
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1 className="title1">PASS-IT-ON</h1>
+                    <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                    <h2>-MAP-</h2>
+                </div>
+            </div>
+            <ul className="tabs-container">
+                <li><Link to={"/"}>Home</Link></li>
+                <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                <li><Link to={"/Members/"}>Members</Link></li>
+                <li><Link to={"/Charities/"}>Charities</Link></li>
+                <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+            </ul>       
+            </div>
       <ReactMapGL
         {...this.state.viewport}
         onViewportChange={(viewport) => this.setState({viewport})}

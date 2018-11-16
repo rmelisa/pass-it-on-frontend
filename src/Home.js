@@ -90,6 +90,7 @@ class Home extends Component {
                     <div>Description: {item.itemDescription}</div>
                     <div>Posted By: {item.username}</div>
                     <div>Charity: {item.charity}</div>
+                    
                 </p>
             </div>
 
@@ -109,9 +110,9 @@ class Home extends Component {
                 </div>
                 {/* {this.getTopItems()} */}
                 <ul className="tabs-container">
-                    <li><Link to={"/itemsList/"}>Items for sale</Link></li>
-                    <li><Link to={"/FAQ/"}>How it works</Link></li>
-                    <li><Link to={"/members/"}>Other members</Link></li>
+                    <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                    <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                    <li><Link to={"/members/"}>Other Members</Link></li>
                     <li><Link to={"/Charities/"}>Charities</Link></li>
                     <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     <li><Link to={"/map/"}>Map</Link></li>

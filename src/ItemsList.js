@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
-import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Route, BrowserRouter, Link } from 'react-router-dom'
 import './ItemsList.css';
 
 class ItemsList extends Component {
@@ -34,18 +33,19 @@ class ItemsList extends Component {
     renderItems(item) {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
         return (<div>
-            <Card className="card">
-              <CardImg className="image-size" top width="30%" src={'/' + item.imageName} alt="Image" />
-              <CardBody>
-                <CardTitle><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </CardTitle>
-                <CardSubtitle>
-                <p>Min Bid: {item.minBid}$</p>
-                <p>Posted By: {item.username}</p>
-                </CardSubtitle>
-                <CardText><div>Current Bid: {item.currentBid}$</div></CardText>
-              </CardBody>
-            </Card>
-          </div>)
+
+            <div className="card">
+                <div className="image-size" top width="30%" src={'/' + item.imageName} alt="Image" />
+                <div>
+                    <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
+                    <div>
+                        <p>Min Bid: {item.minBid}$</p>
+                        <p>Posted By: {item.username}</p>
+                    </div>
+                    <div><div>Current Bid: {item.currentBid}$</div></div>
+                </div>
+            </div>
+        </div>)
 
     }
 
@@ -57,11 +57,27 @@ class ItemsList extends Component {
     render() {
 
         return (
-            <div>
-                <input type="submit" value="Back to homepage" onClick={this.renderHome}></input>
+            <div className='home-container'>
+                <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1 className="title1">PASS-IT-ON</h1>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <h2>-ITEMS FOR SALE-</h2>
+                        <button className="add-item-btn"><Link to={"/addItem/"}>Add Item+</Link></button>
+                    </div>
+                </div>
+                {/* {this.getTopItems()} */}
+                <ul className="tabs-container">
+                    <li><Link to={"/"}>Home</Link></li>
+                    <li><Link to={"/FAQ/"}>How it works</Link></li>
+                    <li><Link to={"/members/"}>Other members</Link></li>
+                    <li><Link to={"/Charities/"}>Charities</Link></li>
+                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                    <li><Link to={"/map/"}>Map</Link></li>
+                </ul>
                 <div className="items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
             </div>
-
         )
     }
 }
