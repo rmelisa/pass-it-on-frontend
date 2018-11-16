@@ -10,7 +10,6 @@ import Home from './Home'
 import AddItem from './AddItem.js'
 import Members from './Members.js'
 import CharityPage from './CharityPage.js'
-import ShoppingCart from './ShoppingCart'
 import FAQ from './FAQ'
 import ItemsBid from './ItemsBid.js'
 import Map from './Map.js'
@@ -111,8 +110,7 @@ class App extends Component {
           <Route exact={true} path='/Info/' render={this.renderFAQ} />
           <Route exact={true} path='/Charities/' render={this.renderCharityPage} />
           <Route exact={true} path='/FAQ/' render={this.renderFAQPage} />
-          {/* <Route exact={true} path='/cart/' render={this.renderCart} /> */}
-          {/* <Route exact={true} path= '/charity/' render={this.renderCharity} /> */}
+      
           <Route exact={true} path= '/ItemsBid/' render={this.renderItemsBid} />
           <Route exact={true} path='/members/' render={this.renderMember} />
           <Route exact={true} path='/map/' render={this.renderMap} />

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import './Home.css';
+
 class Home extends Component {
     constructor() {
         super()
@@ -20,8 +22,8 @@ class Home extends Component {
     }
 
     handleAddItem() {
-            this.props.history.push('/addItem/')
-        
+        this.props.history.push('/addItem/')
+
     }
     //In the BidItems component make a fetch request. look at AddItem for inspiration
     // handleBidItems() {
@@ -33,9 +35,9 @@ class Home extends Component {
     // }
     handleTopLeft() {
         if (this.props.sessionID) {
-            return (<div><div> Welcome, {this.props.username}</div>
-               <button onClick={this.handleLogout}>Logout</button>
-               </div> )
+            return (<div className="logged-in"><div className="logged-in"> Welcome, {this.props.username}</div>
+                <button className="logout" onClick={this.handleLogout}>Logout</button>
+            </div>)
 
         }
         else {
@@ -46,21 +48,21 @@ class Home extends Component {
         }
     }
 
-    handleLogout (event){
-        this.props.dispatch({  
+    handleLogout(event) {
+        this.props.dispatch({
             type: "setSession",
             sessionID: null
         })
-        this.props.dispatch({  
+        this.props.dispatch({
             type: "setUsername",
             username: ''
         })
 
-        fetch('/logout',{
+        fetch('/logout', {
             method: 'GET',
             credentials: "same-origin"
         })
-       
+
     }
 
     getTopItems() {
@@ -75,49 +77,54 @@ class Home extends Component {
     }
     renderItems(item) {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
-        return (<div>
-            <Card>
-              <CardImg top width="100%" src={'/' + item.imageName} alt="Image" />
-              <CardBody>
-                <CardTitle><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </CardTitle>
-                <CardSubtitle>
-                <p>Min Bid: {item.minBid}$</p>
-                <div>Description: {item.itemDescription}</div>
-                <p>Posted By: {item.username}</p>
-                </CardSubtitle>
-                <CardText><div>Current Bid: {item.currentBid}$</div></CardText>
-                <div>Charity: {item.charity}</div>
-              </CardBody>
-            </Card>
-                {/* <img className="item-images" src={item.imageName}></img>
-                <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
-                <div>Min Bid: {item.minBid}$</div>
-                <div>Current Bid: {item.currentBid}$</div>
-                <div>Description: {item.itemDescription}</div>
-                <div>Posted By: {item.username}</div>
-                <div>Charity: {item.charity}</div> */}
+        return (
 
-        </div>)
+            <div className="item-div">
+                <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <img className="item-images" src={item.imageName}></img>
+                <p>
+                    <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
+
+                    <div>Min Bid: {item.minBid}$</div>
+                    <div>Current Bid: {item.currentBid}$</div>
+                    <div>Description: {item.itemDescription}</div>
+                    <div>Posted By: {item.username}</div>
+                    <div>Charity: {item.charity}</div>
+                </p>
+            </div>
+
+        )
     }
     render() {
 
         return (
             <div className='home-container'>
                 {this.handleTopLeft()}
-                {/* {this.getTopItems()} */}
-                <div className="tabs-container">
-                    <div><Link to={"/itemsList/"}>Items for sale</Link></div>
-                    <div><Link to={"/FAQ/"}>How it works</Link></div>
-                    <div><Link to={"/members/"}>Other members</Link></div>
-                    <div><Link to={"/Charities/"}>Charities</Link></div>
-                    <div><Link to={"/ItemsBid/"}>My Bids</Link></div>
-                    <div><Link to={"/map/"}>Map</Link></div>
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1 className="title1">PASS-IT-ON</h1>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+            
+                    </div>
                 </div>
+                {/* {this.getTopItems()} */}
+                <ul className="tabs-container">
+                    <li><Link to={"/itemsList/"}>Items for sale</Link></li>
+                    <li><Link to={"/FAQ/"}>How it works</Link></li>
+                    <li><Link to={"/members/"}>Other members</Link></li>
+                    <li><Link to={"/Charities/"}>Charities</Link></li>
+                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                    <li><Link to={"/map/"}>Map</Link></li>
+                </ul>
+
+
 
                 <div className="btn">
-                    <button className="add-item-btn" onClick={this.handleAddItem}>Add Item +</button>
+                    <p className="top-5-title">Top 5 Items With the Highest Bid!</p>
                 </div>
-                <div className="items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
+                <div className="items-home">
+                    {this.state.itemsDisplayed.map(this.renderItems)}
+                </div>
 
             </div>)
     }

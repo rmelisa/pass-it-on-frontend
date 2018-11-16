@@ -112,9 +112,10 @@ class AddItem extends Component {
 
                     <div>
                         <select className="category-select" onChange={this.handleCategory}>
-                            <option value="charity1">charity1</option>
-                            <option value="charity2">charity2</option>
-                            <option value="charity3">charity3</option>
+                            <option value="charity1">SPCA Montreal</option>
+                            <option value="charity2">Canadian Cancer Society</option>
+                            <option value="charity3">MSF - Doctors Without Borders</option>
+                            <option value="charity3">CAMH - Center for Addiction and Mental Health</option>
                         </select>
                     </div>
                     <div><input className="add-item-btn" type='submit' value="Add Item" /></div>

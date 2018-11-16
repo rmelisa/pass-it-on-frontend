@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
-
-
+import './ItemsList.css';
 
 class ItemsList extends Component {
     constructor(props) {
@@ -34,9 +33,9 @@ class ItemsList extends Component {
 
     renderItems(item) {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
-        return (    <div>
-            <Card>
-              <CardImg top width="100%" src={'/' + item.imageName} alt="Image" />
+        return (<div>
+            <Card className="card">
+              <CardImg className="image-size" top width="30%" src={'/' + item.imageName} alt="Image" />
               <CardBody>
                 <CardTitle><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </CardTitle>
                 <CardSubtitle>
@@ -48,7 +47,6 @@ class ItemsList extends Component {
             </Card>
           </div>)
 
-     
     }
 
 

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import './Signup.css';
 
 class Login extends Component {
     constructor(props) {
@@ -102,32 +104,40 @@ class Login extends Component {
 
     render() {
         return (
-
-            <div className="main">
-                <input type="submit" value="Back to homepage" onClick={this.renderHome}></input>
-                <div className="add-image">
+            <div className="signup-main">
+                <Form>
+                <FormGroup>
                     <img className="add-image" src={`/${this.state.filename}`}></img>
-                </div>
-                Profile picture:
-            <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
-                <form onSubmit={this.handleSubmit}>
-                    First Name:
-            <input type="text" onChange={this.handleFirstNameChange}></input>
-                    Last Name:
-            <input type="text" onChange={this.handleLastNameChange}></input>
-                    Email:
-            <input type="email"></input>
-                    Address:
-            <input type="text"></input>
-                    Bio:
-            <textarea rows="4" cols="20" type="text" onChange={this.handleBioChange}></textarea>
-                    Username:
-            <input type="text" onChange={this.handleUsernameChange}></input>
-                    Password:
-            <input type="password" onChange={this.handlePasswordChange}></input>
-                    <input type="submit" value="ENTER"></input>
-                </form>
-            </div>)
+                    <input type="file" onChange={e => this.uploadFile(e.target.files[0])} />
+                    <Label for="exampleFile"></Label>
+                    <FormText color="muted">
+                        Upload an Image of yourself!
+                    </FormText>
+                </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleEmail"></Label>
+                        <Input type="text" onChange={this.handleFirstNameChange} placeholder="First Name"/>
+                        <Label for="exampleEmail"></Label>
+                        <Input type="text" onChange={this.handleLastNameChange} type="text" placeholder="Last Name"/>
+                    </FormGroup>
+
+                    <Label></Label>
+                    <Input type="email" placeholder="Email" />
+                    
+                    <Label></Label>
+                    <Input type="text" onChange={this.handleUsernameChange} placeholder="Username" />
+
+                    <Label></Label>
+                    <Input type="password" onChange={this.handlePasswordChange} placeholder="Password" />
+
+                    <FormGroup>
+                        <Label for="exampleText"></Label>
+                        <Input type="textarea" onChange={this.handleBioChange} placeholder="Tell us a bit about yourself.." />
+                    </FormGroup>
+                    <Button>Signup</Button>
+                </Form>
+            </div>
+        )
     }
 }
 let connectedLogin = connect()(withRouter(Login))
