@@ -10,10 +10,9 @@ class ItemDetails extends Component {
         this.state = {
             currentBid: null,
             commentInput: '',
+            timeLeft:''
         }
-        // this.handleClick = this.handleClick.bind(this)
         this.backToHome = this.backToHome.bind(this)
-        // this.handleBidChange = this.handleBidChange.bind(this)
         this.updateBidAmount = this.updateBidAmount.bind(this)
         this.renderComments = this.renderComments.bind(this)
         this.handleCommentInput = this.handleCommentInput.bind(this)
@@ -22,6 +21,19 @@ class ItemDetails extends Component {
     }
     componentDidMount() {
         this.getItemDetails()
+        setInterval(function() {
+            let currentTime = Date.now()
+            let distance = this.state.item.timerEnd - currentTime
+            if(distance < 0){
+                this.setState({timeLeft: "0s, bidding is closed and won by "+this.state.item.currentBidUser})
+                return
+            }
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            this.setState({timeLeft:`${days}d  ${hours}h ${minutes}m ${seconds}`}) 
+        }.bind(this), 1000)
     }
 
     getItemDetails() {
@@ -44,6 +56,12 @@ class ItemDetails extends Component {
 
     updateBidAmount(event){
         event.preventDefault()
+        let currentTime = Date.now()
+        if (this.state.item.timerEnd < currentTime){
+            alert('Bidding is closed for this item.')
+            this.refs.bid.value = ''
+            return
+        }
         let callBack = function(response){
             let parsed = JSON.parse(response)
             if(parsed.status === 'success'){
@@ -69,23 +87,6 @@ class ItemDetails extends Component {
             this.refs.bid.value = ''
     
     }
-    // handleBidChange(event) {
-    //     event.preventDefault()
-    //     if (this.props.sessionID) {
-    //         this.props.dispatch({
-    //             type: "allBids",
-    //             itemID: this.props.itemID,
-    //             name: this.state.item.itemName,
-    //             description: this.state.item.description,
-    //             price: this.state.item.newBid,
-    //             image: this.state.item.filename
-    //         })
-    //         this.props.history.push('/bids/')
-    //     } 
-        // else {
-        //     alert('Please login to bid on this item.')
-        // }
-    // }
 
     backToHome() {
         this.props.history.push('/')
@@ -137,9 +138,9 @@ class ItemDetails extends Component {
                 <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
                 <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
                 <div>Last bid placed by:&nbsp;{this.state.item.currentBidUser}</div>
+                <div>Time remaining on auction:&nbsp;{this.state.timeLeft}</div>
                 Place a bid:&nbsp;
                 <input type="text"  ref="bid"></input>
-                {/* <input className="add-to-bt}n" type="submit" onClick={this.handleBidChange} /> */}
                 <input type="submit" onClick={this.updateBidAmount}></input>
             </form>
             <div className='item-list'>Comments:</div>
