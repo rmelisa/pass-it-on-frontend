@@ -110,7 +110,6 @@ class App extends Component {
           <Route exact={true} path='/Info/' render={this.renderFAQ} />
           <Route exact={true} path='/Charities/' render={this.renderCharityPage} />
           <Route exact={true} path='/FAQ/' render={this.renderFAQPage} />
-      
           <Route exact={true} path= '/ItemsBid/' render={this.renderItemsBid} />
           <Route exact={true} path='/members/' render={this.renderMember} />
           <Route exact={true} path='/map/' render={this.renderMap} />
