@@ -33,7 +33,7 @@ let reducer = function( state, action){
 //CreateStore:
 const store = createStore(
     reducer, // reducer
-    {session: undefined,
+    {session: false,
     item: {bids:[] ,filename:"123.png", 
     itemName:"shirt", 
     minBid:"10", 
