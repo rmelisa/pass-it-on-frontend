@@ -1,29 +1,6 @@
-.items{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-
-}
-.card{
-    display: flex;
-    flex-direction: row;
-    margin: 50px;
-   
-    justify-content: space-around;
-    
-    
-}
-
-.image-size{
-height: 150px;
-width: 100px;
-}
-
 
 .sale-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/3.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/4.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,9 +19,19 @@ width: 100px;
 }
 .title1{
     font-size: 60pt;
+    margin: -20px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+.title2{
+    font-size: 60pt;
+    margin-top: -80px;
     margin-bottom: 30px;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bold;
+    color: rgb(211, 208, 208);
+
 }
 
 .tabs-container {
@@ -60,14 +47,6 @@ width: 100px;
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.274);
-
-}
-
-.add-item-btn{
-    text-decoration: none;
-    background-color: white;
-    
-
 
 }
 
@@ -88,4 +67,8 @@ li a:hover {
     background-color: coral;
     text-decoration: none;
     color: white;
+}
+
+.det-img{
+    height: 200px;
 }

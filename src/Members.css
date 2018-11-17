@@ -89,3 +89,27 @@ li a:hover {
     text-decoration: none;
     color: white;
 }
+.search-member{
+   display: flex;
+   float: right;
+   margin: 5px;
+}
+.members{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    background-color: whitesmoke;
+    
+}
+.member-container{
+width: 300px;
+margin: 20px;
+    
+}
+.user-img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}

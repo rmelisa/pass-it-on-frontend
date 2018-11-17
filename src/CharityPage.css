@@ -11,18 +11,30 @@
     padding-right: 5px;
     padding-bottom: 30px;
     flex-direction: row; 
+    background-color: whitesmoke;
  
+}
+
+.charity-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/peace.jpeg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .spca-div{
     margin-top: 30px;
     width: 300px;
+   
 }
 
 .spca-img{
     height:170px;
     width: 150px;
     margin-top: 30px;
+    
 }
 
 .msf-div{
@@ -31,7 +43,7 @@
 }
 
 .msf-img{
-    height:120px;
+    height:100px;
     margin-top: 30px;
 }
 .ccs-div{
@@ -40,17 +52,17 @@
 }
 
 .ccs-img{
-    height:120px;
+    height:80px;
     margin-top: 30px;
 }
 
 .camh-div{
     margin-top: 30px;
-    width: 400px;
+    width: 300px;
 }
 
 .camh-img{
-    height:120px;
+    height:80px;
     margin-top: 30px;
 }
 

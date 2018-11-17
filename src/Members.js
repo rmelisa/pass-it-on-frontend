@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import Home from './Home.js'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
+import "./Members.css"
 
 class Members extends Component {
     constructor(props) {
@@ -25,10 +26,10 @@ class Members extends Component {
     handleSearchChange(event) {
         event.preventDefault()
         let searchInput = event.target.value
-        let filteredUsers = this.state.membersList.filter(function(user){
+        let filteredUsers = this.state.membersList.filter(function (user) {
             return user.username.includes(searchInput)
         })
-        this.setState({listShown: filteredUsers})
+        this.setState({ listShown: filteredUsers })
         return filteredUsers
     }
 
@@ -51,8 +52,8 @@ class Members extends Component {
     renderAllMemebers(user) {
         return (<div className='members'>
             <div>
-                <div className="image-container">
-                    <img className="item-images" src={'/' + user.imageName}></img>
+                <div className="member-container">
+                    <img className="user-img" src={'/' + user.imageName}></img>
                     <div className="desc-1">Username:{user.username}</div>
                     <div className="desc-2">First Name: {user.firstName}</div>
                     <div className="desc-3">Last Name: {user.lastName}</div>
@@ -66,29 +67,33 @@ class Members extends Component {
     }
     render() {
         return (<div>
-              <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-           <div className='home-container'>
-            
-            <div class="hero-image">
-                <div class="hero-text">
-                    <h1 className="title1">PASS-IT-ON</h1>
-                    <p>Taking unwanted items and turning them into monatary donations to those in need</p>
-                    <h2>-MEMBERS-</h2> 
+            <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+            <div className='home-container'>
+
+                <div class="hero-image">
+                    <div class="hero-text">
+                    <div className="title1">PASS</div>
+                    <div className="title2">IT ON</div>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <h2>-MEMBERS-</h2>
+                    </div>
+
+                    <ul className="tabs-container">
+                        <li><Link to={"/"}>Home</Link></li>
+                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                        <li><Link to={"/Charities/"}>Charities</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                        <li><Link to={"/map/"}>Map</Link></li>
+                    </ul>
                 </div>
-            </div>
-            <ul className="tabs-container">
-                <li><Link to={"/"}>Home</Link></li>
-                <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                <li><Link to={"/Charities/"}>Charities</Link></li>
-                <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                <li><Link to={"/map/"}>Map</Link></li>
-            </ul>       
-        
+
             </div>
             <form onSubmit={this.handleSearchSubmit}>
-                <input type="search" placeholder="Search here" onChange={this.handleSearchChange}></input>
-                <input type="submit" ></input>
+                
+                    <input className="search-member" type="search" placeholder="Find a Member!" onChange={this.handleSearchChange}></input>
+                 
+        
             </form>
             <div className="members">{this.state.listShown.map(this.renderAllMemebers)}</div>
         </div>)

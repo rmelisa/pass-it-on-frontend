@@ -1,27 +1,3 @@
-.items{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-
-}
-.card{
-    display: flex;
-    flex-direction: row;
-    margin: 50px;
-   
-    justify-content: space-around;
-    
-    
-}
-
-.image-size{
-height: 150px;
-width: 100px;
-}
-
-
 .sale-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/3.jpeg");
     height: 500px;
@@ -66,16 +42,11 @@ width: 100px;
 .add-item-btn{
     text-decoration: none;
     background-color: white;
-    
-
-
 }
 
 li {
-    text-align: center;
-    
+    text-align: center;   
 }
-
 li a {
     display: block;
     color: white;
@@ -89,3 +60,46 @@ li a:hover {
     text-decoration: none;
     color: white;
 }
+
+.faq{
+display: flex;
+flex-direction: row;
+padding: 10px;
+flex-basis: auto;
+background-color: whitesmoke;
+}
+
+.seller{
+border-right: 2px solid black;
+}
+
+.buyer{
+    border-left: 2px solid black;
+}
+
+.step-title{
+  padding: 20px;
+    text-align: center;
+}
+
+.steps{
+    display: block;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    margin:0 auto;   
+}
+
+.step-desc{
+    height: 80px;
+    padding: 30px;
+    text-align: center;
+}
+
+

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
+import './AddItem.css';
 
 class AddItem extends Component {
     constructor(props) {
@@ -101,7 +102,7 @@ class AddItem extends Component {
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-ADD ITEM-</h2>
                     </div>
-                </div>
+                
                 {/* {this.getTopItems()} */}
                 <ul className="tabs-container">
                     <li><Link to={"/"}>Home</Link></li>
@@ -111,6 +112,7 @@ class AddItem extends Component {
                     <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     <li><Link to={"/map/"}>Map</Link></li>
                 </ul>
+                </div>
             <div className="nav-add">
 
                 <img className="title-add" src="/logo.png"></img>
@@ -131,10 +133,10 @@ class AddItem extends Component {
 
                     <div>
                         <select className="category-select" onChange={this.handleCategory}>
-                            <option value="charity1">SPCA Montreal</option>
-                            <option value="charity2">Canadian Cancer Society</option>
-                            <option value="charity3">MSF - Doctors Without Borders</option>
-                            <option value="charity3">CAMH - Center for Addiction and Mental Health</option>
+                            <option value="SPCA Montreal">SPCA Montreal</option>
+                            <option value="All Out">All Out</option>
+                            <option value="MSF - Doctors Without Borders">MSF - Doctors Without Borders</option>
+                            <option value="CAMH - Center for Addiction and Mental Health">CAMH - Center for Addiction and Mental Health</option>
                         </select>
                     </div>
                     <div><input className="add-item-btn" type='submit' value="Add Item" /></div>

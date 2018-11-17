@@ -39,6 +39,7 @@ class CharityPage extends Component {
     }
 
 
+<<<<<<< Updated upstream
 
 
     backToHome() {
@@ -56,17 +57,42 @@ class CharityPage extends Component {
             </div>
         )
     }
+=======
+    backToHome() {
+        this.props.history.push('/')
+    }
+
+>>>>>>> Stashed changes
     render() {
         return (<div>
             <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
             <div className='home-container'>
 
+<<<<<<< Updated upstream
                 <div class="hero-image">
                     <div class="hero-text">
                         <h1 className="title1">PASS-IT-ON</h1>
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-CHARITIES-</h2>
                     </div>
+=======
+                <div class="charity-image">
+                    <div class="hero-text">
+                        <div className="title1">PASS</div>
+                        <div className="title2">IT ON</div>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <h2>-CHARITIES-</h2>
+                    </div>
+
+                    <ul className="tabs-container">
+                        <li><Link to={"/"}>Home</Link></li>
+                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                        <li><Link to={"/Members/"}>Members</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                        <li><Link to={"/map/"}>Map</Link></li>
+                    </ul>
+>>>>>>> Stashed changes
                 </div>
                 <ul className="tabs-container">
                     <li><Link to={"/"}>Home</Link></li>
@@ -81,19 +107,27 @@ class CharityPage extends Component {
             <Chart className="full-chart"></Chart>
 
 
+<<<<<<< Updated upstream
             <div id="piechart"></div>
+=======
+>>>>>>> Stashed changes
             <div className="charity-container">
                 <img className="spca-img" src="/spca.png"></img>
                 <div className="spca-div">
                     <a href="https://www.spca.com/en/">Link to Website</a>
                     <p>By donating to the Montreal SPCA, you can help alleviate the plight of animals and enable us to continue our mission.</p>
+<<<<<<< Updated upstream
                     <div>Amount Raised:</div>
+=======
+
+>>>>>>> Stashed changes
                 </div>
 
                 <img className="msf-img" src="/msf.png"></img>
                 <div className="msf-div">
                     <a href="http://www.doctorswithoutborders.ca/">Link to Website</a>
                     <p>Médecins Sans Frontières Canada (MSF) works in over 70 countries and has a mission to reduce suffering and provide medical care to people around the world regardless of race, religion or political affiliation.</p>
+<<<<<<< Updated upstream
                     <div>Amount Raised:</div>
                 </div>
             </div>
@@ -113,6 +147,25 @@ class CharityPage extends Component {
                 </div>
             </div>
             <div> {this.renderCharityInfo()} </div>
+=======
+
+                </div>
+            </div>
+            <div className="charity-container">
+                <img className="ccs-img" src="/allout.png"></img>
+                <div className="ccs-div">
+                    <a href="https://allout.org/en">Link to Website</a>
+                    <p>All Out is a global movement for love and equality. We're mobilising thousands of people to build a world where no person will have to sacrifice their family or freedom, safety or dignity, because of who they are or who they love.</p>
+                </div>
+
+                <img className="camh-img" src="/camh.png"></img>
+                <div className="camh-div">
+                    <a href="http://www.camh.ca/">Link to Website</a>
+                    <p>The Centre for Addiction and Mental Health (CAMH) is Canada's largest mental health teaching hospital and one of the world's leading research centres in its field.</p>
+                </div>
+            </div>
+
+>>>>>>> Stashed changes
         </div>
         )
 

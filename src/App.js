@@ -16,12 +16,10 @@ import Map from './Map.js'
 import Chart from './Chart.js'
 
 
-
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
     }
   }
 
@@ -39,6 +37,7 @@ class App extends Component {
         })
       }
     }
+
     callBack = callBack.bind(this)
     fetch('/sessionActive', {
       method:'GET',
@@ -62,7 +61,6 @@ class App extends Component {
   renderHome() {
     return (<Home />)
   }
-
   renderDetails(routerData) {
     let itemID = routerData.match.params.itemID;
     return (<ItemDetails itemID={itemID} />)
@@ -79,8 +77,6 @@ class App extends Component {
   renderFAQPage(){
     return(<FAQ/>)
   }
-
-
   renderItemsBid(){
      return (<ItemsBid/>)
    }

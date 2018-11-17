@@ -141,6 +141,12 @@ class Login extends Component {
                     <Label></Label>
                     <Input type="email" placeholder="Email" />
 
+<<<<<<< Updated upstream
+=======
+                     <Label></Label>
+                    <Input type="adress" placeholder="Address" />
+                    
+>>>>>>> Stashed changes
                     <Label></Label>
                     <Input type="text" onChange={this.handleUsernameChange} placeholder="Username" />
 

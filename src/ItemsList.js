@@ -59,14 +59,15 @@ class ItemsList extends Component {
         return (
             <div className='home-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-                <div class="hero-image">
+                <div class="sale-image">
                     <div class="hero-text">
-                        <h1 className="title1">PASS-IT-ON</h1>
+                    <div className="title1">PASS</div>
+                    <div className="title2">IT ON</div>
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-ITEMS FOR SALE-</h2>
                         <button className="add-item-btn"><Link to={"/addItem/"}>Add Item+</Link></button>
                     </div>
-                </div>
+                
                 {/* {this.getTopItems()} */}
                 <ul className="tabs-container">
                     <li><Link to={"/"}>Home</Link></li>
@@ -76,6 +77,7 @@ class ItemsList extends Component {
                     <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     <li><Link to={"/map/"}>Map</Link></li>
                 </ul>
+                </div>
                 <div className="items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
             </div>
         )

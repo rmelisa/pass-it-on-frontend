@@ -87,19 +87,25 @@ class Home extends Component {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
         return (
 
-            <div className="item-div">
+            <div className="item-div-home">
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-                <img className="item-images" src={item.imageName}></img>
-                <p>
-                    <div><Link to={"/itemDetails/" + item.itemID}>{item.itemName}</Link> </div>
-
+                <img className="item-image-home"src={item.imageName}></img>
+                
+                <div className="desc-box">
+                    <div><Link to={"/itemDetails/" + item.itemID} className="item-link">{item.itemName}</Link> </div>
+                    <div className="desc-item">
                     <div>Min Bid: {item.minBid}$</div>
                     <div>Current Bid: {item.currentBid}$</div>
-                    <div>Description: {item.itemDescription}</div>
+                    <em>Description: {item.itemDescription}</em>
                     <div>Posted By: {item.username}</div>
                     <div>Charity: {item.charity}</div>
+<<<<<<< Updated upstream
 
                 </p>
+=======
+                    </div>
+                </div>
+>>>>>>> Stashed changes
             </div>
 
         )
@@ -123,13 +129,14 @@ class Home extends Component {
 
             <div className='home-container'>
                 {this.handleTopLeft()}
-                <div class="hero-image">
-                    <div class="hero-text">
-                        <h1 className="title1">PASS-IT-ON</h1>
+                <div className="hero-image">
+                    <div className="hero-text">
+                        <div className="title1">PASS</div>
+                        <div className="title2">IT ON</div>
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
 
                     </div>
-                </div>
+               
                 {/* {this.getTopItems()} */}
                 <ul className="tabs-container">
                     <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
@@ -140,8 +147,7 @@ class Home extends Component {
                     <li><Link to={"/map/"}>Map</Link></li>
                     <li><Link to={"/addItem/"}>Add Item</Link></li>
                 </ul>
-
-
+                </div>
 
                 <div className="btn">
                     <p className="top-5-title">Top 5 Items With the Highest Bid!</p>
@@ -149,7 +155,14 @@ class Home extends Component {
                 <div className="items-home">
                     {this.state.itemsDisplayed.map(this.renderItems)}
                 </div>
+<<<<<<< Updated upstream
                 <div> {this.renderCharityInfo()} </div>
+=======
+                <footer>
+                    <div className="banner"></div>
+                </footer>
+
+>>>>>>> Stashed changes
             </div>)
     }
 }

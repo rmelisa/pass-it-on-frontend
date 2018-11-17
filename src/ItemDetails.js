@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import './ItemDetails.css';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
+
 
 class ItemDetails extends Component {
     constructor(props) {
@@ -122,14 +123,32 @@ class ItemDetails extends Component {
     }
 
     render() {
+        
         if (!this.state.item) {
             return 'loading'
         }
-        return (<div>
-
-
-            <button className="back-to-home" onClick={this.backToHome}>Back to Shopping</button>
-            <img className="item-image" src={'/' + this.state.item.imageName}></img>
+        return (
+             <div className='home-container'>
+           
+                <div class="hero-image">
+                    <div class="hero-text">
+                    <div className="title1">PASS</div>
+                    <div className="title2">IT ON</div>
+                    <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+            
+                    </div>
+                <ul className="tabs-container">
+                    <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                    <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                    <li><Link to={"/members/"}>Other Members</Link></li>
+                    <li><Link to={"/Charities/"}>Charities</Link></li>
+                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                    <li><Link to={"/map/"}>Map</Link></li>
+                    <li><Link to={"/addItem/"}>Add Item</Link></li>
+                </ul>
+                </div>
+            
+            <img className="det-img" src={'/' + this.state.item.imageName}></img>
             <div className="item-list"> Title:&nbsp;{this.state.item.itemName}</div>
             <div className="item-list">Description:&nbsp;{this.state.item.itemDescription}</div>
             <div className='item-list'>Posted by:&nbsp;{this.state.item.username}</div>
@@ -154,10 +173,10 @@ class ItemDetails extends Component {
         </div>)
     }
 }
-let connectedItemDetails = connect(function (store) {
+let connectedHome = connect(function (store) {
     return {
         sessionID: store.session,
-        item: store.item
+        username: store.username
     }
 })(withRouter(ItemDetails))
-export default connectedItemDetails
+export default connectedHome

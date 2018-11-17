@@ -58,18 +58,17 @@ class Login extends Component {
     }
 
     render() {
-        return (
-
-            <div className="main">
-                <p className="title1">Enter To Begin Shopping!</p>
-                <form className="signup" onSubmit={this.handleSubmit}>
-                    Username:
-            <input className="signup1" type="text" onChange={this.handleUsernameChange}></input>
-                    Password:
-            <input className="signup1" type="password" onChange={this.handlePasswordChange}></input>
-                    <input className="signup-btn" type="submit" value="ENTER"></input>
-                </form>
-            </div>)
+        return (<div className="login-area">
+            <div className="titlea">PASS</div>
+            <div className="titleb">IT ON</div>
+            <form className="login-form" onSubmit={this.handleSubmit}>
+                <div className="login-titles">Username</div>
+                <input className="username" type="text" onChange={this.handleUsernameChange}></input>
+                <div className="login-titles">Password</div>
+                <input className="password" type="password" onChange={this.handlePasswordChange}></input>
+                <input className="login-btn" type="submit" value="ENTER"></input>
+            </form>
+        </div>)
     }
 }
 let connectedLogin = connect()(withRouter(Login))

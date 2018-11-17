@@ -1,24 +1,6 @@
-.items{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-
-}
-.card{
-    display: flex;
-    flex-direction: row;
-    margin: 50px;
-   
-    justify-content: space-around;
+.add-image{
+    height: 200px;
     
-    
-}
-
-.image-size{
-height: 150px;
-width: 100px;
 }
 
 

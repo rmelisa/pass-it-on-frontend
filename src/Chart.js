@@ -10,7 +10,7 @@ class Chart extends Component {
         render() {
           
 const data = {
-    labels: ['SPCA Montreal', 'MSF Canada', 'Canadian Cancer Society', 'CAMH',],
+    labels: ['SPCA Montreal', 'MSF Canada', 'All Out', 'CAMH',],
     datasets: [
       {
         label: '',
@@ -19,8 +19,7 @@ const data = {
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        data: [2000, 1199, 1200, 1500],
-
+        data: [65, 59, 80, 81]
       }
     ]
   };
@@ -32,7 +31,7 @@ const data = {
         <Bar className="full-chart"
           data={data}
           width={100}
-          height={700}
+          height={300}
           options={{
             maintainAspectRatio: false
             
