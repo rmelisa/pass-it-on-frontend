@@ -9,16 +9,24 @@ class Home extends Component {
     constructor() {
         super()
         this.state = {
-            itemsDisplayed: []
+            itemsDisplayed: [],
+            charityTotals: {}
         }
         this.handleAddItem = this.handleAddItem.bind(this)
         this.handleTopLeft = this.handleTopLeft.bind(this)
         this.getTopItems = this.getTopItems.bind(this)
         this.renderItems = this.renderItems.bind(this)
         this.handleLogout = this.handleLogout.bind(this)
+        this.renderCharityInfo = this.renderCharityInfo.bind(this)
     }
     componentDidMount() {
         this.getTopItems()
+        fetch("/getAllCharities") //confirm name
+            .then(x => x.text())
+            .then(response => {
+                let parsed = JSON.parse(response)
+                this.setState({ charityTotals: parsed })
+            })
     }
 
     handleAddItem() {
@@ -90,22 +98,36 @@ class Home extends Component {
                     <div>Description: {item.itemDescription}</div>
                     <div>Posted By: {item.username}</div>
                     <div>Charity: {item.charity}</div>
-                    
+
                 </p>
             </div>
 
         )
     }
+
+    renderCharityInfo() {
+        let charities = Object.keys(this.state.charityTotals)
+        return (
+            <div>{charities.map(function (charity) {
+                return (<div>Charity Name: {charity}
+                    <br></br>
+                    Amount raised: {this.state.charityTotals[charity]}
+                </div>)
+            }.bind(this))}
+            </div>
+        )
+    }
     render() {
 
         return (
+
             <div className='home-container'>
                 {this.handleTopLeft()}
                 <div class="hero-image">
                     <div class="hero-text">
                         <h1 className="title1">PASS-IT-ON</h1>
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
-            
+
                     </div>
                 </div>
                 {/* {this.getTopItems()} */}
@@ -127,7 +149,7 @@ class Home extends Component {
                 <div className="items-home">
                     {this.state.itemsDisplayed.map(this.renderItems)}
                 </div>
-
+                <div> {this.renderCharityInfo()} </div>
             </div>)
     }
 }

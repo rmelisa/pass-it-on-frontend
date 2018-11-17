@@ -4,6 +4,7 @@ import { withRouter } from 'react-router'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Signup.css';
 
+
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -17,6 +18,7 @@ class Login extends Component {
             usernameInput: "",
             passwordInput: "",
 
+
         }
         this.uploadFile = this.uploadFile.bind(this)
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
@@ -26,6 +28,11 @@ class Login extends Component {
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.renderHome = this.renderHome.bind(this)
+        this.handleAddressChange = this.handleAddressChange.bind(this)
+
+    }
+    componentDidMount() {
+
     }
 
     uploadFile(x) {
@@ -65,15 +72,25 @@ class Login extends Component {
             passwordInput: event.target.value
         })
     }
+    handleAddressChange(event){
+        this.setState({
+            addressInput: event.target.value
+        })
+    }
+
+    // handleLocation() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(function (position) {
+        
+    //             console.log(position)
+    //         })
+
+    //     }
+    // }
     handleSubmit(event) {
         event.preventDefault()
         let body = JSON.stringify(
             this.state)
-        // firstName: this.state.firstNameInput,
-        // lastName: this.state.lastNameInput,
-        // username: this.state.usernameInput,
-        // password: this.state.passwordInput,
-        // bio: this.state.bioInput
         let cb = function (resBody) {
             let parsed = JSON.parse(resBody)
             if (parsed.status) {
@@ -105,36 +122,37 @@ class Login extends Component {
     render() {
         return (
             <div className="signup-main">
-                <Form>
-                <FormGroup>
-                    <img className="add-image" src={`/${this.state.filename}`}></img>
-                    <input type="file" onChange={e => this.uploadFile(e.target.files[0])} />
-                    <Label for="exampleFile"></Label>
-                    <FormText color="muted">
-                        Upload an Image of yourself!
+                <Form onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                        <img className="add-image" src={`/${this.state.filename}`}></img>
+                        <input type="file" onChange={e => this.uploadFile(e.target.files[0])} />
+                        <Label for="exampleFile"></Label>
+                        <FormText color="muted">
+                            Upload an Image of yourself!
                     </FormText>
-                </FormGroup>
+                    </FormGroup>
                     <FormGroup>
                         <Label for="exampleEmail"></Label>
-                        <Input type="text" onChange={this.handleFirstNameChange} placeholder="First Name"/>
+                        <Input type="text" onChange={this.handleFirstNameChange} placeholder="First Name" />
                         <Label for="exampleEmail"></Label>
-                        <Input type="text" onChange={this.handleLastNameChange} type="text" placeholder="Last Name"/>
+                        <Input type="text" onChange={this.handleLastNameChange} type="text" placeholder="Last Name" />
                     </FormGroup>
 
                     <Label></Label>
                     <Input type="email" placeholder="Email" />
-                    
+
                     <Label></Label>
                     <Input type="text" onChange={this.handleUsernameChange} placeholder="Username" />
 
                     <Label></Label>
                     <Input type="password" onChange={this.handlePasswordChange} placeholder="Password" />
-
+                    <Label></Label>
+                    <Input type="text" onChange={this.handleAddressChange} placeholder="Address" />
                     <FormGroup>
                         <Label for="exampleText"></Label>
                         <Input type="textarea" onChange={this.handleBioChange} placeholder="Tell us a bit about yourself.." />
                     </FormGroup>
-                    <Button>Signup</Button>
+                    <Button >Signup</Button>
                 </Form>
             </div>
         )
