@@ -39,14 +39,18 @@ class ItemBidsRender extends Component {
         }else {
             status = 'Auction ended and won by ' + curBid.currentBidUser 
         }
-        return (<div>
+        return (<div className="bid-container">
+              <div>
+            <img className="bid-image"src={'/' + curBid.imageName}></img>
+            </div>
+            <div className="bid-desc">
             <Link to={"/itemDetails/" + curBid.itemID}>{curBid.itemName}</Link>
             <div>Your bid:&nbsp;{curBid.mybid.newBid}$</div>
             <div>Current bid at:&nbsp;{curBid.currentBid}$</div>
             <div>Time remaining on auction:&nbsp;{this.state.timeLeft}</div>
             <div>{status}</div>
-            <img src={'/' + curBid.imageName}></img>
-            <div></div>
+            </div>
+                      
          </div>
         )
     }

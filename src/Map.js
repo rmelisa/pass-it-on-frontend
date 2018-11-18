@@ -21,13 +21,13 @@ class Map extends Component {
 
   render() {
     return (<div>
-<<<<<<< Updated upstream
       <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
       <div className='home-container'>
 
         <div class="hero-image">
           <div class="hero-text">
-            <h1 className="title1">PASS-IT-ON</h1>
+          <div className="title1">PASS</div>
+            <div className="title2">IT ON</div>
             <p>Taking unwanted items and turning them into monatary donations to those in need</p>
             <h2>-MAP-</h2>
           </div>
@@ -40,34 +40,6 @@ class Map extends Component {
           <li><Link to={"/Charities/"}>Charities</Link></li>
           <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
         </ul>
-=======
-        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-        <div className='home-container'>
-            
-            <div class="hero-image">
-                <div class="hero-text">
-                <div className="title1">PASS</div>
-                    <div className="title2">IT ON</div>
-                    <p>Taking unwanted items and turning them into monatary donations to those in need</p>
-                    <h2>-MAP-</h2>
-                </div>
-          
-            <ul className="tabs-container">
-                <li><Link to={"/"}>Home</Link></li>
-                <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                <li><Link to={"/Members/"}>Members</Link></li>
-                <li><Link to={"/Charities/"}>Charities</Link></li>
-                <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-            </ul>       
-            </div>
-            </div>
-      <ReactMapGL
-        {...this.state.viewport}
-        onViewportChange={(viewport) => this.setState({viewport})}
-        mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-      />
->>>>>>> Stashed changes
       </div>
       <ReactMapGL
       {...this.state.viewport}

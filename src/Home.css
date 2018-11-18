@@ -88,11 +88,12 @@ li a {
 }
 
 li a:hover {
-    background-color: rgba(255, 127, 80, 0.486);
+    background-color: coral;
     text-decoration: none;
 }
 .top-5-title{
     font-size: 30pt;  
+    padding: 40px;
 }
 .item-link{
     text-decoration: none;
@@ -100,58 +101,65 @@ li a:hover {
 }
 
 .item-link:hover{
-    color: rgb(245, 143, 125);
+    color: coral;
     text-decoration: none;
     font-weight: bold;
 }
-
-.item-div-home{
+/* the page as a whole */
+.home-items{
     display:flex;
-    flex-direction: row;
-    height: 100px;
-    font-size: 20pt;
-    width: 100px;
-    justify-content: center;
-    padding: 20px;
-    background-color:whitesmoke;
-}
-
-.item-div-home:nth-of-type(1){
-    display:flex;
-    flex-direction: row;
-    height: 430px;
-    font-size: 20pt;
-    width: 100px;
-    justify-content: center;
-    padding: 20px;
-    background-color:whitesmoke;
-}
-.item-image-home{
-    display:flex;
-    flex-direction: column;
-    height: 200px;
-    padding-right: 10px;
-}
-.item-image-home:nth-of-type(1){
-    display:flex;
-    flex-direction: row;
-    height: 400px;
-}
-
-
-.items-home{
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-}
 
-.desc-box{
+    
+}
+/* controls each description */
+.home-dets{
     width: 200px;
    
 }
 
-.desc-box:nth-of-type(1){
-    width: 200px;
-   
-} 
+/* controls each image */
+.item-image-home{
+    height: 300px;
+}
+
+
+/* This is the whole div around the full item - wont maniputlate much */
+.item-div-home{ 
+    margin: 20px;
+    display: flex;
+}
+
+.home-link{
+    text-decoration: none;
+    color: black;
+    font-size: 16pt;
+    text-transform: uppercase;
+    
+
+}
+
+.home-link:hover{
+    text-decoration: none;
+    color: coral;
+    font-weight: bold;
+    
+    
+}
+
+/* control over all charity info div */
+.charity-info{
+    width: 400px;
+    margin-right: 50px; 
+    margin-left: 20px;
+    font-size: 14pt;
+    font-weight: bold;
+
+}
+.charity-name{
+font-weight: bold;
+}
+.amount-raised{
+
+}

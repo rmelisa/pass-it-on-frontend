@@ -1,0 +1,28 @@
+.bid-image{
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    width: 320px;
+    flex-direction: column;
+    text-align: left;
+}
+
+.bid-container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding-left: 200px;
+    padding-top: 50px;
+    background-color: whitesmoke;
+
+}
+
+.bid-desc{
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+    width: 320px;
+    flex-direction: column;
+    text-align: left;
+}

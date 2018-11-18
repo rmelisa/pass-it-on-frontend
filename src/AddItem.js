@@ -23,9 +23,16 @@ class AddItem extends Component {
         this.backToHome = this.backToHome.bind(this)
     }
     componentDidMount(){
+        const styles = {
+            alertMessage: { color: 'red' },
+        
+          };
+        
+         
         if (!this.props.sessionID) {
-            alert('You need to be logged in to add an item')
-            this.props.history.push('/')
+            return( <span style={styles.alertMessage}>You need to be logged in to add an item</span>)
+            // alert('You need to be logged in to add an item')
+            // this.props.history.push('/')
         }
     }
 

@@ -169,6 +169,13 @@ class ItemDetails extends Component {
                 <textarea rows="10" cols="60" className="comment-box" type="text" onChange={this.handleCommentInput} value={this.state.commentInput}></textarea>
                 <input type='submit'/>
             </form>
+            <footer className="banner">
+                <div className="media-div">
+                    <img className="media-img" src={'/facebook.png'} />
+                    <img className="media-img" src={'/instagram.png'} />
+                    <img className="media-img" src={'/twitter.png'} />
+                </div>
+            </footer>
 
         </div>)
     }

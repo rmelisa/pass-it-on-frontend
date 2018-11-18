@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './Home.css';
+import './footer.css'
 
 class Home extends Component {
     constructor() {
@@ -88,24 +89,19 @@ class Home extends Component {
         return (
 
             <div className="item-div-home">
-                <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-                <img className="item-image-home"src={item.imageName}></img>
-                
-                <div className="desc-box">
-                    <div><Link to={"/itemDetails/" + item.itemID} className="item-link">{item.itemName}</Link> </div>
-                    <div className="desc-item">
-                    <div>Min Bid: {item.minBid}$</div>
-                    <div>Current Bid: {item.currentBid}$</div>
-                    <em>Description: {item.itemDescription}</em>
-                    <div>Posted By: {item.username}</div>
-                    <div>Charity: {item.charity}</div>
-<<<<<<< Updated upstream
+               
+                <img className="item-image-home" src={item.imageName}></img>
 
-                </p>
-=======
+                <div>
+                    <div><Link to={"/itemDetails/" + item.itemID} className="home-link" >{item.itemName}</Link></div>
+                    <div className="home-dets">
+                        <div>Min Bid: {item.minBid}$</div>
+                        <div>Current Bid: {item.currentBid}$</div>
+                        <em>Description: {item.itemDescription}</em>
+                        <div>Posted By: {item.username}</div>
+                        <div>Charity: {item.charity}</div>
                     </div>
                 </div>
->>>>>>> Stashed changes
             </div>
 
         )
@@ -114,10 +110,11 @@ class Home extends Component {
     renderCharityInfo() {
         let charities = Object.keys(this.state.charityTotals)
         return (
-            <div>{charities.map(function (charity) {
-                return (<div>Charity Name: {charity}
-                    <br></br>
-                    Amount raised: {this.state.charityTotals[charity]}
+            <div className="charity-info">{charities.map(function (charity) {
+                return (<div className="chairty-name">{charity}
+                    <div className="amount-raised">
+                    Amount raised: ${this.state.charityTotals[charity]}
+                    </div>
                 </div>)
             }.bind(this))}
             </div>
@@ -136,33 +133,39 @@ class Home extends Component {
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
 
                     </div>
-               
-                {/* {this.getTopItems()} */}
-                <ul className="tabs-container">
-                    <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                    <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                    <li><Link to={"/members/"}>Other Members</Link></li>
-                    <li><Link to={"/Charities/"}>Charities</Link></li>
-                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                    <li><Link to={"/map/"}>Map</Link></li>
-                    <li><Link to={"/addItem/"}>Add Item</Link></li>
-                </ul>
+
+                    {/* {this.getTopItems()} */}
+                    <ul className="tabs-container">
+                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                        <li><Link to={"/members/"}>Other Members</Link></li>
+                        <li><Link to={"/Charities/"}>Charities</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                        <li><Link to={"/map/"}>Map</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
+                    </ul>
                 </div>
 
-                <div className="btn">
+                <div>
                     <p className="top-5-title">Top 5 Items With the Highest Bid!</p>
                 </div>
-                <div className="items-home">
+                <div className="home-items">
+                <div className="charity-info">{this.renderCharityInfo()} </div>
                     {this.state.itemsDisplayed.map(this.renderItems)}
                 </div>
-<<<<<<< Updated upstream
-                <div> {this.renderCharityInfo()} </div>
-=======
-                <footer>
-                    <div className="banner"></div>
+           
+                  
+            
+
+
+                <footer className="banner">
+                    <div className="media-div">
+                        <img className="media-img" src={'/facebook.png'} />
+                        <img className="media-img" src={'/instagram.png'} />
+                        <img className="media-img" src={'/twitter.png'} />
+                    </div>
                 </footer>
 
->>>>>>> Stashed changes
             </div>)
     }
 }

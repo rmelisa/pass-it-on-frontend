@@ -4,6 +4,7 @@ import Checkout from './Checkout'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import './FAQ.css'
+import './footer.css'
 
 
 class FAQ extends Component {
@@ -34,8 +35,8 @@ class FAQ extends Component {
 
                 <div class="hero-image">
                     <div class="hero-text">
-                    <div className="title1">PASS</div>
-                    <div className="title2">IT ON</div>
+                        <div className="title1">PASS</div>
+                        <div className="title2">IT ON</div>
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-HOW IT WORKS-</h2>
 
@@ -79,6 +80,14 @@ class FAQ extends Component {
                     <p className="step-desc">If you have won the bid a payment is required. Once complete the process of shipment of the item commences</p>
                 </div>
             </div>
+
+            <footer className="banner">
+                <div className="media-div">
+                    <img className="media-img" src={'/facebook.png'} />
+                    <img className="media-img" src={'/instagram.png'} />
+                    <img className="media-img" src={'/twitter.png'} />
+                </div>
+            </footer>
 
         </div>)
     }

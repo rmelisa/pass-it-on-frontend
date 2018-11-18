@@ -1,0 +1,27 @@
+.banner{
+    height: 100px;
+    background-color:rgba(207, 178, 176, 0.753);
+    bottom: 0;
+    display: flex;
+    width: 100%;
+}
+
+.media-img{
+    height: 40px;
+    display: inline-block;   
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 20px;
+
+  
+}
+
+.media-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; 
+    text-align: center;
+    align-content: center;
+    margin-left: 37.5%;
+}

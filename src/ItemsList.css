@@ -89,3 +89,47 @@ li a:hover {
     text-decoration: none;
     color: white;
 }
+
+.all-items{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding-left: 200px;
+    padding-top: 50px;
+    background-color: whitesmoke;
+  
+}
+
+.item-card{
+    display: flex;
+    margin: 100px;
+    width: 320px;
+    flex-direction: column;
+    text-align: left;
+    
+
+}
+.item-image{
+height: 215px;
+width: 320px;
+}
+.item-list-desc{
+
+}
+.name-link{
+    text-decoration: none;
+    color: black;
+}
+.name-link:hover{
+    text-decoration: none;
+    color: coral;
+    font-weight: bold;
+}
+
+.hover-desc:hover{
+    font-weight: bold;
+    color: black;
+    
+}

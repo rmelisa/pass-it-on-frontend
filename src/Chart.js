@@ -13,7 +13,6 @@ const data = {
     labels: ['SPCA Montreal', 'MSF Canada', 'All Out', 'CAMH',],
     datasets: [
       {
-        label: '',
         backgroundColor: 'rgba(25, 46, 80, 0.952)',
         borderColor: 'rgba(255,99,132,1)',
         borderWidth: 1,

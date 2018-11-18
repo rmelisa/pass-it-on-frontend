@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import ItemsBidsRender from './ItemBidsRender.js'
+import './ItemsBid.css'
 
 class ItemsBid extends Component {
     constructor(props) {
@@ -73,6 +74,13 @@ class ItemsBid extends Component {
             </div>
             <p>Items You Have Bid On</p>
             <div>{this.state.bids.map(this.renderBids)}</div>
+            <footer className="banner">
+                <div className="media-div">
+                    <img className="media-img" src={'/facebook.png'} />
+                    <img className="media-img" src={'/instagram.png'} />
+                    <img className="media-img" src={'/twitter.png'} />
+                </div>
+            </footer>
         </div>)
     }
 }

@@ -96,6 +96,13 @@ class Members extends Component {
         
             </form>
             <div className="members">{this.state.listShown.map(this.renderAllMemebers)}</div>
+            <footer className="banner">
+                <div className="media-div">
+                    <img className="media-img" src={'/facebook.png'} />
+                    <img className="media-img" src={'/instagram.png'} />
+                    <img className="media-img" src={'/twitter.png'} />
+                </div>
+            </footer>
         </div>)
     }
 
