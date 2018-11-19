@@ -22,15 +22,15 @@ width: 100px;
 }
 
 
-.sale-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/3.jpeg");
+.sale-item-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/market.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-.hero-text {
+.sale-items-text {
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bold;
     text-align: center;
@@ -85,7 +85,7 @@ li a {
 }
 
 li a:hover {
-    background-color: coral;
+    background-color:rgb(136, 76, 94);
     text-decoration: none;
     color: white;
 }
@@ -124,7 +124,7 @@ width: 320px;
 }
 .name-link:hover{
     text-decoration: none;
-    color: coral;
+    color: rgb(136, 76, 94);
     font-weight: bold;
 }
 

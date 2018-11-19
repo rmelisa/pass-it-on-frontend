@@ -63,7 +63,7 @@ li a {
 }
 
 li a:hover {
-    background-color: coral;
+    background-color: rgb(136, 76, 94);
     text-decoration: none;
     color: white;
 }

@@ -95,73 +95,88 @@ class Home extends Component {
                     <div className="desc-item">
                         <div>Min Bid: {item.minBid}$</div>
                         <div>Current Bid: {item.currentBid}$</div>
-                        <em>Description: {item.itemDescription}</em>
+                        <em>"{item.itemDescription}"</em>
                         <div>Posted By: {item.username}</div>
                         <div>Charity: {item.charity}</div>
 
 
                     </div>
                 </div >
-                </div>
+            </div>
 
-                )
-            }
-        
+        )
+    }
+
     renderCharityInfo() {
-                    let charities = Object.keys(this.state.charityTotals)
-                return (
+        let charities = Object.keys(this.state.charityTotals)
+        return (
             <div>{charities.map(function (charity) {
-                    return (<div>Charity Name: {charity}
-                        <br></br>
-                        Amount raised: {this.state.charityTotals[charity]}
-                    </div>)
-                }.bind(this))}
-                </div>
-                )
-            }
+                return (<div>Charity Name: {charity}
+                    <br></br>
+                    Amount raised: {this.state.charityTotals[charity]}
+                </div>)
+            }.bind(this))}
+            </div>
+        )
+    }
     render() {
 
         return (
-        
+
             <div className='home-container'>
-                    {this.handleTopLeft()}
-                    <div className="hero-image">
-                        <div className="hero-text">
-                            <div className="title1">PASS</div>
-                            <div className="title2">IT ON</div>
-                            <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                {this.handleTopLeft()}
+                <div className="hero-image">
+                    <div className="hero-text">
+                        <div className="title1">PASS</div>
+                        <div className="title2">IT ON</div>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
 
-                        </div>
-
-                        {/* {this.getTopItems()} */}
-                        <ul className="tabs-container">
-                            <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                            <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                            <li><Link to={"/members/"}>Other Members</Link></li>
-                            <li><Link to={"/Charities/"}>Charities</Link></li>
-                            <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                            <li><Link to={"/addItem/"}>Add Item</Link></li>
-                        </ul>
                     </div>
 
-                    <div className="btn">
-                        <p className="top-5-title">Top 5 Items With the Highest Bid!</p>
+                    {/* {this.getTopItems()} */}
+                    <ul className="tabs-container">
+                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                        <li><Link to={"/members/"}>Other Members</Link></li>
+                        <li><Link to={"/Charities/"}>Charities</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
+                    </ul>
+                </div>
+
+
+                <div className="dashboard-header">
+                    <h3 className="charity-header">Charity<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dashboard</h3>
+
+                    <h3 className="top-header">Top 5<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Items</h3>
+                </div>
+                <div className="home-items">
+                    <div >{this.renderCharityInfo()} </div>
+                    {this.state.itemsDisplayed.map(this.renderItems)}
+                </div>
+
+
+
+
+
+                <footer className="banner">
+                    <div className="media-div">
+                        <img className="media-img" src={'/facebook.png'} />
+                        <img className="media-img" src={'/instagram.png'} />
+                        <img className="media-img" src={'/twitter.png'} />
                     </div>
-                    <div className="items-home">
-                        {this.state.itemsDisplayed.map(this.renderItems)}
-                    </div>
-                    <div> {this.renderCharityInfo()} </div>
-                    <footer>
-                        <div className="banner"></div>
+                  
                     </footer>
+                        
 
+            
                 </div>)
         }
     }
 let connectedHome = connect(function (store) {
     return {
                     sessionID: store.session,
-                username: store.username
-            }
-        })(withRouter(Home))
+            username: store.username
+        }
+    })(withRouter(Home))
 export default connectedHome

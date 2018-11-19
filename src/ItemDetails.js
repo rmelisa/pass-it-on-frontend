@@ -11,7 +11,7 @@ class ItemDetails extends Component {
         this.state = {
             currentBid: null,
             commentInput: '',
-            timeLeft:''
+            timeLeft: ''
         }
         this.backToHome = this.backToHome.bind(this)
         this.updateBidAmount = this.updateBidAmount.bind(this)
@@ -22,18 +22,18 @@ class ItemDetails extends Component {
     }
     componentDidMount() {
         this.getItemDetails()
-        setInterval(function() {
+        setInterval(function () {
             let currentTime = Date.now()
             let distance = this.state.item.timerEnd - currentTime
-            if(distance < 0){
-                this.setState({timeLeft: "0s, bidding is closed and won by "+this.state.item.currentBidUser})
+            if (distance < 0) {
+                this.setState({ timeLeft: "0s, bidding is closed and won by " + this.state.item.currentBidUser })
                 return
             }
             let days = Math.floor(distance / (1000 * 60 * 60 * 24));
             let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            this.setState({timeLeft:`${days}d  ${hours}h ${minutes}m ${seconds}`}) 
+            this.setState({ timeLeft: `${days}d  ${hours}h ${minutes}m ${seconds}` })
         }.bind(this), 1000)
     }
 
@@ -55,21 +55,21 @@ class ItemDetails extends Component {
         }).then(callBack)
     }
 
-    updateBidAmount(event){
+    updateBidAmount(event) {
         event.preventDefault()
         let currentTime = Date.now()
-        if (this.state.item.timerEnd < currentTime){
+        if (this.state.item.timerEnd < currentTime) {
             alert('Bidding is closed for this item.')
             this.refs.bid.value = ''
             return
         }
-        let callBack = function(response){
+        let callBack = function (response) {
             let parsed = JSON.parse(response)
-            if(parsed.status === 'success'){
-                this.setState({item:parsed.item})
-            }else if (parsed.status === 'lowBid') {
+            if (parsed.status === 'success') {
+                this.setState({ item: parsed.item })
+            } else if (parsed.status === 'lowBid') {
                 alert("Bid failed. The amount entered is lower than minimum bid or the current bid")
-            }else if (parsed.status === 'notLogged'){
+            } else if (parsed.status === 'notLogged') {
                 alert("Bid failed. You are not logged in")
             }
         }
@@ -82,11 +82,11 @@ class ItemDetails extends Component {
                 itemID: this.props.itemID,
                 newBid: bidInput
             })
-            }).then(function(res){
-                return res.text()
-            }).then(callBack)
-            this.refs.bid.value = ''
-    
+        }).then(function (res) {
+            return res.text()
+        }).then(callBack)
+        this.refs.bid.value = ''
+
     }
 
     backToHome() {
@@ -97,45 +97,45 @@ class ItemDetails extends Component {
         return (<p className="single-comment">{comment}</p>)
     }
 
-    handleCommentInput(event){
-        this.setState({commentInput: event.target.value})
+    handleCommentInput(event) {
+        this.setState({ commentInput: event.target.value })
     }
 
-    handleCommentSubmit(event){
+    handleCommentSubmit(event) {
         event.preventDefault()
-        let callBack = function(res){
+        let callBack = function (res) {
             let parsed = JSON.parse(res)
             if (parsed.status) {
                 this.getItemDetails()
             }
         }
         callBack = callBack.bind(this)
-        fetch('/addComment',{
-            method:'POST',
-            body:JSON.stringify({
+        fetch('/addComment', {
+            method: 'POST',
+            body: JSON.stringify({
                 itemID: this.state.item.itemID,
                 commentInput: this.state.commentInput
             })
-        }).then(function(res){
+        }).then(function (res) {
             return res.text()
         }).then(callBack)
-        this.setState({commentInput: ''})
+        this.setState({ commentInput: '' })
     }
 
     render() {
-        
+
         if (!this.state.item) {
             return 'loading'
         }
         return (
-             <div className='home-container'>
-           
+            <div className='home-container'>
+
                 <div class="hero-image">
                     <div class="hero-text">
-                    <div className="title1">PASS</div>
-                    <div className="title2">IT ON</div>
-                    <p>Taking unwanted items and turning them into monatary donations to those in need</p>
-            
+                        <div className="title1">PASS</div>
+                        <div className="title2">IT ON</div>
+                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+
                     </div>
                 <ul className="tabs-container">
                     <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
@@ -146,37 +146,55 @@ class ItemDetails extends Component {
                     <li><Link to={"/addItem/"}>Add Item</Link></li>
                 </ul>
                 </div>
-            
-            <img className="det-img" src={'/' + this.state.item.imageName}></img>
-            <div className="item-list"> Title:&nbsp;{this.state.item.itemName}</div>
-            <div className="item-list">Description:&nbsp;{this.state.item.itemDescription}</div>
-            <div className='item-list'>Posted by:&nbsp;{this.state.item.username}</div>
-            <div className='item-list'>Charity:&nbsp;{this.state.item.charity}</div>
-            <form className="bid-system">
-                <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
-                <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
-                <div>Last bid placed by:&nbsp;{this.state.item.currentBidUser}</div>
-                <div>Time remaining on auction:&nbsp;{this.state.timeLeft}</div>
-                Place a bid:&nbsp;
-                <input type="text"  ref="bid"></input>
-                <input type="submit" onClick={this.updateBidAmount}></input>
-            </form>
-            <div className='item-list'>Comments:</div>
-            <div>{this.state.item.comments.map(this.renderComments)}</div>
-            <form className='comments' onSubmit={this.handleCommentSubmit}>
-                <div className='item-list'>Add a comment:</div>
-                <textarea rows="10" cols="60" className="comment-box" type="text" onChange={this.handleCommentInput} value={this.state.commentInput}></textarea>
-                <input type='submit'/>
-            </form>
-            <footer className="banner">
-                <div className="media-div">
-                    <img className="media-img" src={'/facebook.png'} />
-                    <img className="media-img" src={'/instagram.png'} />
-                    <img className="media-img" src={'/twitter.png'} />
-                </div>
-            </footer>
 
-        </div>)
+            <form className="bid-system">
+                        <div className="time-left">Time Remaining:&nbsp;{this.state.timeLeft}</div>
+                            <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
+                            <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
+                            <div>Last bid placed by:&nbsp;{this.state.item.currentBidUser}</div>
+                       
+                  
+                            <input className="bid-input" type="text" ref="bid" placeholder="$" ></input>
+                            <input className="bid-input" type="submit" value="Place Bid"onClick={this.updateBidAmount}></input>
+                        </form>
+                <div className="detail-container">
+                    <div className="details-section">
+                        <img className="det-img" src={'/' + this.state.item.imageName}></img>
+                        <div className="item-list"> Title:&nbsp;{this.state.item.itemName}</div>
+                        <em className="item-list">"{this.state.item.itemDescription}"</em>
+                        <div className='item-list'>Posted By:&nbsp;{this.state.item.username}</div>
+                        <div className='item-list'>Funds will go to:&nbsp;{this.state.item.charity}</div>
+                        
+                        
+                    </div>
+
+
+
+
+
+
+                    <div className='comments'>Comments:
+            <div>{this.state.item.comments.map(this.renderComments)}</div>
+                        <form onSubmit={this.handleCommentSubmit}>
+                            <div className='item-list'>Add a comment:</div>
+                            <textarea rows="5" cols="60" className="comment-box" type="text" onChange={this.handleCommentInput} value={this.state.commentInput}></textarea>
+                            <input type='submit' />
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+                <footer className="banner">
+                    <div className="media-div">
+                        <img className="media-img" src={'/facebook.png'} />
+                        <img className="media-img" src={'/instagram.png'} />
+                        <img className="media-img" src={'/twitter.png'} />
+                    </div>
+                </footer>
+
+            </div>)
     }
 }
 let connectedHome = connect(function (store) {

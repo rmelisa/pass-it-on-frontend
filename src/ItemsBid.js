@@ -54,7 +54,7 @@ class ItemsBid extends Component {
         return (<div>
             <div className='home-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-                <div class="hero-image">
+                <div class="main-bid-image">
                     <div class="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>

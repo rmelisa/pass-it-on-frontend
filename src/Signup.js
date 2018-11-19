@@ -122,41 +122,38 @@ class Login extends Component {
     render() {
         return (
             <div className="signup-main">
-                <Form onSubmit={this.handleSubmit}>
-                    <FormGroup>
+              <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+             
+                  <form className="form-style" onSubmit={this.handleSubmit}>
+                  <div className="add-text">-SIGN UP-</div>
+                    <div className="add-details">
+                        <div className="add-image">
                         <img className="add-image" src={`/${this.state.filename}`}></img>
+                        </div>
+                        <div className="upload-img"> Upload an Image of yourself!</div>
+                        <div className="file-input">
                         <input type="file" onChange={e => this.uploadFile(e.target.files[0])} />
-                        <Label for="exampleFile"></Label>
-                        <FormText color="muted">
-                            Upload an Image of yourself!
-                    </FormText>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleEmail"></Label>
-                        <Input type="text" onChange={this.handleFirstNameChange} placeholder="First Name" />
-                        <Label for="exampleEmail"></Label>
-                        <Input type="text" onChange={this.handleLastNameChange} type="text" placeholder="Last Name" />
-                    </FormGroup>
-
-                    <Label></Label>
-                    <Input type="email" placeholder="Email" />
-
-                     <Label></Label>
-                    <Input type="adress" placeholder="Address" />
                     
-                    <Label></Label>
-                    <Input type="text" onChange={this.handleUsernameChange} placeholder="Username" />
+                        </div>
+                   
+                        <input className="input-field" type="text" onChange={this.handleFirstNameChange} placeholder="First Name"  placeholder="Item Name" />
+                        <input className="input-field" onChange={this.handleLastNameChange} type="text" placeholder="Last Name" />
+                        <input className="input-field" type="email" placeholder="Email"  placeholder="Item Name" />
+                        <input className="input-field" onChange={this.handleAddressChange} type="address" placeholder="Address"  placeholder="Address" />
+                        <input className="input-field" onChange={this.handleUsernameChange} type="email" placeholder="Username"  placeholder="Username" />
+                        <input className="input-field" onChange={this.handlePasswordChange}type="password" placeholder="Passowrd"  placeholder="Password" />
 
-                    <Label></Label>
-                    <Input type="password" onChange={this.handlePasswordChange} placeholder="Password" />
-                    <Label></Label>
-                    <Input type="text" onChange={this.handleAddressChange} placeholder="Address" />
-                    <FormGroup>
-                        <Label for="exampleText"></Label>
-                        <Input type="textarea" onChange={this.handleBioChange} placeholder="Tell us a bit about yourself.." />
-                    </FormGroup>
-                    <Button >Signup</Button>
-                </Form>
+                        <textarea className="input-field" rows="4" cols="20" type="textarea" onChange={this.handleBioChange} placeholder="Tell us a bit about yourself.."></textarea>
+                
+              
+                        <div><input className="add-item-btn" type='submit' value="Sign Up" /></div>
+                    </div>
+                      
+                    </form>
+
+           
+                   
+                    
             </div>
         )
     }

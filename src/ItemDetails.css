@@ -1,4 +1,3 @@
-
 .sale-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/4.jpeg");
     height: 500px;
@@ -7,6 +6,7 @@
     background-size: cover;
     position: relative;
 }
+
 .hero-text {
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bold;
@@ -15,23 +15,24 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white; 
+    color: white;
 }
-.title1{
+
+.title1 {
     font-size: 60pt;
     margin: -20px;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bold;
     font-style: italic;
 }
-.title2{
+
+.title2 {
     font-size: 60pt;
     margin-top: -80px;
     margin-bottom: 30px;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bold;
     color: rgb(211, 208, 208);
-
 }
 
 .tabs-container {
@@ -40,19 +41,17 @@
     padding: 0;
     overflow: hidden;
     background-color: rgba(25, 46, 80, 0.952);
-    display:flex;
+    display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: space-around;
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.274);
-
 }
 
 li {
     text-align: center;
-    
 }
 
 li a {
@@ -69,6 +68,71 @@ li a:hover {
     color: white;
 }
 
-.det-img{
-    height: 200px;
+.detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+.details-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    width: 300px
+}
+
+.det-img {
+    display: flex;
+    height: 200px;
+    box-shadow: 1px 2px black;
+    justify-content: space-around;
+    height: 300px;
+    width: 350px;
+    margin: 10px;
+    
+}
+.item-list{
+    padding: 5px;
+}
+
+.comments {
+    padding: 40px;
+    width: 600px;
+  
+}
+
+.bid-system{
+    display:flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-left: 200px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    background-color:whitesmoke;
+    text-align: center;
+    width: 900px;
+       
+}
+
+.bid-input{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.time-left{
+    color: rgb(136, 76, 94);
+    font-weight: bold;
+    animation: blinker 1.6s linear infinite;
+    font-size: 14pt;
+    padding: 10px;
+   
+}
+      
+@keyframes blinker {
+50% {
+    opacity: 0;
+    }
+  }
+

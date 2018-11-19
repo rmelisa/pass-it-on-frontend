@@ -80,7 +80,7 @@ class CharityPage extends Component {
                 </ul>
             </div>
             </div>
-       
+            
             <Chart className="full-chart"></Chart>
 
 
@@ -111,7 +111,7 @@ class CharityPage extends Component {
                     <p>The Centre for Addiction and Mental Health (CAMH) is Canada's largest mental health teaching hospital and one of the world's leading research centres in its field.</p>
                 </div>
             </div>
-            <div> {this.renderCharityInfo()} </div>
+            
             <footer className="banner">
                 <div className="media-div">
                     <img className="media-img" src={'/facebook.png'} />

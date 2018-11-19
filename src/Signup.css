@@ -10,7 +10,8 @@
 .signup-button{
     display: flex;
     width: 100%;
-    margin-left:10%;
+    
+    align-items: center;
    
 }
 .upload-image{
@@ -18,4 +19,17 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.add-text{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+.upload-img{
+    color: white;
 }

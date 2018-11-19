@@ -1,3 +1,6 @@
+.home-container{
+    background-color: whitesmoke;
+}
 .logged-in{
     display: flex;
     flex-direction: row;
@@ -88,7 +91,7 @@ li a {
 }
 
 li a:hover {
-    background-color: coral;
+    background-color: rgb(136, 76, 94);
     text-decoration: none;
 }
 .top-5-title{
@@ -101,7 +104,7 @@ li a:hover {
 }
 
 .item-link:hover{
-    color: coral;
+    color: rgb(136, 76, 94);
     text-decoration: none;
     font-weight: bold;
 }
@@ -116,6 +119,8 @@ li a:hover {
 /* controls each description */
 .home-dets{
     width: 200px;
+    padding-left: 5px;
+    
    
 }
 
@@ -129,6 +134,9 @@ li a:hover {
 .item-div-home{ 
     margin: 20px;
     display: flex;
+    box-shadow: 5px 10px #bbbbbb;
+    height: 300px;
+    width: 700px;
 }
 
 .home-link{
@@ -142,7 +150,7 @@ li a:hover {
 
 .home-link:hover{
     text-decoration: none;
-    color: coral;
+    color: rgb(136, 76, 94);
     font-weight: bold;
     
     
@@ -155,11 +163,37 @@ li a:hover {
     margin-left: 20px;
     font-size: 14pt;
     font-weight: bold;
+    padding: 10px;
+    box-shadow: 5px 10px rgb(136, 76, 94);
 
 }
-.charity-name{
-font-weight: bold;
-}
-.amount-raised{
+.charity-info:hover{
+    color: rgb(136, 76, 94);
 
+}
+
+.dashboard-header{
+    display: flex;
+    padding-right: 400px;
+  
+    margin-top: 15px;
+}
+.charity-header{
+    margin-right: 400px;
+    margin-left: 50px;
+    color: black;
+    padding-right: 10px;
+    text-align: center;
+    border-radius: 10%;
+    text-transform: uppercase;
+    
+}
+
+.top-header{
+    color: black;
+    padding-right: 10px;
+    text-align: center;
+    border-radius: 10%;
+    text-transform: uppercase;
+ 
 }

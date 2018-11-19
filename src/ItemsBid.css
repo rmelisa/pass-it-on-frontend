@@ -1,3 +1,11 @@
+.main-bid-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/4.jpeg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 .bid-image{
     height: 220px;
     display: flex;

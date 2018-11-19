@@ -33,7 +33,7 @@ class FAQ extends Component {
             <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
             <div className='home-container'>
 
-                <div class="hero-image">
+                <div class="faq-main-image">
                     <div class="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
