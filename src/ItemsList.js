@@ -56,11 +56,12 @@ class ItemsList extends Component {
         return (
             <div className='home-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
                 <div class="sale-item-image">
                     <div class="sale-items-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-ITEMS FOR SALE-</h2>
                          
                     </div>

@@ -16,12 +16,20 @@
 }
 
 .charity-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/peace.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.192)), url("/comm.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+.title-description{
+    font-family: 'Lato', sans-serif;
+    font-size: 16pt;
+    text-transform: capitalize;
+    width: 600px;
+    font-style: italic;
+    font-weight: 150;
 }
 
 .spca-div{

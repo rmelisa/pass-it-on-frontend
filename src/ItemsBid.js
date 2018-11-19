@@ -56,11 +56,12 @@ class ItemsBid extends Component {
         return (<div>
             <div className='home-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
                 <div class="main-bid-image">
                     <div class="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-YOUR BIDS-</h2>
                     </div>
 
@@ -84,7 +85,7 @@ class ItemsBid extends Component {
                     <img className="media-img" src={'/twitter.png'} />
                 </div>
             </footer>
-            <div><Checkout/></div>
+    
         </div>)
     }
 }

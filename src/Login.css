@@ -1,39 +1,54 @@
 .login-area{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("/ocean.jpeg");
+    width: 100%;
+    height: 1200px;
     
 }
 
 .login-form{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%; 
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-bottom: 30%;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.377);
+    padding: 100px;
+   
+    text-align: center;
 }
+.login-form .login-titles .username .password{
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
 .login-titles{
     text-align: center;
     padding: 5px;
     color: whitesmoke;
 }
 .username{
-    background-color:whitesmoke !important;
-    
+    background-color:whitesmoke;
+    width: 300px;
+    align-self: center;
+    border-radius: 5px;
 }
 
 
 .password{
-    background-color: whitesmoke !important;
+    align-self: center;
+    background-color: whitesmoke;
+    width: 300px;
+    border-radius: 5px;
 }
 
 .login-btn{
     margin-top: 20px;
-    width: 100%; 
+    width: 200px;
+    align-self: center;
+    border-radius: 5px;
+   
+  
 }
 
 .titlea{
-    padding-top: 80px;
+    padding-top: 20px;
     font-size: 60pt;
     margin-bottom: -5px;
     font-family: 'Libre Franklin', sans-serif;

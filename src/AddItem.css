@@ -11,6 +11,20 @@
     color: white; 
 }
 
+.form-style{
+
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.377);
+    padding-right: 400px;
+    padding-left: 400px;
+    
+    text-align: center;
+    height: 700px
+
+}
+
 .add-text{
     font-size: 30px;
     margin-bottom: 20px;
@@ -35,6 +49,8 @@
   }
 
 
+
+
 li {
     text-align: center;
     
@@ -49,12 +65,12 @@ li a {
 }
 
 li a:hover {
-    background-color: rgb(136, 76, 94);
+    background-color:rgba(0, 0, 0, 0.726);
     text-decoration: none;
     color: white;
 }
 
-.add-image{
+.add-item-image{
     height: 150px;
     
 }
@@ -72,10 +88,12 @@ li a:hover {
 
 .category-select{
     width: 300px;
-    background-color:rgb(136, 76, 94);
+    background-color:rgb(16, 24, 49);
+    color: white;
     /* rgb(77, 123, 145); */
+    margin-top: -15px;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 
 }
 
@@ -84,6 +102,7 @@ li a:hover {
     background-color: white;
     width: 300px;
     height: 30px;
+    border-radius: 5px;
     
 }
 

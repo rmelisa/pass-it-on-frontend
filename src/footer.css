@@ -1,6 +1,6 @@
 .banner{
     height: 100px;
-    background-color:rgb(136, 76, 94);
+    background-color:rgba(0, 0, 0, 0.726);
     bottom: 0;
     display: flex;
     width: 100%;
@@ -10,7 +10,7 @@
     height: 40px;
     display: inline-block;   
     text-align: center;
-    margin-left: 80px;
+    margin-left: 40px;
     margin-top: 20px;
 
   

@@ -16,13 +16,14 @@ class FAQ extends Component {
     render() {
         return (<div>
             <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
             <div className='home-container'>
 
                 <div class="faq-main-image">
                     <div class="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-HOW IT WORKS-</h2>
                     </div>
                     <ul className="tabs-container">
@@ -58,7 +59,7 @@ class FAQ extends Component {
                     <span className="steps">3</span>
                     <p className="step-desc">You can view the status of your bid through "My Bids"</p>
                     <span className="steps">4</span>
-                    <p className="step-desc">If you have won the bid a payment is required. Once complete the process of shipment of the item commences</p>
+                    <p className="step-desc">If you have won the bid, a payment is required. Once complete, the shipment process of the item will begin!</p>
                 </div>
             </div>
 

@@ -14,10 +14,10 @@ const data = {
     datasets: [
       {
         backgroundColor: 'rgba(25, 46, 80, 0.952)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
+        borderColor: 'rgb(143, 17, 17)',
+        borderWidth: 2,
+        hoverBackgroundColor: 'rgb(143, 17, 17)',
+        hoverBorderColor: 'rgb(143, 17, 17)',
         data: [65, 59, 80, 81]
       }
     ]

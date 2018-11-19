@@ -66,12 +66,14 @@ width: 100px;
     background-color: rgb(136, 76, 94);
   }
 
-.add-item-btn{
-    text-decoration: none;
-    background-color: white;
-    
 
-
+.title-description{
+    font-family: 'Lato', sans-serif;
+    font-size: 16pt;
+    text-transform: capitalize;
+    width: 600px;
+    font-style: italic;
+    font-weight: 150;
 }
 
 li {

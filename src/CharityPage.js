@@ -64,13 +64,14 @@ class CharityPage extends Component {
         return (
         <div>
             <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
             <div className='home-container'>
 
                 <div class="charity-image">
                     <div class="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-CHARITIES-</h2>
 
 

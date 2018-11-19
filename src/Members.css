@@ -1,3 +1,4 @@
+
 .items{
     display: flex;
     flex-direction: row;
@@ -16,11 +17,14 @@
     
 }
 
+
 .image-size{
 height: 150px;
 width: 100px;
 }
-
+.bkr{
+    background-color: whitesmoke;
+}
 
 .member-main-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/members.jpeg");
@@ -29,6 +33,7 @@ width: 100px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-color: whitesmoke;
 }
 .hero-text {
     font-family: 'Libre Franklin', sans-serif;
@@ -60,11 +65,22 @@ width: 100px;
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.274);
+    
 
 }
 .active {
     background-color: rgb(136, 76, 94);
   }
+
+.title-description{
+    font-family: 'Lato', sans-serif;
+    font-size: 16pt;
+    text-transform: capitalize;
+    width: 600px;
+    font-style: italic;
+    font-weight: 150;
+}
+
 
 .add-item-btn{
     text-decoration: none;
@@ -94,8 +110,14 @@ li a:hover {
 }
 .search-member{
    display: flex;
-   float: right;
+   float: left;
    margin: 5px;
+   background-color: whitesmoke;
+
+}
+
+.search-div{
+    background-color: whitesmoke;
 }
 .members{
     display: flex;
@@ -109,6 +131,7 @@ li a:hover {
 .member-container{
 width: 300px;
 margin: 20px;
+background-color: whitesmoke;
     
 }
 .user-img{

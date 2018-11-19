@@ -69,13 +69,14 @@ class Members extends Component {
     render() {
         return (<div>
             <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
             <div className='home-container'>
 
                 <div class="member-main-image">
                     <div class="hero-text">
-                    <div className="title1">PASS</div>
-                    <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <div className="title1">PASS</div>
+                        <div className="title2">IT ON</div>
+                        <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-MEMBERS-</h2>
                     </div>
 
@@ -90,12 +91,16 @@ class Members extends Component {
                     </ul>
                 </div>
             </div>
-            <form onSubmit={this.handleSearchSubmit}>   
+            <div className="bkr" >
+            <form className="bkr" onSubmit={this.handleSearchSubmit}>
+                <div className="search-div">
                     <input className="search-member" type="search" placeholder="Find a Member!" onChange={this.handleSearchChange}></input>
+                </div>
             </form>
-           
+            </div>
+
             <div className="members">{this.state.listShown.map(this.renderAllMemebers)}</div>
-            <Map/>
+            <Map />
             <footer className="banner">
                 <div className="media-div">
                     <img className="media-img" src={'/facebook.png'} />

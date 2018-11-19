@@ -17,15 +17,21 @@
     background-color: rgb(0, 0, 0);
     padding-right: 20px;
     padding-left: 20px;
+    font-family: 'Lato', sans-serif;
+}
+.login-signup:hover{
+    font-weight: bold;
+    color: white;
 }
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/ocean.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/passing.jpeg");
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    animation: fadein 3s
 }
 
 .hero-text {
@@ -56,6 +62,15 @@
 
 }
 
+.title-description{
+    font-family: 'Lato', sans-serif;
+    font-size: 16pt;
+    text-transform: capitalize;
+    width: 600px;
+    font-style: italic;
+    font-weight: 150;
+}
+
 .tabs-container {
     list-style-type: none;
     margin: 0;
@@ -69,7 +84,7 @@
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.274); 
-    
+    font-family:'Lato', sans-serif; 
 }
 .active {
     background-color: rgb(136, 76, 94);
@@ -97,7 +112,7 @@ li a {
 }
 
 li a:hover {
-    background-color: rgb(136, 76, 94);
+    background-color:rgba(0, 0, 0, 0.726);
     text-decoration: none;
 }
 .top-5-title{
@@ -107,6 +122,9 @@ li a:hover {
 .item-link{
     text-decoration: none;
     color: black;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .item-link:hover{
@@ -138,11 +156,19 @@ li a:hover {
 
 /* This is the whole div around the full item - wont maniputlate much */
 .item-div-home{ 
+    height: 200px;
+    width: 300px;
+    margin: 20px;
+    display: flex;
+    box-shadow: 5px 10px #bbbbbb;
+    
+}
+.item-div-home:nth-child(2){
     margin: 20px;
     display: flex;
     box-shadow: 5px 10px #bbbbbb;
     height: 300px;
-    width: 700px;
+    width: 600px;
 }
 
 .home-link{
@@ -202,4 +228,10 @@ li a:hover {
     border-radius: 10%;
     text-transform: uppercase;
  
+}
+
+@keyframes fadein{
+    25%{opacity:0}
+    50%{opacity:.5;}
+    100%{opacity:1;}
 }

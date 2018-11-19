@@ -123,9 +123,11 @@ class Login extends Component {
         return (
             <div className="signup-main">
               <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+              <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet"></link>
+
              
                   <form className="form-style" onSubmit={this.handleSubmit}>
-                  <div className="add-text">-SIGN UP-</div>
+                  <div className="add-text">CREATE AN ACCOUNT</div>
                     <div className="add-details">
                         <div className="add-image">
                         <img className="add-image" src={`/${this.state.filename}`}></img>
@@ -138,15 +140,15 @@ class Login extends Component {
                    
                         <input className="input-field" type="text" onChange={this.handleFirstNameChange} placeholder="First Name"  placeholder="First Name" />
                         <input className="input-field" onChange={this.handleLastNameChange} type="text" placeholder="Last Name" />
-                        <input className="input-field" type="email" placeholder="Email" />
+                        <input className="input-field" type="email" placeholder="Email"  placeholder="Email" />
                         <input className="input-field" onChange={this.handleAddressChange} type="address" placeholder="Address"  placeholder="Address" />
-                        <input className="input-field" onChange={this.handleUsernameChange} type="text" placeholder="Username"  placeholder="Username" />
+                        <input className="input-field2" onChange={this.handleUsernameChange} type="text" placeholder="Username"  placeholder="Username" />
                         <input className="input-field" onChange={this.handlePasswordChange}type="password" placeholder="Passowrd"  placeholder="Password" />
 
                         <textarea className="input-field" rows="4" cols="20" type="textarea" onChange={this.handleBioChange} placeholder="Tell us a bit about yourself.."></textarea>
                 
               
-                        <div><input className="add-item-btn" type='submit' value="Sign Up" /></div>
+                        <div><input className="signup-btn" type='submit' value="Sign Up" /></div>
                     </div>
                       
                     </form>

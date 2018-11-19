@@ -59,14 +59,17 @@ class Login extends Component {
 
     render() {
         return (<div className="login-area">
+        <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet"></link>
             <div className="titlea">PASS</div>
             <div className="titleb">IT ON</div>
             <form className="login-form" onSubmit={this.handleSubmit}>
+         
                 <div className="login-titles">Username</div>
                 <input className="username" type="text" onChange={this.handleUsernameChange}></input>
                 <div className="login-titles">Password</div>
                 <input className="password" type="password" onChange={this.handlePasswordChange}></input>
                 <input className="login-btn" type="submit" value="ENTER"></input>
+                
             </form>
         </div>)
     }

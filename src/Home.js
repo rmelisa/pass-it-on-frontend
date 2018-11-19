@@ -90,6 +90,7 @@ class Home extends Component {
 
             <div className="item-div-home">
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
                 <Link to={"/itemDetails/" + item.itemID}><img className="item-image-home" src={item.imageName}></img></Link>
                 <div className="desc-box">
                     <div><Link to={"/itemDetails/" + item.itemID} className="item-link">{item.itemName}</Link> </div>
@@ -99,8 +100,6 @@ class Home extends Component {
                         <em>"{item.itemDescription}"</em>
                         <div>Posted By: {item.username}</div>
                         <div>Charity: {item.charity}</div>
-
-
                     </div>
                 </div >
             </div>
@@ -129,7 +128,7 @@ class Home extends Component {
                     <div className="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                        <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
 
                     </div>
                     <ul className="tabs-container">

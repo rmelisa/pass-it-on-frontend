@@ -115,14 +115,15 @@ class AddItem extends Component {
                     </ul>
                 <div class="hero-texts">
                    
-                    <div className="add-text">-ADD ITEM-</div>
+              
                 </div>
-
+                
 
                 <form className="form-style" onSubmit={this.handleSubmit}>
+                <div className="add-text">ADD ITEM</div>
                     <div className="add-details">
-                        <div className="add-image">
-                            <img className="add-image" src={`/${this.state.filename}`}></img>
+                        <div className="add-item-image">
+                            <img className="add-item-image" src={`/${this.state.filename}`}></img>
                         </div>
                         <div className="file-input">
                             <input id="hide" type="file" onChange={e => this.uploadFile(e.target.files[0])} />
