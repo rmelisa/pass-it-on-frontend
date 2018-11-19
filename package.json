@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:4000",
+  "proxy": "http://178.128.235.40:4030",
   "name": "some-awesome-name",
   "version": "0.1.0",
   "private": true,

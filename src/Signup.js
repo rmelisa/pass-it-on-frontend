@@ -136,11 +136,11 @@ class Login extends Component {
                     
                         </div>
                    
-                        <input className="input-field" type="text" onChange={this.handleFirstNameChange} placeholder="First Name"  placeholder="Item Name" />
+                        <input className="input-field" type="text" onChange={this.handleFirstNameChange} placeholder="First Name"  placeholder="First Name" />
                         <input className="input-field" onChange={this.handleLastNameChange} type="text" placeholder="Last Name" />
-                        <input className="input-field" type="email" placeholder="Email"  placeholder="Item Name" />
+                        <input className="input-field" type="email" placeholder="Email" />
                         <input className="input-field" onChange={this.handleAddressChange} type="address" placeholder="Address"  placeholder="Address" />
-                        <input className="input-field" onChange={this.handleUsernameChange} type="email" placeholder="Username"  placeholder="Username" />
+                        <input className="input-field" onChange={this.handleUsernameChange} type="text" placeholder="Username"  placeholder="Username" />
                         <input className="input-field" onChange={this.handlePasswordChange}type="password" placeholder="Passowrd"  placeholder="Password" />
 
                         <textarea className="input-field" rows="4" cols="20" type="textarea" onChange={this.handleBioChange} placeholder="Tell us a bit about yourself.."></textarea>

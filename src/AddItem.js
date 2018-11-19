@@ -12,7 +12,7 @@ class AddItem extends Component {
             itemName: '',
             minBid: 0,
             description: '',
-            charityChoice: 'charity1',
+            charityChoice: 'SPCA Montreal',
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handlePriceChange = this.handlePriceChange.bind(this)

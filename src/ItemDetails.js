@@ -26,7 +26,7 @@ class ItemDetails extends Component {
             let currentTime = Date.now()
             let distance = this.state.item.timerEnd - currentTime
             if (distance < 0) {
-                this.setState({ timeLeft: "0s, bidding is closed and won by " + this.state.item.currentBidUser })
+                this.setState({ timeLeft: `0s, bidding is closed and won by ${this.state.item.currentBidUser}` })
                 return
             }
             let days = Math.floor(distance / (1000 * 60 * 60 * 24));

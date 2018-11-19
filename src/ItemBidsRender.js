@@ -31,19 +31,13 @@ class ItemBidsRender extends Component {
 
 
     }
-    // getTotal() {
-    //     let total = 0
-    //     this.props.bid.forEach(function (item) {
-    //         let price = parseInt(item.currentBid)
-    //         total += price
-    // 
-    //     }.bind(this))
-    // }
+
 
     render() {
         let curBid = this.props.bid
         let currentTime = Date.now()
         let status;
+        let distance = curBid.timerEnd - currentTime
         if (curBid.timerEnd > currentTime) {
             status = 'Auction in progress'
         } else {
@@ -60,9 +54,8 @@ class ItemBidsRender extends Component {
                 <div>Current bid at:&nbsp;{curBid.currentBid}$</div>
                 <div>Time remaining on auction:&nbsp;{this.state.timeLeft}</div>
                 <div>{status}</div>
-
             </div>
-            <Checkout/>
+            {distance < 0 && curBid.currentBidUser === curBid.mybid.username ? (<Checkout/>): (<div/>)}
         </div>
         )
     }
