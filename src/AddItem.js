@@ -4,6 +4,7 @@ import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import './AddItem.css';
 
+
 class AddItem extends Component {
     constructor(props) {
         super(props)
@@ -103,13 +104,15 @@ class AddItem extends Component {
         return (
             <div className='add-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
-                <ul className="tab-container">
-                    <li><Link to={"/"}>Home</Link></li>
-                    <li><Link to={"/FAQ/"}>How it works</Link></li>
-                    <li><Link to={"/members/"}>Other members</Link></li>
-                    <li><Link to={"/Charities/"}>Charities</Link></li>
-                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                </ul>
+                <ul className="tab-container">             
+                        <li><Link to={"/"}>Home</Link></li>
+                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                        <li><Link to={"/members/"}>Other Members</Link></li>
+                        <li><Link to={"/Charities/"}>Charities</Link></li>
+                        <li><Link to={"/addItem/"} className="active">Add Item</Link></li>
+                        <li><Link to={"/FAQ/"}>About</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                    </ul>
                 <div class="hero-texts">
                    
                     <div className="add-text">-ADD ITEM-</div>

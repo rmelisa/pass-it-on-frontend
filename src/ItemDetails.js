@@ -5,6 +5,7 @@ import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 
 
+
 class ItemDetails extends Component {
     constructor(props) {
         super(props)
@@ -137,14 +138,15 @@ class ItemDetails extends Component {
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
 
                     </div>
-                <ul className="tabs-container">
-                    <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                    <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                    <li><Link to={"/members/"}>Other Members</Link></li>
-                    <li><Link to={"/Charities/"}>Charities</Link></li>
-                    <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                    <li><Link to={"/addItem/"}>Add Item</Link></li>
-                </ul>
+                    <ul className="tabs-container">
+                        <li><Link to={"/"}>Home</Link></li>
+                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                        <li><Link to={"/members/"}>Other Members</Link></li>
+                        <li><Link to={"/Charities/"}>Charities</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        <li><Link to={"/FAQ/"}>About</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                    </ul>
                 </div>
 
             <form className="bid-system">

@@ -10,23 +10,8 @@ import './footer.css'
 class FAQ extends Component {
     constructor() {
         super()
-        this.state = {
-        }
-        this.getTotal = this.getTotal.bind(this)
 
     }
-
-    getTotal() {
-        let total = 0
-        this.props.items.forEach(function (item) {
-            let price = parseInt(item.newBid)
-            total += price
-        });
-        return `${total} $`
-    }
-
-
-
 
     render() {
         return (<div>
@@ -39,22 +24,18 @@ class FAQ extends Component {
                         <div className="title2">IT ON</div>
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
                         <h2>-HOW IT WORKS-</h2>
-
-
-
                     </div>
                     <ul className="tabs-container">
                         <li><Link to={"/"}>Home</Link></li>
                         <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
                         <li><Link to={"/members/"}>Other Members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        <li><Link to={"/FAQ/"} className="active">About</Link></li>
                         <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                        <li><Link to={"/map/"}>Map</Link></li>
                     </ul>
                 </div>
             </div>
-
-
             <div className="faq">
                 <div className="seller">
                     <h2 className="step-title">Do you want to sell your item and have the proceeds go to a charity of your choice?</h2>
@@ -79,6 +60,22 @@ class FAQ extends Component {
                     <span className="steps">4</span>
                     <p className="step-desc">If you have won the bid a payment is required. Once complete the process of shipment of the item commences</p>
                 </div>
+            </div>
+
+            <div className="About-Us">
+                <div>
+                <img className="owners" src={'/Christina.jpg'}></img>
+                <p>hey Im Christinafblsdjkfbvblv jhbfvls sdjfnbvlsdfhv </p>
+                </div>
+                <div>
+                <img className="owners" src={'/Elisa.jpg'}></img>
+                <p>hey Im Christinafblsdjkfbvblv jhbfvls sdjfnbvlsdfhv </p>
+                </div>
+                <div>
+                <img className="owners" src={'/Shabnam.jpg'}></img>
+                <p>hey Im Christinafblsdjkfbvblv jhbfvls sdjfnbvlsdfhv </p>
+                </div>
+
             </div>
 
             <footer className="banner">

@@ -25,6 +25,9 @@
     background-color: whitesmoke;
 
 }
+.active {
+    background-color: rgb(136, 76, 94);
+  }
 
 .bid-desc{
     display: flex;

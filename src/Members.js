@@ -28,7 +28,7 @@ class Members extends Component {
         event.preventDefault()
         let searchInput = event.target.value
         let filteredUsers = this.state.membersList.filter(function (user) {
-            return user.username.includes(searchInput)
+            return user.username.toLowerCase().includes(searchInput)
         })
         this.setState({ listShown: filteredUsers })
         return filteredUsers
@@ -79,13 +79,14 @@ class Members extends Component {
                         <h2>-MEMBERS-</h2>
                     </div>
 
-                    <ul className="tabs-container">
+                     <ul className="tabs-container">
                         <li><Link to={"/"}>Home</Link></li>
                         <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                        <li><Link to={"/members/"} className="active">Other Members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
-                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                         <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        <li><Link to={"/FAQ/"}>About</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     </ul>
                 </div>
             </div>

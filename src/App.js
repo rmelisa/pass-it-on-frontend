@@ -16,6 +16,7 @@ import Map from './Map.js'
 import Chart from './Chart.js'
 
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -24,14 +25,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let callBack = function (res){
+    let callBack = function (res) {
       let parsed = JSON.parse(res)
       if (parsed.status) {
-        this.props.dispatch({  
+        this.props.dispatch({
           type: "setSession",
           sessionID: parsed.sessionID
         })
-        this.props.dispatch({  
+        this.props.dispatch({
           type: "setUsername",
           username: parsed.username
         })
@@ -40,7 +41,7 @@ class App extends Component {
 
     callBack = callBack.bind(this)
     fetch('/sessionActive', {
-      method:'GET',
+      method: 'GET',
       credentials: "same-origin"
     }).then(function (x) {
       return x.text()
@@ -69,35 +70,29 @@ class App extends Component {
     return (<AddItem />)
   }
   renderItemsList() {
-    return (<ItemsList/>)
+    return (<ItemsList />)
   }
-  renderCharityPage(){
-    return(<CharityPage/>)
+  renderCharityPage() {
+    return (<CharityPage />)
   }
-  renderFAQPage(){
-    return(<FAQ/>)
+  renderFAQPage() {
+    return (<FAQ />)
   }
-  renderItemsBid(){
-     return (<ItemsBid/>)
-   }
-  
+  renderItemsBid() {
+    return (<ItemsBid />)
+  }
+
   renderMember(routerData) {
     let username = routerData.match.params.username;
     return (<Members username={username} />)
   }
-  renderMap(){
+  renderMap() {
     return (<Map></Map>)
   }
-  renderChart(){
+  renderChart() {
     return (<Chart></Chart>)
   }
-
-  // renderCart(){
-  //   return(<ShoppingCart/>)
-  //   }
-// renderFAQ(){
-//   return (<FAQ/>)
-// }
+  
 
   render() {
     return (
@@ -113,9 +108,9 @@ class App extends Component {
           <Route exact={true} path='/Charities/' render={this.renderCharityPage} />
           <Route exact={true} path='/Chart/' render={this.renderChart} />
           <Route exact={true} path='/FAQ/' render={this.renderFAQPage} />
-          <Route exact={true} path= '/ItemsBid/' render={this.renderItemsBid} />
+          <Route exact={true} path='/ItemsBid/' render={this.renderItemsBid} />
           <Route exact={true} path='/members/' render={this.renderMember} />
-          <Route exact={true} path='/map/' render={this.renderMap} />
+          <Route exact={true} path='/AboutUs/' render={this.renderAboutUs} />
         </div>
       </BrowserRouter>
     );

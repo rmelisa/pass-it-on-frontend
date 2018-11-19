@@ -38,6 +38,9 @@
     background-color: rgba(0, 0, 0, 0.274);
 
 }
+.active {
+    background-color: rgb(136, 76, 94);
+  }
 
 .add-item-btn{
     text-decoration: none;
@@ -103,3 +106,18 @@ border-right: 2px solid black;
 }
 
 
+.owners{
+    height:150px;
+    width: 125px;
+    margin-top: 30px;
+    margin-right: 20px;
+    border-radius: 50%;
+    
+}
+
+.About-Us{
+    display: flex;
+    flex-direction: row;
+    padding-left: 200px;
+    padding-top: 50px;
+}

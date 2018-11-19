@@ -5,6 +5,7 @@ import { withRouter } from 'react-router'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './Home.css';
 
+
 class Home extends Component {
     constructor() {
         super()
@@ -103,7 +104,6 @@ class Home extends Component {
                     </div>
                 </div >
             </div>
-
         )
     }
 
@@ -132,15 +132,14 @@ class Home extends Component {
                         <p>Taking unwanted items and turning them into monatary donations to those in need</p>
 
                     </div>
-
-                    {/* {this.getTopItems()} */}
                     <ul className="tabs-container">
+                        <li ><Link to={"/"} className="active">Home</Link></li>
                         <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
                         <li><Link to={"/members/"}>Other Members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
-                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                         <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        <li><Link to={"/FAQ/"}>About</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     </ul>
                 </div>
 
@@ -172,18 +171,18 @@ class Home extends Component {
                         <img className="media-img" src={'/instagram.png'} />
                         <img className="media-img" src={'/twitter.png'} />
                     </div>
-                  
-                    </footer>
-                        
 
-            
-                </div>)
-        }
+                </footer>
+
+
+
+            </div>)
     }
+}
 let connectedHome = connect(function (store) {
     return {
-                    sessionID: store.session,
-            username: store.username
-        }
-    })(withRouter(Home))
+        sessionID: store.session,
+        username: store.username
+    }
+})(withRouter(Home))
 export default connectedHome

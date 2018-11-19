@@ -4,6 +4,8 @@ import { Route, BrowserRouter, Link } from 'react-router-dom'
 
 const MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoiYm9yaGFhbiIsImEiOiJjam9pdnNsaWswZGgxM3FtaTcwbXNuMXZ1In0.dsqmmjBjCMkxcFhjcZ-gSA"
 
+
+
 class Map extends Component {
   constructor(props) {
     super(props)
@@ -11,15 +13,37 @@ class Map extends Component {
       viewport: {
         width: 1200,
         height: 200,
-        latitude: 37.7577,
-        longitude: -122.4376,
-        zoom: 8
+        latitude: 45.5017,
+        longitude: -100.5673,
+        zoom: 6
       },
-      membersList: []
+      members: []
 
     };
+    this.MarkerForMembers = this.MarkerForMembers.bind(this)
   }
 
+  componentDidMount(){
+    let cb = function (response) {
+      let parsed = JSON.parse(response)
+      console.log(parsed)
+      this.setState({ members: parsed})
+  }
+cb = cb.bind(this)
+    
+      fetch("/getMembers")
+          .then(function (x) {
+              return x.text()
+          })
+          .then(cb)
+  }
+
+  MarkerForMembers(member){
+    console.log("hey shabi!", member.lat, member.lon)
+    return(<Marker latitude={member.location.lat} longitude={member.location.lon} offsetLeft={-20} offsetTop={-10}>
+      <div><img src="/pin2.png"></img></div>
+    </Marker>)
+  }
   render() {
     return (<div>
       
@@ -28,9 +52,7 @@ class Map extends Component {
       onViewportChange={(viewport) => this.setState({ viewport })}
       mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
       >
-        <Marker latitude={37.78} longitude={-122.41} offsetLeft={-20} offsetTop={-10}>
-          <div><img src="/pin2.png"></img></div>
-        </Marker>
+        {this.state.members.map(this.MarkerForMembers)}
         
         </ReactMapGL>
     </div>

@@ -4,6 +4,8 @@ import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import ItemsBidsRender from './ItemBidsRender.js'
 import './ItemsBid.css'
+import Checkout from './Checkout.js'
+
 
 class ItemsBid extends Component {
     constructor(props) {
@@ -62,13 +64,14 @@ class ItemsBid extends Component {
                         <h2>-YOUR BIDS-</h2>
                     </div>
 
-                    <ul className="tabs-container">
+                     <ul className="tabs-container">
                         <li><Link to={"/"}>Home</Link></li>
                         <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                        <li><Link to={"/Members/"}>Members</Link></li>
+                        <li><Link to={"/members/"}>Other Members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
                         <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        <li><Link to={"/FAQ/"}>About</Link></li>
+                        <li><Link to={"/ItemsBid/"} className="active">My Bids</Link></li>
                     </ul>
                 </div>
             </div>
@@ -81,6 +84,7 @@ class ItemsBid extends Component {
                     <img className="media-img" src={'/twitter.png'} />
                 </div>
             </footer>
+            <div><Checkout/></div>
         </div>)
     }
 }

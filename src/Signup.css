@@ -33,3 +33,7 @@
 .upload-img{
     color: white;
 }
+
+.active {
+    background-color: rgb(136, 76, 94);
+  }

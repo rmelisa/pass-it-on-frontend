@@ -88,3 +88,6 @@
     text-transform: uppercase;
     font-size: 20pt;
 }
+.active {
+    background-color: rgb(136, 76, 94);
+  }

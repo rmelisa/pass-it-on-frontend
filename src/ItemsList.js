@@ -68,11 +68,12 @@ class ItemsList extends Component {
                     {/* {this.getTopItems()} */}
                     <ul className="tabs-container">
                         <li><Link to={"/"}>Home</Link></li>
-                        <li><Link to={"/FAQ/"}>How it works</Link></li>
-                        <li><Link to={"/members/"}>Other members</Link></li>
+                        <li><Link to={"/itemsList/"} className="active">Items for Sale</Link></li>
+                        <li><Link to={"/members/"}>Other Members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
-                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                         <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     </ul>
                 </div>
                 <div className="all-items">{this.state.itemsDisplayed.map(this.renderItems)}</div>

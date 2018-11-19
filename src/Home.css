@@ -68,8 +68,14 @@
     justify-content: space-around;
     position: absolute;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.274);  
+    background-color: rgba(0, 0, 0, 0.274); 
+    
 }
+.active {
+    background-color: rgb(136, 76, 94);
+  }
+
+  
 .logout{
     display:flex;
     justify-content: space-between;

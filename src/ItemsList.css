@@ -62,6 +62,9 @@ width: 100px;
     background-color: rgba(0, 0, 0, 0.274);
 
 }
+.active {
+    background-color: rgb(136, 76, 94);
+  }
 
 .add-item-btn{
     text-decoration: none;
