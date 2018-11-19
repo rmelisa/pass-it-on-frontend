@@ -5,6 +5,7 @@ import { withRouter } from 'react-router'
 import Home from './Home.js'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import "./Members.css"
+import Map from './Map.js'
 
 class Members extends Component {
     constructor(props) {
@@ -84,18 +85,16 @@ class Members extends Component {
                         <li><Link to={"/FAQ/"}>How it Works</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
                         <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                        <li><Link to={"/map/"}>Map</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
                     </ul>
                 </div>
-
             </div>
-            <form onSubmit={this.handleSearchSubmit}>
-                
+            <form onSubmit={this.handleSearchSubmit}>   
                     <input className="search-member" type="search" placeholder="Find a Member!" onChange={this.handleSearchChange}></input>
-                 
-        
             </form>
+           
             <div className="members">{this.state.listShown.map(this.renderAllMemebers)}</div>
+            <Map/>
             <footer className="banner">
                 <div className="media-div">
                     <img className="media-img" src={'/facebook.png'} />

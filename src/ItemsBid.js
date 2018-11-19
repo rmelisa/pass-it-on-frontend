@@ -68,7 +68,7 @@ class ItemsBid extends Component {
                         <li><Link to={"/FAQ/"}>How it Works</Link></li>
                         <li><Link to={"/Members/"}>Members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
-                        <li><Link to={"/map/"}>Map</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
                     </ul>
                 </div>
             </div>

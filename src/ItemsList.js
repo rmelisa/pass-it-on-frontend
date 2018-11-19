@@ -33,25 +33,25 @@ class ItemsList extends Component {
     renderItems(item) {
         //check that the variable names match what gets returned from the fetch, example image, itemID, price, description
         return (<div className="item-card">
-                <img className="item-image" top width="30%" src={'/' + item.imageName} alt="Image" />
-                <div>
-                    <div ><Link to={"/itemDetails/" + item.itemID} className="name-link">{item.itemName}</Link> </div>
-                    <div className="item-list-desc">
-                        <p >{item.charity}</p>
-                        <p className="hover-desc">{item.itemDescription}</p>
-                        
-                    </div>
-                </div>
-            </div>)
-    
-        }
-    
-    
-    renderHome() {
-                this.props.history.push('/')
-            }
+            <Link to={"/itemDetails/" + item.itemID}> <img className="item-image" top width="30%" src={'/' + item.imageName} alt="Image" /></Link>
+            <div>
+                <div ><Link to={"/itemDetails/" + item.itemID} className="name-link">{item.itemName}</Link> </div>
+                <div className="item-list-desc">
+                    <p >{item.charity}</p>
+                    <p className="hover-desc">{item.itemDescription}</p>
 
-            render() {
+                </div>
+            </div>
+        </div>)
+
+    }
+
+
+    renderHome() {
+        this.props.history.push('/')
+    }
+
+    render() {
 
         return (
             <div className='home-container'>
@@ -72,25 +72,25 @@ class ItemsList extends Component {
                         <li><Link to={"/members/"}>Other members</Link></li>
                         <li><Link to={"/Charities/"}>Charities</Link></li>
                         <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                        <li><Link to={"/map/"}>Map</Link></li>
+                        <li><Link to={"/addItem/"}>Add Item</Link></li>
                     </ul>
                 </div>
                 <div className="all-items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
                 <footer className="banner">
-                <div className="media-div">
-                    <img className="media-img" src={'/facebook.png'} />
-                    <img className="media-img" src={'/instagram.png'} />
-                    <img className="media-img" src={'/twitter.png'} />
-                </div>
-            </footer>
+                    <div className="media-div">
+                        <img className="media-img" src={'/facebook.png'} />
+                        <img className="media-img" src={'/instagram.png'} />
+                        <img className="media-img" src={'/twitter.png'} />
+                    </div>
+                </footer>
             </div>
-            )
-        }
+        )
     }
-    
+}
+
 let connectedItemsList = connect(function (store) {
     return {
-                sessionID: store.session
-        }
-    })(withRouter(ItemsList))
+        sessionID: store.session
+    }
+})(withRouter(ItemsList))
 export default connectedItemsList

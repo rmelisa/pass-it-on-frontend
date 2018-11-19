@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //Reducer:
 let reducer = function( state, action){
     if(action.type ==="setSession"){
-        return{...state, session: action.sessionID }
+        return{...state, session: action.sessionID  }
     }
     if(action.type === "setItemID"){
         return{...state, itemID: action.id}

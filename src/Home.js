@@ -4,7 +4,6 @@ import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './Home.css';
-import './footer.css'
 
 class Home extends Component {
     constructor() {
@@ -89,90 +88,80 @@ class Home extends Component {
         return (
 
             <div className="item-div-home">
-               
-                <img className="item-image-home" src={item.imageName}></img>
-
-                <div>
-                    <div><Link to={"/itemDetails/" + item.itemID} className="home-link" >{item.itemName}</Link></div>
-                    <div className="home-dets">
+                <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <Link to={"/itemDetails/" + item.itemID}><img className="item-image-home" src={item.imageName}></img></Link>
+                <div className="desc-box">
+                    <div><Link to={"/itemDetails/" + item.itemID} className="item-link">{item.itemName}</Link> </div>
+                    <div className="desc-item">
                         <div>Min Bid: {item.minBid}$</div>
                         <div>Current Bid: {item.currentBid}$</div>
                         <em>Description: {item.itemDescription}</em>
                         <div>Posted By: {item.username}</div>
                         <div>Charity: {item.charity}</div>
+
+
                     </div>
+                </div >
                 </div>
-            </div>
 
-        )
-    }
-
+                )
+            }
+        
     renderCharityInfo() {
-        let charities = Object.keys(this.state.charityTotals)
-        return (
-            <div className="charity-info">{charities.map(function (charity) {
-                return (<div className="chairty-name">{charity}
-                    <div className="amount-raised">
-                    Amount raised: ${this.state.charityTotals[charity]}
-                    </div>
-                </div>)
-            }.bind(this))}
-            </div>
-        )
-    }
+                    let charities = Object.keys(this.state.charityTotals)
+                return (
+            <div>{charities.map(function (charity) {
+                    return (<div>Charity Name: {charity}
+                        <br></br>
+                        Amount raised: {this.state.charityTotals[charity]}
+                    </div>)
+                }.bind(this))}
+                </div>
+                )
+            }
     render() {
 
         return (
-
+        
             <div className='home-container'>
-                {this.handleTopLeft()}
-                <div className="hero-image">
-                    <div className="hero-text">
-                        <div className="title1">PASS</div>
-                        <div className="title2">IT ON</div>
-                        <p>Taking unwanted items and turning them into monatary donations to those in need</p>
+                    {this.handleTopLeft()}
+                    <div className="hero-image">
+                        <div className="hero-text">
+                            <div className="title1">PASS</div>
+                            <div className="title2">IT ON</div>
+                            <p>Taking unwanted items and turning them into monatary donations to those in need</p>
 
+                        </div>
+
+                        {/* {this.getTopItems()} */}
+                        <ul className="tabs-container">
+                            <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
+                            <li><Link to={"/FAQ/"}>How it Works</Link></li>
+                            <li><Link to={"/members/"}>Other Members</Link></li>
+                            <li><Link to={"/Charities/"}>Charities</Link></li>
+                            <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
+                            <li><Link to={"/addItem/"}>Add Item</Link></li>
+                        </ul>
                     </div>
 
-                    {/* {this.getTopItems()} */}
-                    <ul className="tabs-container">
-                        <li><Link to={"/itemsList/"}>Items for Sale</Link></li>
-                        <li><Link to={"/FAQ/"}>How it Works</Link></li>
-                        <li><Link to={"/members/"}>Other Members</Link></li>
-                        <li><Link to={"/Charities/"}>Charities</Link></li>
-                        <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                        <li><Link to={"/map/"}>Map</Link></li>
-                        <li><Link to={"/addItem/"}>Add Item</Link></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <p className="top-5-title">Top 5 Items With the Highest Bid!</p>
-                </div>
-                <div className="home-items">
-                <div className="charity-info">{this.renderCharityInfo()} </div>
-                    {this.state.itemsDisplayed.map(this.renderItems)}
-                </div>
-           
-                  
-            
-
-
-                <footer className="banner">
-                    <div className="media-div">
-                        <img className="media-img" src={'/facebook.png'} />
-                        <img className="media-img" src={'/instagram.png'} />
-                        <img className="media-img" src={'/twitter.png'} />
+                    <div className="btn">
+                        <p className="top-5-title">Top 5 Items With the Highest Bid!</p>
                     </div>
-                </footer>
+                    <div className="items-home">
+                        {this.state.itemsDisplayed.map(this.renderItems)}
+                    </div>
+                    <div> {this.renderCharityInfo()} </div>
+                    <footer>
+                        <div className="banner"></div>
+                    </footer>
 
-            </div>)
+                </div>)
+        }
     }
-}
 let connectedHome = connect(function (store) {
     return {
-        sessionID: store.session,
-        username: store.username
-    }
-})(withRouter(Home))
+                    sessionID: store.session,
+                username: store.username
+            }
+        })(withRouter(Home))
 export default connectedHome

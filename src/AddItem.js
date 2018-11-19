@@ -117,7 +117,6 @@ class AddItem extends Component {
                     <li><Link to={"/members/"}>Other members</Link></li>
                     <li><Link to={"/Charities/"}>Charities</Link></li>
                     <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
-                    <li><Link to={"/map/"}>Map</Link></li>
                 </ul>
                 </div>
             <div className="nav-add">
