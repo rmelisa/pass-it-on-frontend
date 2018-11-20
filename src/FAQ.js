@@ -84,7 +84,7 @@ class FAQ extends Component {
                 <div className="owner-container">
                     <img className="owners" src={'/Shabnam.jpg'}></img>
                     <p className="owners-desc">
-                        Shabnam is  ,
+                        Shabnam is Tehran-born,
                         with Computer-Science background.
                         She finds helping makes you feel better 
                         as a human being!
