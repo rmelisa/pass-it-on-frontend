@@ -5,16 +5,19 @@
     display: flex;
     flex-direction: row;
     color:white;
-    background-color: rgb(0, 0, 0);
+    padding-top: 5px;
+    padding-left: 2px;
+    
     padding-right: 20px;
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: bold;
     width: 100%;
 }
 
 .login-signup{
     color:white;
-    background-color: rgba(0, 0, 0, 0.274); 
+    padding-top: 5px;
+    padding-left: 2px;
     padding-right: 20px;
     padding-left: 20px;
     font-family: 'Lato', sans-serif;
@@ -97,7 +100,7 @@
      padding-right: 120px;
      padding-left: 120px;
      padding-bottom: 30px;
-     margin-bottom: 40px;
+     margin-bottom: 10px;
      font-family:'Lato', sans-serif; 
      text-align: center;
      font-weight: bold;
@@ -106,8 +109,12 @@
  } 
 .logout{
     display:flex;
-    justify-content: space-between;
-    margin-left: 30px;
+    color: rgb(179, 4, 4);
+    width: 70px;
+    border-radius: 3px;
+    font-family:'Lato', sans-serif; 
+    margin-top: 10px;
+    
 }
 
 li {
@@ -169,12 +176,11 @@ li a:hover {
 
 /* This is the whole div around the full item - wont maniputlate much */
 .item-div-home{ 
-    height: 200px;
-    width: 300px;
+    height: 180px;
+    width: 380px;
     margin: 20px;
     display: flex;
     box-shadow: 5px 6px #bbbbbb;
-    
 }
 .item-div-home:nth-child(2){
     margin: 20px;
@@ -189,24 +195,26 @@ li a:hover {
     width: 380px;
 }
 /* controls each image */
-.item-image-home{
-    height: 115px;
-    width: 220px;
+.item-div-home .item-image-home{
+    height: 175px;
+    width: 260px;
 }
 
+.item-div-home .item-link{
+   font-size: 8.8pt;
+  
 
+}
 .item-image-home:nth-child(2){
     height: 300px;
     
 }
-.desc-item{
-    height: 300px;
-    font-size: 20px;
-}
 
-.desc-item:nth-child(2){
-    height: 100px;
-    font-size: 10px;
+.desc-box{
+    font-size: 8px;
+}
+.item-div-home:nth-child(2) .desc-box{
+    font-size: 13px;
 }
 
 .home-link{
@@ -246,6 +254,8 @@ li a:hover {
     display: flex;
     padding-right: 400px;
     margin-top: 15px;
+    background-color: rgb(248, 245, 245);
+
 }
 .charity-header{
     margin-right: 400px;
@@ -255,13 +265,18 @@ li a:hover {
     text-align: center;
     border-radius: 10%;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
     
 }
 
 .top-header{
     color: black;
     padding-right: 10px;
-    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
     border-radius: 10%;
     text-transform: uppercase;
  
@@ -270,5 +285,35 @@ li a:hover {
 @keyframes fadein{
     25%{opacity:0}
     50%{opacity:.5;}
+    75%{opacity:0.75;}
     100%{opacity:1;}
+}
+
+.charity-totals{
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 600px;
+    height: 300px;
+    padding-left: 80px;
+    padding-top:20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.308)), url("/ppl.jpeg");
+    color: white;
+    box-shadow: 5px 10px #bbbbbb;
+
+    
+}
+
+
+.chairty-nm{
+    padding: 5px;
+    font-weight: bold;
+    font-family:'Lato', sans-serif; 
+    font-size: 18px;
+    
+}
+.raised-amt{
+    font-style: oblique;
+
+
 }

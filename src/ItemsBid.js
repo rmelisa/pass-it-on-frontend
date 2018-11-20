@@ -57,6 +57,8 @@ class ItemsBid extends Component {
             <div className='home-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
                 <div class="main-bid-image">
                     <div class="hero-text">
                         <div className="title1">PASS</div>
@@ -76,7 +78,7 @@ class ItemsBid extends Component {
                     </ul>
                 </div>
             </div>
-            <p>Items You Have Bid On</p>
+            <div className="bid-title">ITEMS YOU HAVE BID ON</div>
             <div>{this.state.bids.map(this.renderBids)}</div>
             <footer className="banner">
                 <div className="media-div">
