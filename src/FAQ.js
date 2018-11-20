@@ -64,17 +64,29 @@ class FAQ extends Component {
             </div>
 
             <div className="About-Us">
-                <div>
-                <img className="owners" src={'/Christina.jpg'}></img>
-                <p>hey Im Christinafblsdjkfbvblv jhbfvls sdjfnbvlsdfhv </p>
+                <div className="owner-container">
+                    <img className="owners" src={'/Christina3.jpg'}></img>
+                    <p className="owners-desc">
+                        Christina is London-born,
+                        Comes from Medical field.
+                        She found her passion in coding.
+                        She loves travelling
+                        and helping others who are in need! </p>
                 </div>
-                <div>
-                <img className="owners" src={'/Elisa.jpg'}></img>
-                <p>hey Im Christinafblsdjkfbvblv jhbfvls sdjfnbvlsdfhv </p>
+                <div className="owner-container">
+                    <img className="owners" src={'/Elisa.jpg'}></img>
+                    <p className="owners-desc">
+                        Elisa is Montreal-born, comes from Food Industry. She is passionate about coding and sports. She feels good when she donates!
+                    </p>
                 </div>
-                <div>
-                <img className="owners" src={'/Shabnam.jpg'}></img>
-                <p>hey Im Christinafblsdjkfbvblv jhbfvls sdjfnbvlsdfhv </p>
+                <div className="owner-container">
+                    <img className="owners" src={'/Shabnam.jpg'}></img>
+                    <p className="owners-desc">
+                        Shabnam is Tehran-born,
+                        with Computer-Science background.
+                        She finds helping makes you feel better 
+                        as a human being!
+                    </p>
                 </div>
 
             </div>

@@ -121,9 +121,9 @@ border-right: 2px solid black;
 .owners{
     height:150px;
     width: 125px;
-    margin-top: 30px;
-    margin-right: 20px;
+   
     border-radius: 50%;
+    justify-content: space-around;
     
 }
 
@@ -131,5 +131,14 @@ border-right: 2px solid black;
     display: flex;
     flex-direction: row;
     padding-left: 200px;
-    padding-top: 50px;
+    padding-right: 200px;
+    padding-top: 20px;
+    text-align: center;
+  
 }
+.owner-container{
+    padding: 30px;
+}
+ .owners-desc{
+    width: 200px;
+ }
