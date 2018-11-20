@@ -44,6 +44,14 @@
     margin-top: 30px;
     
 }
+.spca-div a{
+    color: black;
+    font-weight: bold;
+}
+.spca-div a:hover{
+    color: black;
+    font-weight: bolder;
+}
 
 .msf-div{
     margin-top: 30px;
@@ -54,6 +62,15 @@
     height:100px;
     margin-top: 30px;
 }
+
+.msf-div a{
+    color: black;
+    font-weight: bold;
+}
+.msf-div a:hover{
+    color: black;
+    font-weight: bolder;
+}
 .ccs-div{
     margin-top: 30px;
     width: 300px;
@@ -61,17 +78,37 @@
 
 .ccs-img{
     height:80px;
-    margin-top: 30px;
+    margin-top: 60px;
+    padding-right: 5px;
+}
+.ccs-div a{
+    color: black;
+    font-weight: bold;
+}
+.ccs-div a:hover{
+    color: black;
+    font-weight: bolder;
 }
 
 .camh-div{
     margin-top: 30px;
-    width: 300px;
+    width: 280px;
 }
 
 .camh-img{
-    height:80px;
-    margin-top: 30px;
+    height:70px;
+    margin-top: 60px;
+    width: 320px;
+    margin-left: 30px;
+}
+
+.camh-div a{
+    color: black;
+    font-weight: bold;
+}
+.camh-div a:hover{
+    color: black;
+    font-weight: bolder;
 }
 
 

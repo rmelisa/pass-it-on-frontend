@@ -56,8 +56,6 @@ class Members extends Component {
                 <div className="member-container">
                     <img className="user-img" src={'/' + user.imageName}></img>
                     <div className="desc-1">Username:{user.username}</div>
-                    <div className="desc-2">First Name: {user.firstName}</div>
-                    <div className="desc-3">Last Name: {user.lastName}</div>
                     <div className="desc-3">Bio: {user.bio}</div>
                 </div>
             </div>
@@ -103,9 +101,9 @@ class Members extends Component {
             <Map />
             <footer className="banner">
                 <div className="media-div">
-                    <img className="media-img" src={'/facebook.png'} />
-                    <img className="media-img" src={'/instagram.png'} />
-                    <img className="media-img" src={'/twitter.png'} />
+                <img className="media-img" src={'/facebook-xxl.png'} />
+                        <img className="media-img" src={'/instagram-xxl.png'} />
+                        <img className="media-img" src={'/twitter-xxl.png'} />
                 </div>
             </footer>
         </div>)

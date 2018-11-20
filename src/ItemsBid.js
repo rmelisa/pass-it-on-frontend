@@ -80,9 +80,9 @@ class ItemsBid extends Component {
             <div>{this.state.bids.map(this.renderBids)}</div>
             <footer className="banner">
                 <div className="media-div">
-                    <img className="media-img" src={'/facebook.png'} />
-                    <img className="media-img" src={'/instagram.png'} />
-                    <img className="media-img" src={'/twitter.png'} />
+                <img className="media-img" src={'/facebook-xxl.png'} />
+                        <img className="media-img" src={'/instagram-xxl.png'} />
+                        <img className="media-img" src={'/twitter-xxl.png'} />
                 </div>
             </footer>
     

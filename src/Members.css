@@ -80,7 +80,12 @@ width: 100px;
     font-style: italic;
     font-weight: 150;
 }
-
+.desc-1{
+    font-family: 'Prompt', sans-serif;
+}
+.desc-3{
+    font-family: 'Prompt', sans-serif;
+}
 
 .add-item-btn{
     text-decoration: none;

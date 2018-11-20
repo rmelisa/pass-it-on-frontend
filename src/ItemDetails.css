@@ -86,10 +86,10 @@ li a:hover {
 
 .det-img {
     display: flex;
-    height: 200px;
+    height: 245px;
     box-shadow: 1px 2px black;
     justify-content: space-around;
-    height: 300px;
+ 
     width: 350px;
     margin: 10px;
     

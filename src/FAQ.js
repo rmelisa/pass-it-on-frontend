@@ -81,9 +81,9 @@ class FAQ extends Component {
 
             <footer className="banner">
                 <div className="media-div">
-                    <img className="media-img" src={'/facebook.png'} />
-                    <img className="media-img" src={'/instagram.png'} />
-                    <img className="media-img" src={'/twitter.png'} />
+                <img className="media-img" src={'/facebook-xxl.png'} />
+                        <img className="media-img" src={'/instagram-xxl.png'} />
+                        <img className="media-img" src={'/twitter-xxl.png'} />
                 </div>
             </footer>
 
