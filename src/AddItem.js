@@ -88,7 +88,7 @@ class AddItem extends Component {
         }).then(function (res) {
             let parsed = JSON.parse(res)//check what is being sent back
             if (parsed.status) {
-                alert('item added succesfully')
+                alert('ITEM ADDED SUCCESFULLY')
                 this.props.history.push('/')
             } else {
                 alert('item was not added succesfully, please login and try again')

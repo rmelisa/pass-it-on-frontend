@@ -67,22 +67,24 @@ class FAQ extends Component {
                 <div className="owner-container">
                     <img className="owners" src={'/Christina3.jpg'}></img>
                     <p className="owners-desc">
-                        Christina is London-born,
-                        Comes from Medical field.
+                        Christina is a Montreal-adoptee,
+                        coming from the Medical field.
                         She found her passion in coding.
-                        She loves travelling
-                        and helping others who are in need! </p>
+                        She loves travelling, coffee and comedy!
+                         </p>
                 </div>
                 <div className="owner-container">
                     <img className="owners" src={'/Elisa.jpg'}></img>
                     <p className="owners-desc">
-                        Elisa is Montreal-born, comes from Food Industry. She is passionate about coding and sports. She feels good when she donates!
+                        Elisa is Montreal-born, comes from Food Industry. 
+                        She is passionate about coding and cooking. 
+                        She frequently donates to charities!
                     </p>
                 </div>
                 <div className="owner-container">
                     <img className="owners" src={'/Shabnam.jpg'}></img>
                     <p className="owners-desc">
-                        Shabnam is Tehran-born,
+                        Shabnam is  ,
                         with Computer-Science background.
                         She finds helping makes you feel better 
                         as a human being!
