@@ -13,9 +13,9 @@ class Map extends Component {
       viewport: {
         width: 1200,
         height: 200,
-        latitude: 45.5017,
-        longitude: -100.5673,
-        zoom: 6
+        latitude: 45.476722211952456,
+        longitude: -73.57146624130783,
+        zoom: 10
       },
       members: []
 
