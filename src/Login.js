@@ -64,9 +64,9 @@ class Login extends Component {
             <div className="titleb">IT ON</div>
             <form className="login-form" onSubmit={this.handleSubmit}>
          
-                <div className="login-titles">Username</div>
+                <div className="login-titles">USERNAME</div>
                 <input className="username" type="text" onChange={this.handleUsernameChange}></input>
-                <div className="login-titles">Password</div>
+                <div className="login-titles">PASSWORD</div>
                 <input className="password" type="password" onChange={this.handlePasswordChange}></input>
                 <input className="login-btn" type="submit" value="ENTER"></input>
                 

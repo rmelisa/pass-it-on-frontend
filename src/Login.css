@@ -14,13 +14,13 @@
    
     text-align: center;
 }
-.login-form .login-titles .username .password{
-    background-color: rgba(0, 0, 0, 0.377);
-}
+
 
 .login-titles{
     text-align: center;
     padding: 5px;
+    padding-top: 10px;
+    font-family: 'Lato', sans-serif;
     color: whitesmoke;
 }
 .username{
@@ -68,5 +68,5 @@
 }
 
 .active {
-    background-color: rgb(136, 76, 94);
+    background-color: black;
   }

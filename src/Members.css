@@ -110,10 +110,8 @@ li a:hover {
 }
 .search-member{
    display: flex;
-   float: left;
-   margin: 5px;
-   background-color: whitesmoke;
-
+   background-color: white;
+   padding: 5px;
 }
 
 .search-div{
@@ -124,13 +122,14 @@ li a:hover {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 40px;
+    
     background-color: whitesmoke;
     
 }
 .member-container{
 width: 300px;
-margin: 20px;
+padding-top: 20px;
+
 background-color: whitesmoke;
     
 }

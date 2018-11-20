@@ -123,8 +123,9 @@ class Home extends Component {
         return (
 
             <div className='home-container'>
-                {this.handleTopLeft()}
+                
                 <div className="hero-image">
+                {this.handleTopLeft()}
                     <div className="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
@@ -142,15 +143,16 @@ class Home extends Component {
                     </ul>
                 </div>
 
-
-                <div className="dashboard-header">
-                    <p>Throughout our lifetime, we accumluate many possessions. Some of these may have sentimental
+                    <div className="home-intro">
+                        Throughout our lifetime, we accumluate many possessions. Some of these may have sentimental
                         value or represent a portion of our lives that we wish to move on from. The emotions attached
                         to these objects are powerful things and adds great value to them. But the inheritor of these
                         objects may be unaware of their significance. We have created this website to help those who wish
                         to donate these special items and give them a voice. All proceeds go to charity and you can take
                         comfort in knowing that your donation will go to a recipient who will appreciate its story.
-                    </p>
+                    </div>
+                <div className="dashboard-header">
+                   
                     <h3 className="charity-header">Charity<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dashboard</h3>
 
                     <h3 className="top-header">Top 5<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Items</h3>
