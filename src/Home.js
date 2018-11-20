@@ -91,6 +91,9 @@ class Home extends Component {
             <div className="item-div-home">
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
+    
                 <Link to={"/itemDetails/" + item.itemID}><img className="item-image-home" src={item.imageName}></img></Link>
                 <div className="desc-box">
                     <div><Link to={"/itemDetails/" + item.itemID} className="item-link">{item.itemName}</Link> </div>
@@ -109,11 +112,13 @@ class Home extends Component {
     renderCharityInfo() {
         let charities = Object.keys(this.state.charityTotals)
         return (
-            <div>{charities.map(function (charity) {
-                return (<div>Charity Name: {charity}
-                    <br></br>
-                    Amount raised: {this.state.charityTotals[charity]}
-                </div>)
+            <div className="charity-totals">{charities.map(function (charity) {
+                return (<div>
+                <div className="chairty-nm">{charity}</div>
+             
+                    <div className="raised-amt">&#8594;&nbsp;Amount raised: ${this.state.charityTotals[charity]}
+                    </div>
+                    </div>)
             }.bind(this))}
             </div>
         )
@@ -123,9 +128,9 @@ class Home extends Component {
         return (
 
             <div className='home-container'>
-                
+
                 <div className="hero-image">
-                {this.handleTopLeft()}
+                    {this.handleTopLeft()}
                     <div className="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
@@ -143,32 +148,28 @@ class Home extends Component {
                     </ul>
                 </div>
 
-                    <div className="home-intro">
-                        Throughout our lifetime, we accumluate many possessions. Some of these may have sentimental
-                        value or represent a portion of our lives that we wish to move on from. The emotions attached
-                        to these objects are powerful things and adds great value to them. But the inheritor of these
-                        objects may be unaware of their significance. We have created this website to help those who wish
-                        to donate these special items and give them a voice. All proceeds go to charity and you can take
-                        comfort in knowing that your donation will go to a recipient who will appreciate its story.
+                <div className="home-intro">
+                    Throughout our lifetime, we accumluate many possessions. Some of these may have sentimental
+                    value or represent a portion of our lives that we wish to move on from. The emotions attached
+                    to these objects are powerful things and adds great value to them. But the inheritor of these
+                    objects may be unaware of their significance. We have created this website to help those who wish
+                    to donate these special items and give them a voice. All proceeds go to charity and you can take
+                    comfort in knowing that your donation will go to a recipient who will appreciate its story.
                     </div>
                 <div className="dashboard-header">
-                   
-                    <h3 className="charity-header">Charity<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dashboard</h3>
 
-                    <h3 className="top-header">Top 5<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Items</h3>
+                    <div className="charity-header">Charity<br></br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dashboard</div>
+
+                    <div className="top-header">Top 5<br></br>&nbsp; &nbsp; &nbsp; &nbsp;Items</div>
                 </div>
                 <div className="home-items">
                     <div >{this.renderCharityInfo()} </div>
                     {this.state.itemsDisplayed.map(this.renderItems)}
                 </div>
 
-
-
-
-
                 <footer className="banner">
                     <div className="media-div">
-                    <img className="media-img" src={'/facebook-xxl.png'} />
+                        <img className="media-img" src={'/facebook-xxl.png'} />
                         <img className="media-img" src={'/instagram-xxl.png'} />
                         <img className="media-img" src={'/twitter-xxl.png'} />
                     </div>

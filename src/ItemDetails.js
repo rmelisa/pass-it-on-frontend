@@ -152,7 +152,7 @@ class ItemDetails extends Component {
             <form className="bid-system">
                         <div className="time-left">Time Remaining:&nbsp;{this.state.timeLeft}</div>
                             <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
-                            <div className="item-list"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
+                            <div className="item-list2"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
                             <div>Last bid placed by:&nbsp;{this.state.item.currentBidUser}</div>
                        
                   

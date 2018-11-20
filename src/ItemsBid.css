@@ -21,7 +21,7 @@
     align-items: center;
     text-align: center;
     padding-left: 200px;
-    padding-top: 50px;
+
     background-color: whitesmoke;
 }
 
@@ -46,4 +46,12 @@
     width: 320px;
     flex-direction: column;
     text-align: left;
+}
+.bid-title{
+    padding-top: 20px;
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30pt;
+    text-align: center;
+    font-weight: bold;
 }

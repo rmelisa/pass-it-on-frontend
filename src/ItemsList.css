@@ -9,7 +9,7 @@
 .card{
     display: flex;
     flex-direction: row;
-    margin: 50px;
+    margin: 30px;
    
     justify-content: space-around;
     
@@ -90,7 +90,7 @@ li a {
 }
 
 li a:hover {
-    background-color:rgb(136, 76, 94);
+    background-color:black;
     text-decoration: none;
     color: white;
 }
@@ -101,19 +101,20 @@ li a:hover {
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    padding-left: 200px;
-    padding-top: 50px;
+    padding-top: 30px;
     background-color: whitesmoke;
   
 }
 
 .item-card{
     display: flex;
-    margin: 100px;
+    margin: 30px;
+    margin-left: 60px;
     width: 320px;
     flex-direction: column;
     text-align: left;
     box-shadow: 5px 6px #bbbbbb;
+    height: 450px;
     
 
 }
@@ -130,7 +131,7 @@ width: 320px;
 }
 .name-link:hover{
     text-decoration: none;
-    color: rgb(136, 76, 94);
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
