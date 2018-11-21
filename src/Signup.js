@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Signup.css';
-
+import Modal from './Modal.js'
 
 class Login extends Component {
     constructor(props) {
@@ -17,8 +17,10 @@ class Login extends Component {
             bioInput: "",
             usernameInput: "",
             passwordInput: "",
-
-
+            errorPopup: {
+                error: false,
+                msg: ''
+            }
         }
         this.uploadFile = this.uploadFile.bind(this)
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
@@ -102,9 +104,9 @@ class Login extends Component {
                     type: "setUsername",
                     username: this.state.usernameInput
                 })
-                this.props.history.push('/')
+                this.setState({errorPopup: {error: true, msg:'Signup successful, Welcome ' + this.state.usernameInput}})
             } else {
-                alert('Failed login or signup, please try again')
+                this.setState({errorPopup: {error: true, msg:'Failed signup. Please try again.'}})
             }
         }
         cb = cb.bind(this)
@@ -120,6 +122,9 @@ class Login extends Component {
     }
 
     render() {
+        if (this.state.errorPopup.error) {
+            return (<Modal errorMSG={this.state.errorPopup.msg}/>)
+        }
         return (
             <div className="signup-main">
               <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>

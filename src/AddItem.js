@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import './AddItem.css';
-
+import Modal from './Modal.js'
 
 class AddItem extends Component {
     constructor(props) {
@@ -14,6 +14,10 @@ class AddItem extends Component {
             minBid: 0,
             description: '',
             charityChoice: 'SPCA Montreal',
+            errorPopup: {
+                error: false,
+                msg: '',
+            }
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handlePriceChange = this.handlePriceChange.bind(this)
@@ -24,16 +28,11 @@ class AddItem extends Component {
         this.backToHome = this.backToHome.bind(this)
     }
     componentDidMount() {
-        const styles = {
-            alertMessage: { color: 'red' },
-
-        };
 
 
         if (!this.props.sessionID) {
-            return (<span style={styles.alertMessage}>You need to be logged in to add an item</span>)
-            // alert('You need to be logged in to add an item')
-            // this.props.history.push('/')
+            this.setState({errorPopup: {error: true, msg:'You need to be logged in to add an item'}})
+        
         }
     }
 
@@ -88,8 +87,7 @@ class AddItem extends Component {
         }).then(function (res) {
             let parsed = JSON.parse(res)//check what is being sent back
             if (parsed.status) {
-                alert('ITEM ADDED SUCCESFULLY')
-                this.props.history.push('/')
+                this.setState({errorPopup: {error: true, msg:'Item added successfully'}})
             } else {
                 alert('item was not added succesfully, please login and try again')
             }
@@ -101,6 +99,9 @@ class AddItem extends Component {
     }
 
     render() {
+        if (this.state.errorPopup.error) {
+            return (<Modal errorMSG={this.state.errorPopup.msg}/>)
+        }
         return (
             <div className='add-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>

@@ -2,12 +2,17 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import './Login.css';
+import Modal from './Modal.js'
 class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
             usernameInput: "",
-            passwordInput: ""
+            passwordInput: "",
+            errorPopup: {
+                error: false,
+                msg: ''
+            }
         }
         this.handleUsernameChange = this.handleUsernameChange.bind(this)
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
@@ -45,7 +50,7 @@ class Login extends Component {
                 this.props.history.push('/')
                 // return(<div>Welcome,{this.state.usernameInput}</div>)
             } else {
-                alert('Failed login , please try again')
+                this.setState({errorPopup: {error: true, msg:'Login failed. Please try again.'}})
             }
         }
         cb = cb.bind(this)
@@ -58,6 +63,9 @@ class Login extends Component {
     }
 
     render() {
+        if (this.state.errorPopup.error) {
+            return (<Modal errorMSG={this.state.errorPopup.msg}/>)
+        }
         return (<div className="login-area">
         <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet"></link>
             <div className="titlea">PASS</div>
