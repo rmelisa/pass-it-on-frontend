@@ -1,13 +1,13 @@
 
 
-.modal p {
+.modal2 p {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
 /* The Modal (background) */
-.modal {
+.modal2 {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -21,7 +21,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+.modal2-content {
     position: relative;
     background-color: #36204b;
     margin: auto;
@@ -48,24 +48,24 @@
 }
 
 /* The Close Button */
-.close {
+.close2 {
     color:white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close2:hover,
+.close2:focus {
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header {
+.modal2-header {
     padding: 10px 16px;
     background-color: #36204b;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal2-body {padding: 2px 16px;}
 

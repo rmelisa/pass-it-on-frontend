@@ -15,12 +15,12 @@ class Modal extends Component {
 
     render(){
         return(
-            <div className="modal">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <span className="close" onClick={this.close}>&times;</span>
+            <div className="modal2">
+              <div className="modal2-content">
+                <div className="modal2-header">
+                  <span className="close2" onClick={this.close}>&times;</span>
                 </div>
-                <div className="modal-body">
+                <div className="modal2-body">
                   <p>{this.props.errorMSG}</p>
                 </div>
               </div>
