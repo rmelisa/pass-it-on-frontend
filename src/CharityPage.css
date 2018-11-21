@@ -125,15 +125,15 @@
 
 }
 .chart-title{
-    text-align: center;
     padding-top: 20px;
-    background-color: whitesmoke;
-    border-bottom: 4px black solid;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    font-size: 20pt;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30pt;
+    text-align: center;
     font-weight: bold;
+    border-bottom: 4px black solid;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
 }
 .active {
     background-color: rgb(136, 76, 94);

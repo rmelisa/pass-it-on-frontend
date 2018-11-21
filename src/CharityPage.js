@@ -65,6 +65,7 @@ class CharityPage extends Component {
         <div>
             <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
+             <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
             <div className='home-container'>
 
                 <div class="charity-image">

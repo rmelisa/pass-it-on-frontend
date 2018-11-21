@@ -105,6 +105,7 @@ class AddItem extends Component {
         return (
             <div className='add-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
                 <ul className="tab-container">             
                         <li><Link to={"/"}>Home</Link></li>
                         <li><Link to={"/itemsList/"}>Items for Sale</Link></li>

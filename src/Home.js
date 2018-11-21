@@ -98,8 +98,8 @@ class Home extends Component {
                 <div className="desc-box">
                     <div><Link to={"/itemDetails/" + item.itemID} className="item-link">{item.itemName}</Link> </div>
                     <div className="desc-item">
-                        <div>Min Bid: {item.minBid}$</div>
-                        <div>Current Bid: {item.currentBid}$</div>
+                        <div className="bid-titles">Min Bid: {item.minBid}$</div>
+                        <div className="bid-titles">Current Bid: {item.currentBid}$</div>
                         <em className="desc-trim">"{item.itemDescription.slice(0,100)+ "..."}"</em>
                         <div>Posted By: {item.username}</div>
                         <div>Charity: {item.charity}</div>

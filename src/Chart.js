@@ -18,14 +18,14 @@ const data = {
         borderWidth: 2,
         hoverBackgroundColor: 'rgb(143, 17, 17)',
         hoverBorderColor: 'rgb(143, 17, 17)',
-        data: [65, 59, 80, 81]
+        data: [650, 590, 800, 810]
       }
     ]
   };
               
          return (<div>
             
-        <h5 className="chart-title">Amount Raised Per Charity</h5>
+        <h5 className="chart-title">CHARITY INFO</h5>
         <div className="full-chart">
         <Bar className="full-chart"
           data={data}

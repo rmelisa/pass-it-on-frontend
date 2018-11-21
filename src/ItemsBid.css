@@ -54,4 +54,6 @@
     font-size: 30pt;
     text-align: center;
     font-weight: bold;
+    border-bottom: 4px black solid;
+    padding-bottom: 10px;
 }

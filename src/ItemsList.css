@@ -105,6 +105,15 @@ li a:hover {
     background-color: whitesmoke;
   
 }
+.items-title{
+    padding-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30pt;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 4px black solid;
+    padding-bottom: 10px;
+}
 
 .item-card{
     display: flex;
@@ -128,6 +137,7 @@ width: 320px;
 .name-link{
     text-decoration: none;
     color: black;
+    font-weight: bold;
 }
 .name-link:hover{
     text-decoration: none;

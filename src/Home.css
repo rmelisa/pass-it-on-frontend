@@ -101,11 +101,12 @@
      padding-left: 120px;
      padding-bottom: 30px;
      margin-bottom: 10px;
-     font-family:'Lato', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
      text-align: center;
      font-weight: bold;
+     font-style: italic;
      border-bottom: black 4px solid;
-     font-size: 14pt;
+     font-size: 12pt;
  } 
 .logout{
     display:flex;
@@ -133,18 +134,42 @@ li a {
 
 li a:hover {
     background-color:rgba(0, 0, 0, 0.726);
-    text-decoration:                   none;
+    text-decoration:none;
 }
 .top-5-title{
     font-size: 30pt;  
     padding: 40px;
 }
+.item-div-home:nth-child(2) .item-link{
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 16pt;
+    padding-bottom: 3px;
+}
+
+.bid-titles{
+    font-weight: 600;
+}
+
 .item-link{
     text-decoration: none;
     color: black;
     text-decoration: underline;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
+    font-size: 8;
+}
+
+.item-link:nth-child(2){
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 20pt;
 }
 
 .item-link:hover{
@@ -181,6 +206,7 @@ li a:hover {
     margin: 20px;
     display: flex;
     box-shadow: 5px 6px #bbbbbb;
+    margin-bottom: 60px;
 }
 .item-div-home:nth-child(2){
     margin: 20px;
@@ -209,12 +235,16 @@ li a:hover {
     height: 300px;
     
 }
+.desc-box:nth-child(2){
+    font-size: 16px;
+}
 
 .desc-box{
-    font-size: 8px;
+    font-size: 9.3px;
+    padding-left: 5px;
 }
 .item-div-home:nth-child(2) .desc-box{
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .home-link{
@@ -268,12 +298,13 @@ li a:hover {
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 25px;
+    padding-bottom: 20px;
     
 }
 
 .top-header{
     color: black;
-    padding-right: 10px;
+    
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     font-size: 25px;
@@ -292,14 +323,16 @@ li a:hover {
 .charity-totals{
     padding-left: 20px;
     margin-top: 20px;
-    margin-left: 10px;
-    width: 600px;
+    margin-left: 30px;
+    width: 590px;
     height: 300px;
     padding-left: 80px;
     padding-top:20px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.308)), url("/ppl.jpeg");
     color: white;
     box-shadow: 5px 10px #bbbbbb;
+    margin-bottom: 60px;
+    background-repeat: no-repeat;
 
     
 }

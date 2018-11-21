@@ -57,12 +57,13 @@ class ItemsList extends Component {
             <div className='home-container'>
                 <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
                 <div class="sale-item-image">
                     <div class="sale-items-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
                         <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>
-                        <h2>-ITEMS FOR SALE-</h2>
+                     
                          
                     </div>
 
@@ -77,6 +78,7 @@ class ItemsList extends Component {
                         <li><Link to={"/ItemsBid/"}>My Bids</Link></li>
                     </ul>
                 </div>
+                <div className="items-title">ITEMS FOR SALE</div>
                 <div className="all-items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
                 <footer className="banner">
                     <div className="media-div">

@@ -129,6 +129,7 @@ class Login extends Component {
             <div className="signup-main">
               <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet"></link>
               <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet"></link>
+              <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
 
              
                   <form className="form-style" onSubmit={this.handleSubmit}>
