@@ -4,14 +4,18 @@ import { withRouter } from 'react-router'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import ItemsBidsRender from './ItemBidsRender.js'
 import './ItemsBid.css'
-import Checkout from './Checkout.js'
+import Modal from './Modal.js'
 
 
 class ItemsBid extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            bids: []
+            bids: [],
+            errorPopup: {
+                error: false,
+                msg: ''
+            }
         }
 
         this.backToHome = this.backToHome.bind(this)
@@ -20,8 +24,7 @@ class ItemsBid extends Component {
 
     componentDidMount() {
         if (!this.props.sessionID) {
-            alert('You need to be logged in to see your current bids')
-            this.props.history.push('/')
+           this.setState({errorPopup: {error: true, msg:'You need to be logged in to see your current bids'}})
         }
         let callBack = function (res) {
             let parsed = JSON.parse(res)
@@ -52,6 +55,9 @@ class ItemsBid extends Component {
 
 
     render() {
+        if (this.state.errorPopup.error) {
+            return (<Modal errorMSG={this.state.errorPopup.msg}/>)
+        }
 
         return (<div>
             <div className='home-container'>
@@ -59,8 +65,8 @@ class ItemsBid extends Component {
                 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=Martel+Sans:900" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"></link>
-                <div class="main-bid-image">
-                    <div class="hero-text">
+                <div className="main-bid-image">
+                    <div className="hero-text">
                         <div className="title1">PASS</div>
                         <div className="title2">IT ON</div>
                         <p className="title-description">Taking unwanted items and turning them into monatary donations to those in need</p>

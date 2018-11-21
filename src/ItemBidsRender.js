@@ -55,7 +55,7 @@ class ItemBidsRender extends Component {
                 <div>Time remaining on auction:&nbsp;{this.state.timeLeft}</div>
                 <div>{status}</div>
             </div>
-            {distance < 0 && curBid.currentBidUser === curBid.mybid.username ? (<Checkout/>): (<div/>)}
+            {distance < 0 && curBid.currentBidUser === curBid.mybid.username? (<Checkout/>): (<div/>)}
         </div>
         )
     }
