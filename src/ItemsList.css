@@ -124,12 +124,20 @@ li a:hover {
     text-align: left;
     box-shadow: 5px 6px #bbbbbb;
     height: 450px;
+    transition: transform .2s; /* Animation */
     
 
 }
 .item-image{
 height: 215px;
 width: 320px;
+
+}
+
+
+
+.item-card:hover {
+    transform: scale(1.1); 
 }
 .item-list-desc{
 
@@ -149,4 +157,15 @@ width: 320px;
     font-weight: bold;
     color: black;
     
+}
+
+.category-select{
+    width: 300px;
+    background-color:rgb(16, 24, 49);
+    color: white;
+    /* rgb(77, 123, 145); */
+    margin-top: -15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+
 }

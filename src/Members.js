@@ -55,7 +55,7 @@ class Members extends Component {
             <div>
                 <div className="member-container">
                     <img className="user-img" src={'/' + user.imageName}></img>
-                    <div className="desc-1">Username:{user.username}</div>
+                    <div className="desc-1">{user.username}</div>
                     <div className="desc-3">Bio: {user.bio}</div>
                 </div>
             </div>

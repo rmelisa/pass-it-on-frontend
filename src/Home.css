@@ -207,6 +207,7 @@ li a:hover {
     display: flex;
     box-shadow: 5px 6px #bbbbbb;
     margin-bottom: 60px;
+    transition: transform .2s; /* Animation */
 }
 .item-div-home:nth-child(2){
     margin: 20px;
@@ -214,6 +215,13 @@ li a:hover {
     box-shadow: 5px 10px #bbbbbb;
     height: 300px;
     width: 600px;
+    transition: transform .2s; /* Animation */
+}
+.item-div-home:hover{
+    transform: scale(1.1); 
+}
+.item-div-home:nth-child(2):hover{
+    transform: scale(1.1); 
 }
 
 .item-div-home:nth-child(2) .item-image-home{

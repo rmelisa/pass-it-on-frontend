@@ -8,11 +8,13 @@ class ItemsList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            itemsDisplayed: []
+            itemsDisplayed: [],
+            charity: 'all'
         }
         this.getItems = this.getItems.bind(this)
         this.renderItems = this.renderItems.bind(this)
         this.renderHome = this.renderHome.bind(this)
+        this.handleCategory = this.handleCategory.bind(this)
         // this.handleAddItem = this.handleAddItem.bind(this)
         // this.handleShoppingCart = this.handleShoppingCart.bind(this)
     }
@@ -26,7 +28,15 @@ class ItemsList extends Component {
             .then(x => x.text())
             .then(response => {
                 let parsed = JSON.parse(response)
-                this.setState({ itemsDisplayed: parsed })
+                if (this.state.charity === 'all') {
+                    this.setState({ itemsDisplayed: parsed })
+                    return
+                }
+                let itemsArr = parsed.filter(function (item) {
+                    return item.charity === this.state.charity
+                }.bind(this))
+                this.setState({ itemsDisplayed: itemsArr })
+
             })
     }
 
@@ -50,6 +60,15 @@ class ItemsList extends Component {
     renderHome() {
         this.props.history.push('/')
     }
+
+    handleCategory(event) {
+        let charity = event.target.value
+        this.setState({
+            charity: charity
+        })
+        this.getItems()
+    }
+
 
     render() {
 
@@ -79,6 +98,13 @@ class ItemsList extends Component {
                     </ul>
                 </div>
                 <div className="items-title">ITEMS FOR SALE</div>
+                <select className="category-select" onChange={this.handleCategory}>
+                                <option value="all">All Items</option>
+                                <option value="SPCA Montreal">SPCA Montreal</option>
+                                <option value="All Out">All Out</option>
+                                <option value="MSF - Doctors Without Borders">MSF - Doctors Without Borders</option>
+                                <option value="CAMH - Center for Addiction and Mental Health">CAMH - Center for Addiction and Mental Health</option>
+                            </select>
                 <div className="all-items">{this.state.itemsDisplayed.map(this.renderItems)}</div>
                 <footer className="banner">
                     <div className="media-div">

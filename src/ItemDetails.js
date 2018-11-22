@@ -27,7 +27,7 @@ class ItemDetails extends Component {
             let currentTime = Date.now()
             let distance = this.state.item.timerEnd - currentTime
             if (distance < 0) {
-                this.setState({ timeLeft: `0S, BIDDING IS CLOSED AND WON BY: ${this.state.item.currentBidUser}` })
+                this.setState({ timeLeft: `0s, BIDDING IS CLOSED AND WON BY: ${this.state.item.currentBidUser}` })
                 return
             }
             let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -150,7 +150,7 @@ class ItemDetails extends Component {
                 </div>
 
             <form className="bid-system">
-                        <div className="time-left">TIME'S UP:&nbsp;{this.state.timeLeft}</div>
+                        <div className="time-left">TIME REMAINING:&nbsp;{this.state.timeLeft}</div>
                             <div className="item-list">Minimum Bid:&nbsp;${this.state.item.minBid}</div>
                             <div className="item-list2"> Current Highest Bid:&nbsp;${this.state.item.currentBid}</div>
                             <div>Last bid placed by:&nbsp;{this.state.item.currentBidUser}</div>
