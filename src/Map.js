@@ -41,7 +41,7 @@ cb = cb.bind(this)
   MarkerForMembers(member){
     console.log("hey shabi!", member.lat, member.lon)
     return(<Marker latitude={member.location.lat} longitude={member.location.lon} offsetLeft={-20} offsetTop={-10}>
-      <div><img src="/pin2.png"></img></div>
+      <div><img src="/p.jpg"></img></div>
     </Marker>)
   }
   render() {

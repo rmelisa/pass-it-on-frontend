@@ -140,7 +140,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin-left: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     background-color: whitesmoke;
  
  }
@@ -157,10 +157,10 @@
     width: 150px;
    align-self: center;
    margin-left: 80px;
- 
- }
- 
- .members-title{
+    
+}
+
+.members-title{
     padding-top: 20px;
     font-family: 'Montserrat', sans-serif;
     font-size: 30pt;

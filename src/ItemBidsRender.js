@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import Checkout from './Checkout.js'
+import './ItemsBid.css'
 
 class ItemBidsRender extends Component {
     constructor(props) {
@@ -49,7 +50,7 @@ class ItemBidsRender extends Component {
                 <img className="bid-image" src={'/' + curBid.imageName}></img>
             </div>
             <div className="bid-desc">
-                <Link to={"/itemDetails/" + curBid.itemID}>{curBid.itemName}</Link>
+                <Link to={"/itemDetails/" + curBid.itemID} className="bid-header-title">{curBid.itemName}</Link>
                 <div>Your bid:&nbsp;{curBid.mybid.newBid}$</div>
                 <div>Current bid at:&nbsp;{curBid.currentBid}$</div>
                 <div>Time remaining on auction:&nbsp;{this.state.timeLeft}</div>

@@ -57,3 +57,11 @@
     border-bottom: 4px black solid;
     padding-bottom: 10px;
 }
+.bid-header-title{
+    font-weight: bold;
+    color: black;
+}
+.bid-header-title:hover{
+    font-weight: bolder;
+    color: black;
+}

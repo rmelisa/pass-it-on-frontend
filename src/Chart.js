@@ -3,6 +3,8 @@ import { withRouter } from 'react-router'
 import React, { Component } from "react";
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import { Bar } from 'react-chartjs-2'
+import './CharityPage.css'
+
 
 
 
@@ -13,6 +15,7 @@ const data = {
     labels: ['SPCA Montreal', 'MSF Canada', 'All Out', 'CAMH',],
     datasets: [
       {
+        label: 'Amount Raised in Dollars',
         backgroundColor: 'rgba(25, 46, 80, 0.952)',
         borderColor: 'rgb(143, 17, 17)',
         borderWidth: 2,
@@ -25,7 +28,7 @@ const data = {
               
          return (<div>
             
-        <h5 className="chart-title">CHARITY INFO</h5>
+        <div className="chart-title">CHARITY INFO</div>
         <div className="full-chart">
         <Bar className="full-chart"
           data={data}

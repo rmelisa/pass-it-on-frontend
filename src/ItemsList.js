@@ -48,7 +48,7 @@ class ItemsList extends Component {
                 <div ><Link to={"/itemDetails/" + item.itemID} className="name-link">{item.itemName}</Link> </div>
                 <div className="item-list-desc">
                     <p >{item.charity}</p>
-                    <p className="hover-desc">{item.itemDescription}</p>
+                    <p className="hover-desc">"{item.itemDescription}"</p>
 
                 </div>
             </div>
