@@ -39,7 +39,7 @@ class FAQ extends Component {
             </div>
             <div className="faq">
                 <div className="seller">
-                    <h2 className="step-title">Do you want to sell your item and have the proceeds go to a charity of your choice?</h2>
+                    <h2 className="step-title">Do you want to donate your item and have the proceeds go to a charity of your choice?</h2>
                     <span className="steps">1</span>
                     <p className="step-desc">Create an Account and let us know a little about you</p>
                     <span className="steps">2</span>
